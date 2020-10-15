@@ -8,7 +8,7 @@ use MUSICAA\controllers\AbstractController;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\Data;
 
-class Onbaording extends AbstractController
+class OnbaordingController extends AbstractController
 {
     use Helper;
 
