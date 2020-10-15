@@ -1,0 +1,12 @@
+{
+    "name": "ahmed/musicaa",
+    "require": {
+        "athlon1600/youtube-downloader": "^2.1",
+      "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MUSICAA\\": "app"
+        }
+    }
+}
