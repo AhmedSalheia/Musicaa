@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="" />
+    <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Onboarding.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Onboarding.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +23,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -27,6 +33,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1iixoQdoL6HAY0M4kPtjrtjRl5r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -69,6 +76,7 @@
       <workItem from="1602436193429" duration="222000" />
       <workItem from="1602683858958" duration="214000" />
       <workItem from="1602757013395" duration="11349000" />
+      <workItem from="1602791351172" duration="100000" />
     </task>
     <servers />
   </component>
