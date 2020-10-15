@@ -21,15 +21,19 @@ class Onboarding extends AbstractModel
     public static $tableSchema = [
         'id'            =>  self::DATA_TYPE_STR,
         'img'           =>  self::DATA_TYPE_STR,
-        'title'         =>  self::DATA_TYPE_STR
+        'title'         =>  self::DATA_TYPE_STR,
+        'details'       =>  self::DATA_TYPE_STR,
+        'lastModified'  =>  self::DATA_TYPE_STR
     ];
 
     public function createTable()
     {
         DatabaseHandler::factory()->exec('
             CREATE TABLE onboarding(
-                id VARCHAR(20) NOT NULL PRIMARY KEY,
-                data TEXT NOT NULL,
+                id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                img VARCHAR(30) NOT NULL UNIQUE,
+                title VARCHAR(30) NOT NULL UNIQUE,
+                details VARCHAR(250) NOT NULL,
                 lastModified DATETIME DEFAULT now()
             )
         ');
@@ -42,19 +46,21 @@ class Onboarding extends AbstractModel
         foreach ($data as $datum)
         {
             $senddata = new self();
-            $senddata->id = $datum->id;
-            $senddata->data = $datum->data;
+
+            $senddata->img = $datum->img;
+            $senddata->title = $datum->title;
+            $senddata->details = $datum->details;
 
             if(!$senddata->save())
             {
-                echo 'Error Adding '. $senddata->id . ' To '.self::$tableName.' Table In The Database'."\n";
+                echo '<br>Error Adding '. $senddata->title . ' To '.self::$tableName.' Table In The Database<br>';
                 $bool = false;
             }
         }
 
         if ($bool === true)
         {
-            echo 'Finished Adding Data To '.self::$tableName.' Table In The Database'."\n";
+            echo '<br>Finished Adding Data To '.self::$tableName.' Table In The Database<br>';
         }
     }
 }
