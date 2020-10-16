@@ -6,6 +6,8 @@ namespace MUSICAA\lib\traits;
 trait Helper
 {
     use InputFilter;
+    use Encription;
+    use Mailing;
 
     public function redirect($page){
         session_write_close();
@@ -13,14 +15,4 @@ trait Helper
         exit();
     }
 
-    public function jsonRender($message,$language,$status=NULL){
-
-        if ($status === NULL)
-        {
-            $status = is_array($message);
-        }
-
-        echo json_encode(['response' => $message, 'status' => $status,'Content-Language' => $language]);
-        exit();
-    }
 }

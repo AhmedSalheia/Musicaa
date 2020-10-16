@@ -16,7 +16,7 @@ class Onboarding extends AbstractModel
 
     public static $tableName = 'onboarding';
     public static $primaryKey = 'id';
-    public static $uniqueKey = '';
+    public static $uniqueKey = 'img';
     public static $timeCol = 'lastModified';
     public static $tableSchema = [
         'id'            =>  self::DATA_TYPE_STR,
@@ -51,16 +51,21 @@ class Onboarding extends AbstractModel
             $senddata->title = $datum->title;
             $senddata->details = $datum->details;
 
-            if(!$senddata->save())
+            $save = $senddata->save();
+
+            if($save === false)
             {
-                echo '<br>Error Adding '. $senddata->title . ' To '.self::$tableName.' Table In The Database<br>';
+                echo '<br><span style="color:red;">Error Adding '. $senddata->title . ' To '.self::$tableName.' Table In The Database</span><br>';
                 $bool = false;
+            }elseif (is_object($save))
+            {
+                echo '<br><span style="color:#f09900;">Did Not Add ' . $senddata->title . ' To '.self::$tableName.' Table In The Database (Existed)</span><br>';
             }
         }
 
         if ($bool === true)
         {
-            echo '<br>Finished Adding Data To '.self::$tableName.' Table In The Database<br>';
+            echo '<br><span style="color:green;">Finished Adding Data To '.self::$tableName.' Table In The Database</span><br>';
         }
     }
 }

@@ -2,7 +2,9 @@
     "name": "ahmed/musicaa",
     "require": {
         "athlon1600/youtube-downloader": "^2.1",
-      "ext-json": "*"
+      "ext-json": "*",
+      "ext-openssl": "*",
+      "ext-fileinfo": "*"
     },
     "autoload": {
         "psr-4": {

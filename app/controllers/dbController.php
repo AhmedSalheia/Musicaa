@@ -5,6 +5,8 @@ namespace MUSICAA\controllers;
 
 
 use MUSICAA\models\Data;
+use MUSICAA\models\GenderLabels;
+use MUSICAA\models\Genders;
 use MUSICAA\models\Onboarding;
 
 class dbController extends AbstractController
@@ -22,10 +24,26 @@ class dbController extends AbstractController
         $onboarding = new Onboarding();
         $onboarding->createTable();
         $onboarding->addToTable([
-            ['img' => 'onboarding01.png','title' => 'Listen freely','details' => 'Musicana provides the latest world tunes and music'],
-            ['img' => 'onboarding02.png','title' => 'Enjoy without internet','details' => 'Save and play music in internet off mode'],
-            ['img' => 'onboarding03.png','title' => 'Follow Up Close','details' => 'Follow the artists closest to your area'],
-            ['img' => 'onboarding04.png','title' => 'Big updates','details' => 'There are great features available within the app that you have not seen before.'],
+            ['img' => 'onboarding01','title' => 'Listen freely','details' => 'Musicana provides the latest world tunes and music'],
+            ['img' => 'onboarding02','title' => 'Enjoy without internet','details' => 'Save and play music in internet off mode'],
+            ['img' => 'onboarding03','title' => 'Follow Up Close','details' => 'Follow the artists closest to your area'],
+            ['img' => 'onboarding04','title' => 'Big updates','details' => 'There are great features available within the app that you have not seen before.'],
+        ]);
+
+        $genderLabels = new GenderLabels();
+        $genderLabels->createTable();
+        $genderLabels->addToTable([
+            ['id' => 'en', 'male' => 'Male', 'female' => 'Female', 'ratherNotToSay' => 'Rather Not To Say','custom' => 'Custom'],
+            ['id' => 'ar', 'male' => 'رجل', 'female' => 'انثى', 'ratherNotToSay' => 'أفضل عدم الاجابة','custom' => 'مخصص']
+        ]);
+
+        $genders = new Genders();
+        $genders->createTable();
+        $genders->addToTable([
+            ['gender' => 'male'],
+            ['gender' => 'female'],
+            ['gender' => 'ratherNotToSay'],
+            ['gender' => 'custom']
         ]);
     }
 }

@@ -45,14 +45,14 @@ class Data extends AbstractModel
 
             if(!$senddata->save())
             {
-                echo 'Error Adding '. $senddata->id . ' To '.self::$tableName.' Table In The Database'."<br>";
+                echo '<span style="color:red;">Error Adding '. $senddata->id . ' To '.self::$tableName.' Table In The Database</span>'."<br>";
                 $bool = false;
             }
         }
 
         if ($bool === true)
         {
-            echo 'Finished Adding Data To '.self::$tableName.' Table In The Database'."<br>";
+            echo '<span style="color:green;">Finished Adding Data To '.self::$tableName.' Table In The Database</span>'."<br>";
         }
     }
 }

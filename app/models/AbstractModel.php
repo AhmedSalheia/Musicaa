@@ -117,7 +117,7 @@ class AbstractModel
     }
 
     public static function getByUnique($unique){
-        $sql = 'SELECT * FROM '.static::$tableName. ' WHERE '.static::$unique.' = "'.$unique.'"';
+        $sql = 'SELECT * FROM '.static::$tableName. ' WHERE '.static::$uniqueKey.' = "'.$unique.'"';
         $stmt = DatabaseHandler::factory()->prepare($sql);
         if($stmt->execute() === true){
             if (method_exists(get_called_class(),'__construct')){

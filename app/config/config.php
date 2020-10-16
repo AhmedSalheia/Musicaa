@@ -12,6 +12,7 @@ define('LANG_PATH', APP_PATH . DS . 'languages' . DS);
 define('CSS', '/assets/css/');
 define('JS', '/assets/js/');
 define('IMG', '/assets/images/');
+define('INI','./app/ini/');
 
 defined('DATABASE_HOST_NAME')? null : define('DATABASE_HOST_NAME','localhost');
 defined('DATABASE_DB_NAME')? null : define('DATABASE_DB_NAME','progwlfo_musicaabase');
@@ -44,3 +45,5 @@ define('ROLE',[
         'end'   =>  '...>'
     ]
 ]);
+
+define('KEY','whateverTheFuckthingImustputasAKEY');

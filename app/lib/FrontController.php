@@ -52,20 +52,20 @@ class FrontController
             if (isset($url[1]) && $url[1] !== '' && in_array(strtoupper($url[1]),API_VER)){
                 $version = $url[1];
             }else{
-                $this->jsonRender('No Version Selected');
+                $this->jsonRender('No Version Selected',$this->language);
             }
 
             if (isset($url[2]) && $url[2] !== ''){
                 $category = $url[2];
             }else{
-                $this->jsonRender('No Category Selected');
+                $this->jsonRender('No Category Selected',$this->language);
             }
 
             if (isset($url[3]) && $url[3] !== '')
             {
-                $this->_controller = 'api\\'.$version.'\\'.$category.'\\'.$url[3];
+                $this->_controller = 'api\\'.$version.'\\'.$category.'\\'. ucfirst(strtolower($url[3]));
             }else{
-                $this->jsonRender('No Action Selected');
+                $this->jsonRender('No Action Selected',$this->language);
             }
 
 
@@ -102,21 +102,21 @@ class FrontController
         $actionName = $this->_action . 'Action';
 
         if (!class_exists($controllerClassName)){
-            if (!str_word_count($this->_controller,1)[0] === 'api')
+            if (str_word_count($this->_controller,1)[0] !== 'api')
             {
                 $controllerClassName = self::NOT_FOUND_CONTROLLER;
             }else{
-                $this->jsonRender('The Wanted Category Doesn\'t Exist');
+                $this->jsonRender('The Wanted Category Doesn\'t Exist',$this->language);
             }
         }
 
         $controller = new $controllerClassName;
         if (!method_exists($controller, $actionName)){
-            if (!str_word_count($this->_controller,1)[0] === 'api')
+            if (str_word_count($this->_controller,1)[0] !== 'api')
             {
                 $this->_action = $actionName = self::NOT_FOUND_ACTION;
             }else{
-                $this->jsonRender('The Wanted Action Doesn\'t Exist');
+                $this->jsonRender('The Wanted Action Doesn\'t Exist',$this->language);
             }
         }
 

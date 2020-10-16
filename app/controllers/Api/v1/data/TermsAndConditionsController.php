@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MUSICAA\controllers\api\v1\data;
+namespace MUSICAA\controllers\Api\v1\data;
 
 
 use MUSICAA\lib\traits\Helper;
@@ -13,7 +13,7 @@ class TermsAndConditionsController extends \MUSICAA\controllers\AbstractControll
 
     public function defaultAction()
     {
-        $this->_lang->load('api.errors.data');
+        $this->_lang->load('Api.errors.data');
         extract($this->_lang->get(),EXTR_PREFIX_ALL,'data');
         $data = Data::getByPK('terms');
 
@@ -23,6 +23,7 @@ class TermsAndConditionsController extends \MUSICAA\controllers\AbstractControll
             $this->jsonRender(['data' => $data, 'role' => ROLE],$this->language);
         }else{
 
+            $this->mail('ahmedsalheia.as@gmail.com','We Have Detected Error In Getting Terms Data From Database','Error In Musicaa App API');
             $this->jsonRender($data_terror,$this->language);
 
         }
