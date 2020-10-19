@@ -2,35 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/GendersController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/GetImageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ini/mail.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/traits/Encription.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/traits/JsonFuncions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/traits/Mailing.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/GenderLabels.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/Genders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/notfound/notfound.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/notfound/noview.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/musicaa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/musicaa.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/data/OnbaordingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/OnboardingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/data/PrivacypolicyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/PrivacypolicyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/data/TermsAndConditionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/TermsAndConditionsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dbController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dbController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/languages/en/api/errors/data.lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/languages/en/api/errors/data.lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/AbstractModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/AbstractModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Onboarding.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Onboarding.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/onboarding01.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/onboarding/onboarding01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/onboarding02.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/onboarding/onboarding02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/onboarding03.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/onboarding/onboarding03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/onboarding04.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/onboarding/onboarding04.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +41,20 @@
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/athlon1600/youtube-downloader" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/vendor/google/auth" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iixoQdoL6HAY0M4kPtjrtjRl5r" />
@@ -110,7 +108,10 @@
       <workItem from="1602436193429" duration="222000" />
       <workItem from="1602683858958" duration="214000" />
       <workItem from="1602757013395" duration="11349000" />
-      <workItem from="1602791351172" duration="11005000" />
+      <workItem from="1602791351172" duration="12310000" />
+      <workItem from="1602924368148" duration="4862000" />
+      <workItem from="1603055688171" duration="1403000" />
+      <workItem from="1603124693117" duration="298000" />
     </task>
     <servers />
   </component>

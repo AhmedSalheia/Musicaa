@@ -4,7 +4,9 @@
         "athlon1600/youtube-downloader": "^2.1",
       "ext-json": "*",
       "ext-openssl": "*",
-      "ext-fileinfo": "*"
+      "ext-fileinfo": "*",
+        "firebase/php-jwt": "^5.2",
+        "google/apiclient": "^2.7"
     },
     "autoload": {
         "psr-4": {

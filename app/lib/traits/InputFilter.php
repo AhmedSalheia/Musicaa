@@ -23,7 +23,13 @@ trait InputFilter
         $method = strtoupper($method);
         if ($_SERVER['REQUEST_METHOD'] === $method)
         {
-
+            if (isset($_REQUEST[$input]) && $_REQUEST[$input] !== '')
+            {
+                echo 'yes';
+            }else
+            {
+                $this->jsonRender('','');
+            }
         }else{
             $this->jsonRender('','');
         }
