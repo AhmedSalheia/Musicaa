@@ -47,3 +47,9 @@ define('ROLE',[
 ]);
 
 define('KEY','whateverTheFuckthingImustputasAKEY');
+define('TOK_KEY','@!#TRPOINTONFOTRFISISVONOPopahunqpvnq56486%*$');
+
+define('TOKEN',array(
+    "iat" => time(),
+    "iss" => 'musicaa.app'
+));

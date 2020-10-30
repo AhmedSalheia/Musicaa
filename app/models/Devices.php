@@ -12,6 +12,7 @@ class Devices extends AbstractModel
     public $name;
     public $UUID;
     public $OS;
+    public $is_primary="n";
 
     public static $tableName = 'devices';
     public static $primaryKey = 'id';
@@ -32,6 +33,7 @@ class Devices extends AbstractModel
                 name VARCHAR(50) NOT NULL,
                 UUID TEXT NOT NULL UNIQUE,
                 OS INT NOT NULL,
+                is_primary ENUM("y","n"),
                 FOREIGN KEY (OS) REFERENCES os(id)
             )
         ');

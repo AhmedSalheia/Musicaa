@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/loginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/languages/en/api/errors/user.lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/languages/en/api/errors/user.lang.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Devices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Devices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/OS.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/OS.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -111,7 +111,7 @@
       <workItem from="1603135171325" duration="669000" />
       <workItem from="1603196596470" duration="5562000" />
       <workItem from="1603394729873" duration="19000" />
-      <workItem from="1604033709918" duration="8228000" />
+      <workItem from="1604033709918" duration="13528000" />
     </task>
     <servers />
   </component>
@@ -150,10 +150,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="794" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604034567588" />
-    <state x="478" y="241" key="SettingsEditor" timestamp="1602760477393">
+    <state x="478" y="241" key="SettingsEditor" timestamp="1604080240372">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="478" y="241" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1602760477393" />
+    <state x="478" y="241" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1604080240372" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1604039439294">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
