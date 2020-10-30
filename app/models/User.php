@@ -17,6 +17,7 @@ class User extends AbstractModel
     public $password;
     public $country;
     public $gender;
+    public $img='';
     public $verified = 'n';
     public $lastModified;
 
@@ -34,6 +35,7 @@ class User extends AbstractModel
         'password'      =>  self::DATA_TYPE_STR,
         'country'       =>  self::DATA_TYPE_STR,
         'gender'        =>  self::DATA_TYPE_INT,
+        'img'           =>  self::DATA_TYPE_STR,
         'verified'      =>  self::DATA_TYPE_STR,
         'lastModified'  =>  self::DATA_TYPE_STR
     ];
@@ -51,6 +53,7 @@ class User extends AbstractModel
                 password TEXT NOT NULL,
                 country VARCHAR(2) NOT NULL,
                 gender INT NOT NULL,
+                img VARCHAR(50) NOT NULL,
                 verified ENUM("n","y") DEFAULT "n",
                 lastModified DATETIME DEFAULT now(),
                 FOREIGN KEY (gender) REFERENCES genders(id)

@@ -27,7 +27,7 @@ class Devices extends AbstractModel
     public function createTable()
     {
         DatabaseHandler::factory()->exec('
-            CREATE TABLE user(
+            CREATE TABLE devices(
                 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
                 name VARCHAR(50) NOT NULL,
                 UUID TEXT NOT NULL UNIQUE,

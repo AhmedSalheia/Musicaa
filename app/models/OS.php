@@ -24,7 +24,7 @@ class OS extends AbstractModel
     {
         DatabaseHandler::factory()->exec('
             CREATE TABLE os(
-                id INT NOT NULL PRIMARY KEY,
+                id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
                 OS VARCHAR(15) NOT NULL UNIQUE
             )
         ');

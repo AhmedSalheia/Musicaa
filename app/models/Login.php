@@ -27,7 +27,7 @@ class Login extends AbstractModel
         DatabaseHandler::factory()->exec('
             CREATE TABLE login(
                 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                userId INT NUT NULL,
+                userId INT NOT NULL,
                 deviceId INT NOT NULL,
                 FOREIGN KEY (userId) REFERENCES user(id),
                 FOREIGN KEY (deviceId) REFERENCES devices(id)
