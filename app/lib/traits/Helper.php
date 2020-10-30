@@ -15,4 +15,8 @@ trait Helper
         exit();
     }
 
+    public function randText($num)
+    {
+        return str_split(str_shuffle('absdefghijklmnopqrstuvwxyz1234567890'),$num)[0];
+    }
 }

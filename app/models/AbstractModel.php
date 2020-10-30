@@ -59,8 +59,8 @@ class AbstractModel
 
 // UPDATING OR DELETING :
 
-    public function save(){
-        if (isset(static::$uniqueKey) && static::$uniqueKey != ''){
+    public function save($stat=''){
+        if (isset(static::$uniqueKey) && static::$uniqueKey != '' && $stat !== 'upd'){
 
             $get = self::getByUnique($this->{static::$uniqueKey});
 

@@ -4,10 +4,15 @@
 namespace MUSICAA\controllers;
 
 
+use MUSICAA\models\Devices;
+use MUSICAA\models\Login;
+use MUSICAA\models\OS;
+use MUSICAA\models\Verification;
 use MUSICAA\models\Data;
 use MUSICAA\models\GenderLabels;
 use MUSICAA\models\Genders;
 use MUSICAA\models\Onboarding;
+use MUSICAA\models\User;
 
 class dbController extends AbstractController
 {
@@ -34,7 +39,7 @@ class dbController extends AbstractController
         $genderLabels->createTable();
         $genderLabels->addToTable([
             ['id' => 'en', 'male' => 'Male', 'female' => 'Female', 'ratherNotToSay' => 'Rather Not To Say','custom' => 'Custom'],
-            ['id' => 'ar', 'male' => 'رجل', 'female' => 'انثى', 'ratherNotToSay' => 'أفضل عدم الاجابة','custom' => 'مخصص']
+            ['id' => 'ar', 'male' => 'ذكر', 'female' => 'انثى', 'ratherNotToSay' => 'أفضل عدم الاجابة','custom' => 'مخصص']
         ]);
 
         $genders = new Genders();
@@ -45,5 +50,23 @@ class dbController extends AbstractController
             ['gender' => 'ratherNotToSay'],
             ['gender' => 'custom']
         ]);
+
+        $user = new User();
+        $user->createTable();
+
+        $verification = new Verification();
+        $verification->createTable();
+
+        $os = new OS();
+        $os->createTable();
+        $os->addToTable([
+            ['OS' => 'Android']
+        ]);
+
+        $devices = new Devices();
+        $devices->createTable();
+
+        $login = new Login();
+        $login->createTable();
     }
 }

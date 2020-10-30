@@ -25,7 +25,7 @@ defined('DEFAULT_LANG')? null : define('DEFAULT_LANG','en');
 defined('LANGS')? null : define('LANGS',['en','ar']);
 
 define('API_VER', ['V1']);
-define('SUPPORTED_LANGS',['en']);
+define('SUPPORTED_LANGS',LANGS);
 define('REQUEST_SCHEME',['https']);
 
 

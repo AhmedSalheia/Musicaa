@@ -22,7 +22,7 @@ class GenderLabels extends AbstractModel
         'id'            =>  self::DATA_TYPE_STR,
         'male'          =>  self::DATA_TYPE_STR,
         'female'        =>  self::DATA_TYPE_STR,
-    'ratherNotToSay' =>  self::DATA_TYPE_STR,
+    'ratherNotToSay'    =>  self::DATA_TYPE_STR,
         'custom'        =>  self::DATA_TYPE_STR
     ];
 

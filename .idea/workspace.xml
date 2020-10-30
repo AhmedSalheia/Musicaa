@@ -2,19 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/musicaa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/musicaa.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ISO 3166-1 DB/ISO_3166.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/VerificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/loginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/languages/en/api/errors/user.lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Devices.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/OS.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Verification.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dbController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dbController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/database/DatabaseHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/database/DatabaseHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/Mailing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Mailing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/AbstractModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/AbstractModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/GenderLabels.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/GenderLabels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Genders.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Genders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +77,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BloodDonation.dev" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,14 +96,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\musicaa\app\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\musicaa\assets\images\onboarding" />
       <recent name="D:\xampp\musicaa\app\models" />
       <recent name="D:\xampp\musicaa\app\controllers\api\v1" />
       <recent name="D:\xampp\musicaa\app\lib\traits" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\musicaa\app\ISO 3166-1 DB" />
+      <recent name="D:\xampp\musicaa\app\views" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -111,7 +124,11 @@
       <workItem from="1602791351172" duration="12310000" />
       <workItem from="1602924368148" duration="4862000" />
       <workItem from="1603055688171" duration="1403000" />
-      <workItem from="1603124693117" duration="922000" />
+      <workItem from="1603124693117" duration="1815000" />
+      <workItem from="1603135171325" duration="669000" />
+      <workItem from="1603196596470" duration="5562000" />
+      <workItem from="1603394729873" duration="19000" />
+      <workItem from="1604033709918" duration="7626000" />
     </task>
     <servers />
   </component>
@@ -122,33 +139,41 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1060" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603199304961">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1060" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603199304961" />
     <state x="755" y="338" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602757537443">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="755" y="338" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1602757537443" />
-    <state x="289" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602758949916">
+    <state x="289" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604036234356">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="289" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602758949916" />
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602801250216">
+    <state x="289" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604036234356" />
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604043398402">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602801250216" />
-    <state x="1099" y="282" key="FileChooserDialogImpl" timestamp="1602684012491">
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604043398402" />
+    <state x="1099" y="282" key="FileChooserDialogImpl" timestamp="1603394745580">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1099" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602684012491" />
-    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1602843942418">
+    <state x="1099" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603394745580" />
+    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1604043298815">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="748" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602843942418" />
-    <state x="794" y="463" key="NewPhpFileDialog" timestamp="1602768045318">
+    <state x="748" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604043298815" />
+    <state x="794" y="463" key="NewPhpFileDialog" timestamp="1604034567588">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="794" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602768045318" />
+    <state x="794" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604034567588" />
     <state x="478" y="241" key="SettingsEditor" timestamp="1602760477393">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="478" y="241" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1602760477393" />
+    <state x="616" y="250" key="run.anything.popup" timestamp="1604039439294">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1604039439294" />
   </component>
 </project>

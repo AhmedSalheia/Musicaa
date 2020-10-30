@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/app/ISO 3166-1 DB/ISO_3166.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/app/models/User.php" dialect="H2" />
+  </component>
+</project>

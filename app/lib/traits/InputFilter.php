@@ -21,17 +21,20 @@ trait InputFilter
     public function checkInput($method,$input)
     {
         $method = strtoupper($method);
+
         if ($_SERVER['REQUEST_METHOD'] === $method)
         {
             if (isset($_REQUEST[$input]) && $_REQUEST[$input] !== '')
             {
-                echo 'yes';
+
+                return $_REQUEST[$input];
+
             }else
             {
-                $this->jsonRender('','');
+                $this->jsonRender(['message' => $input.' Not Provided','error_for' => $input],'en',false);
             }
         }else{
-            $this->jsonRender('','');
+            $this->jsonRender('Please Provide a Valid request, The Request type must be '.$method,'en');
         }
     }
 }

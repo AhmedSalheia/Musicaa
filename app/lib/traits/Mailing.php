@@ -23,8 +23,10 @@ trait Mailing
         $email_body =  $this->mailBody($body);
         $email_address = $username;
 
-        $headers = array ('From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
+        $headers = array ('From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address,'MIME-Version' => 1, 'Content-type' => 'text/html;charset=iso-8859-1');
+
         $smtp = \Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $this->dec($password)));
+
         $mail = $smtp->send($to, $headers, $email_body);
 
 
