@@ -22,7 +22,8 @@ class Devices extends AbstractModel
         'id'            =>  self::DATA_TYPE_INT,
         'name'          =>  self::DATA_TYPE_STR,
         'UUID'          =>  self::DATA_TYPE_STR,
-        'OS'            =>  self::DATA_TYPE_INT
+        'OS'            =>  self::DATA_TYPE_INT,
+        'is_primary'    =>  self::DATA_TYPE_STR
     ];
 
     public function createTable()

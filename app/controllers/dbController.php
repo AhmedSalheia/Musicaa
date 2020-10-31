@@ -7,6 +7,7 @@ namespace MUSICAA\controllers;
 use MUSICAA\models\Devices;
 use MUSICAA\models\Login;
 use MUSICAA\models\OS;
+use MUSICAA\models\TokenMod;
 use MUSICAA\models\Verification;
 use MUSICAA\models\Data;
 use MUSICAA\models\GenderLabels;
@@ -68,5 +69,8 @@ class dbController extends AbstractController
 
         $login = new Login();
         $login->createTable();
+
+        $tokenMod = new TokenMod();
+        $tokenMod->createTable();
     }
 }

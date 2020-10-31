@@ -44,7 +44,7 @@ class RegisterController extends AbstractController
         $user->phone = $phone;
         $user->email = strtolower($email);
         $user->password = $password;
-        $user->country = $country;
+        $user->country = USER::get('Select * from iso_3166_1 Where name LIKE "%'.$country.'%"')[0]->iso; // see what sohaib wants
         $user->gender = $gender;
 
         $save = $user->save();

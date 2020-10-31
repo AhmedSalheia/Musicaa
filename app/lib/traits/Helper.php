@@ -3,11 +3,15 @@
 
 namespace MUSICAA\lib\traits;
 
+use Firebase\JWT\JWT;
+use MUSICAA\models\TokenMod;
+
 trait Helper
 {
     use InputFilter;
     use Encription;
     use Mailing;
+    use Auth;
 
     public function redirect($page){
         session_write_close();
