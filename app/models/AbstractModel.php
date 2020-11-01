@@ -125,7 +125,7 @@ class AbstractModel
             }else{
                 $results = $stmt->fetchAll(\PDO::FETCH_CLASS,get_called_class());
             }
-            return !empty($results)? ((count($results) == 1)? array_shift($results): $results) : false;
+            return !empty($results)? ((count($results) === 1)? array_shift($results): $results) : false;
         }
         return false;
     }

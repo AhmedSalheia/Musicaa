@@ -8,6 +8,8 @@ use Firebase\JWT\JWT;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\Data;
 use MUSICAA\models\Devices;
+use MUSICAA\models\GenderLabels;
+use MUSICAA\models\Genders;
 use MUSICAA\models\Login;
 use MUSICAA\models\OS;
 use MUSICAA\models\TokenMod;
@@ -51,7 +53,7 @@ class loginController extends \MUSICAA\controllers\AbstractController
                         {
                             $device = new Devices();
                             $device->OS = $os->id;
-                            $device->is_primary = 'y';
+                            $device->is_primary = (Login::getByCol('userID',$user->id) !== false)? 'n':'y';
                             $device->UUID = $UUID;
                             $device->name = $name;
 
@@ -62,19 +64,18 @@ class loginController extends \MUSICAA\controllers\AbstractController
                         }
 
                         $login = Login::get('SELECT * FROM login WHERE userId="'.$user->id.'" AND deviceId="'.$device->id.'"');
-                        if (is_array($login) && $login !== [])
+                        if (is_array($login) && !empty($login))
                         {
                             $login = $login[0];
-                        }
 
-                        if ($login === [])
+                        }else
                         {
                             $login = new Login();
                             $login->userId = $user->id;
                             $login->deviceId = $device->id;
                         }
 
-                        $save = $login->save();
+                        $save = $login->save('upd');
                         if ($save !== false)
                         {
                             $tokenMod = TokenMod::getByPK($login->id);
@@ -99,8 +100,12 @@ class loginController extends \MUSICAA\controllers\AbstractController
                             $tokenMod->save();
 
                             $user->token = JWT::encode($token_B,TOK_KEY);
-                            $user->country = Data::get('SELECT * FROM iso_3166_1 WHERE ');
+                            $user->country = Data::get('SELECT * FROM iso_3166_1 WHERE iso LIKE "%'.$user->country.'%"')[0]->printable_name;
 
+                            $gender = Genders::getByPK($user->gender)->gender;
+                            $user->gender = GenderLabels::getByPK($this->language)->$gender;
+
+                            unset($user->id, $user->verified, $user->password);
                             $this->jsonRender(['data' => $user],$this->language);
 
                         }else{

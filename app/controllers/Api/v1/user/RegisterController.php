@@ -44,7 +44,7 @@ class RegisterController extends AbstractController
         $user->phone = $phone;
         $user->email = strtolower($email);
         $user->password = $password;
-        $user->country = USER::get('Select * from iso_3166_1 Where name LIKE "%'.$country.'%"')[0]->iso; // see what sohaib wants
+        $user->country = USER::get('Select * from iso_3166_1 Where iso LIKE "%'.$country.'%"')[0]->iso;
         $user->gender = $gender;
 
         $save = $user->save();
@@ -63,10 +63,13 @@ class RegisterController extends AbstractController
                 if ($save === true)
                 {
                     $verification = '<h4>Your VerificationController Code is <b>'.$ver.'</b> </h4>';
-                    $this->mail($email,$verification,'Verify Your Account');
+                    if (!$this->mail($email,$verification,'Verify Your Account'))
+                    {
+                        $this->jsonRender($user_emailSendErr,$this->language);
+                    }
                 }
 
-                $this->jsonRender(['message' => $user_registerSuc],$this->language);
+                $this->jsonRender($user_registerSuc,$this->language,true);
 
             }else{
 

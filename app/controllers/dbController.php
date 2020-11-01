@@ -5,9 +5,13 @@ namespace MUSICAA\controllers;
 
 
 use MUSICAA\models\Devices;
+use MUSICAA\models\Languages;
 use MUSICAA\models\Login;
 use MUSICAA\models\OS;
+use MUSICAA\models\Status;
+use MUSICAA\models\Theme;
 use MUSICAA\models\TokenMod;
+use MUSICAA\models\Tracker;
 use MUSICAA\models\Verification;
 use MUSICAA\models\Data;
 use MUSICAA\models\GenderLabels;
@@ -72,5 +76,19 @@ class dbController extends AbstractController
 
         $tokenMod = new TokenMod();
         $tokenMod->createTable();
+
+        $status = new Status();
+        $status->createTable();
+
+        $tracker = new Tracker();
+        $tracker->createTable();
+
+        $theme = new Theme();
+        $theme->createTable();
+        $theme->addToTable([['name'=>'Dark'],['name'=>'Moon']]);
+
+        $languages = new Languages();
+        $languages->createTable();
+        $languages->addToTable([['name' => 'en']]);
     }
 }

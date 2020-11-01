@@ -2,17 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/LogoutController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/traits/Auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/TokenMod.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/CountriesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/ProfileController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/SessionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/SettingsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/StatusController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/DefaultSettings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Languages.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Status.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Theme.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Tracker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/9tqkyw.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/og1mv4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/v7gds5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/wn5skp.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/LogoutController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/loginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/dbController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dbController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/languages/en/api/errors/user.lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/languages/en/api/errors/user.lang.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/traits/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Devices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Devices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/JsonFuncions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/JsonFuncions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/AbstractModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/AbstractModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +87,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BloodDonation.dev" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -85,15 +99,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\musicaa\app\models" />
+      <recent name="D:\xampp\musicaa\app\ISO 3166-1 DB" />
+      <recent name="D:\xampp\musicaa\app\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\musicaa\assets\images\onboarding" />
       <recent name="D:\xampp\musicaa\app\models" />
       <recent name="D:\xampp\musicaa\app\controllers\api\v1" />
       <recent name="D:\xampp\musicaa\app\lib\traits" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\musicaa\app\ISO 3166-1 DB" />
-      <recent name="D:\xampp\musicaa\app\views" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -117,7 +132,10 @@
       <workItem from="1603135171325" duration="669000" />
       <workItem from="1603196596470" duration="5562000" />
       <workItem from="1603394729873" duration="19000" />
-      <workItem from="1604033709918" duration="20737000" />
+      <workItem from="1604033709918" duration="21382000" />
+      <workItem from="1604145737341" duration="812000" />
+      <workItem from="1604146569729" duration="197000" />
+      <workItem from="1604182640285" duration="18252000" />
     </task>
     <servers />
   </component>
@@ -144,18 +162,20 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="289" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604036234356" />
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604089121139">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="690" y="324" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604233670049">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604089121139" />
+    <state x="690" y="324" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1604233670049" />
     <state x="1099" y="282" key="FileChooserDialogImpl" timestamp="1603394745580">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1099" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603394745580" />
-    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1604089117552">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="748" y="293" key="NewPhpClassDialog" timestamp="1604233659051">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="748" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604089117552" />
+    <state x="748" y="293" key="NewPhpClassDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1604233659051" />
     <state x="794" y="463" key="NewPhpFileDialog" timestamp="1604034567588">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -164,13 +184,15 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="478" y="241" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1604080240372" />
-    <state x="616" y="250" key="run.anything.popup" timestamp="1604039439294">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="616" y="281" key="run.anything.popup" timestamp="1604233051649">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1604039439294" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1604089425083">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="616" y="281" key="run.anything.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1604233051649" />
+    <state x="623" y="266" width="672" height="653" key="search.everywhere.popup" timestamp="1604224328695">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1604089425083" />
+    <state x="623" y="266" width="672" height="653" key="search.everywhere.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1604224328695" />
   </component>
 </project>

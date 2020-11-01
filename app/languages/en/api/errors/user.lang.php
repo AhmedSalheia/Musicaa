@@ -13,8 +13,23 @@ $_['devSaveErr'] = 'Could\'t Save The Device Info ... Try again later';
 $_['loginSaveErr'] = 'Could\'t login ... Try again later';
 $_['notVer'] = 'User Not Verified ... Please Verify the account then try again';
 $_['logoutErr'] = 'Could Not Logout, Please Try Again Later';
+$_['needAdmin'] = 'Only The Primary Device Can See The Connected Devices';
+$_['statusNewErr'] = 'Can Not Creat New Status, There Is Still Active One';
+$_['statusSaveErr'] = 'Could Not Save Status New Data';
+$_['noStatusErr'] = 'There Is No Active Status For This Session';
+$_['sameStatusErr'] = 'The active status is the same as the changed';
+$_['uploadErr'] = 'Error Uploading Img .... Please Try Again Later';
+$_['emailSendErr'] = 'could Not Send Verification Email, Try To Resend It Again';
+$_['emailSameErr'] = 'New Email Can\'t Be The Same As Old Email';
+$_['passSameErr'] = 'New Password Can\'t Be The Same As Old Password';
 
 
 
 $_['registerSuc'] = 'User Registered Successfully';
 $_['verifiedSuc'] = 'User Verified Successfully';
+$_['logoutSuc']   = 'Logged Out Successfully';
+$_['SeslogoutSuc']   = 'Session Terminated Successfully';
+$_['SeslogoutAllSuc']   = 'Primary Session Terminated Successfully, This has Terminated All Secondary Sessions Too';
+$_['statusCloseSuc']   = 'Successfully Closed the active status';
+$_['changeStatusSuc']   = 'Successfully Changed the active status To ';
+$_['saveDataSuc'] = 'New Data Saved Successfully';

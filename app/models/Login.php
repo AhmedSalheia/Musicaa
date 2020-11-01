@@ -14,7 +14,7 @@ class Login extends AbstractModel
 
     public static $tableName = 'login';
     public static $primaryKey = 'id';
-    public static $uniqueKey = '';
+    public static $uniqueKey = 'userId';
     public static $timeCol = '';
     public static $tableSchema = [
         'id'            =>  self::DATA_TYPE_INT,

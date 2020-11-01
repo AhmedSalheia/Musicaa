@@ -12,6 +12,7 @@ trait JsonFuncions
         if ($status === NULL)
         {
             $status = is_array($message);
+            $message = ['message' => $message];
         }
 
         echo json_encode(['response' => $message, 'status' => $status,'Content-Language' => $language],JSON_UNESCAPED_SLASHES);
