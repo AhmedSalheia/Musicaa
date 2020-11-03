@@ -1,5 +1,7 @@
 <?php
 
+use MUSICAA\models\Languages;
+
 if (!defined('DS')){
     define('DS', DIRECTORY_SEPARATOR);
 }
@@ -22,7 +24,16 @@ defined('DATABASE_PORT_NUMBER')? null : define('DATABASE_PORT_NUMBER',3306);
 defined('DATABASE_CONN_DRIVER')? null : define('DATABASE_CONN_DRIVER',1);
 
 defined('DEFAULT_LANG')? null : define('DEFAULT_LANG','en');
-defined('LANGS')? null : define('LANGS',['en','ar']);
+
+
+$langs = Languages::getAll();
+$arr = [];
+foreach ($langs as $lang)
+{
+    $arr[] = $lang->name;
+}
+
+defined('LANGS')? null : define('LANGS',$arr);
 
 define('API_VER', ['V1']);
 define('SUPPORTED_LANGS',LANGS);
