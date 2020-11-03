@@ -3,7 +3,6 @@
     use MUSICAA\lib\FrontController;
     use MUSICAA\lib\Language;
     use MUSICAA\lib\Template;
-    use MUSICAA\models\Languages;
 
     session_start();
 
