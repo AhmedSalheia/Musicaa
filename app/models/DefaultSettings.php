@@ -38,9 +38,9 @@ class DefaultSettings extends AbstractModel
                 language INT NOT NULL,
                 additional_screen INT NOT NULL,
                 auto_update INT NOT NULL,
-                FOREIGN KEY (os) REFERENCES os(OS),
+                FOREIGN KEY (os) REFERENCES os(id),
                 FOREIGN KEY (theme) REFERENCES themes(id),
-                FOREIGN KEY (language) REFERENCES languages(id),
+                FOREIGN KEY (language) REFERENCES languages(id)
             )
         ');
     }

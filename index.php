@@ -3,6 +3,7 @@
     use MUSICAA\lib\FrontController;
     use MUSICAA\lib\Language;
     use MUSICAA\lib\Template;
+    use MUSICAA\models\Languages;
 
     session_start();
 
@@ -18,10 +19,16 @@
         $_SESSION['lang'] = DEFAULT_LANG;
     }
 
+    $langs = Languages::getAll();
+    $arr = [];
+    foreach ($langs as $lang)
+    {
+        $arr[] = $lang->name;
+    }
+    define('LANGS',$arr);
+
     $template = new Template($template_parts);
     $lang = new Language();
 
     $frontController = new FrontController($template, $lang);
     $frontController->dispatch();
-
-?>

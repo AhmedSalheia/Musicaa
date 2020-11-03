@@ -8,25 +8,24 @@ use MUSICAA\lib\database\DatabaseHandler;
 
 class Settings extends AbstractModel
 {
-    public function __construct()
-    {
-
-    }
-
     public $loginId;
-    public $permissions=7;
-    public $additional_screen=1;
-    public $theme=1;
-    public $auto_update=1;
+    public $permissions;
+    public $additional_screen;
+    public $language;
+    public $theme;
+    public $auto_update;
 
     public static $tableName = 'settings';
-    public static $primaryKey = 'id';
+    public static $primaryKey = 'loginId';
     public static $uniqueKey = '';
     public static $timeCol = '';
     public static $tableSchema = [
-        'id'            =>  self::DATA_TYPE_STR,
-        'data'          =>  self::DATA_TYPE_STR,
-        'lastModified'  =>  self::DATA_TYPE_STR
+        'loginId'           =>  self::DATA_TYPE_INT,
+        'permissions'       =>  self::DATA_TYPE_INT,
+        'theme'             =>  self::DATA_TYPE_INT,
+        'language'          =>  self::DATA_TYPE_INT,
+        'additional_screen' =>  self::DATA_TYPE_INT,
+        'auto_update'       =>  self::DATA_TYPE_INT
     ];
 
     public function createTable()
@@ -34,8 +33,14 @@ class Settings extends AbstractModel
         DatabaseHandler::factory()->exec('
             CREATE TABLE settings(
                 loginId INT NOT NULL PRIMARY KEY,
-                data TEXT NOT NULL,
-                FOREIGN KEY (loginId) REFERENCES login(id)
+                permissions INT NOT NULL,
+                theme INT NOT NULL,
+                language INT NOT NULL,
+                additional_screen INT NOT NULL,
+                auto_update INT NOT NULL,
+                FOREIGN KEY (loginId) REFERENCES login(id),
+                FOREIGN KEY (theme) REFERENCES themes(id),
+                FOREIGN KEY (language) REFERENCES languages(id)
             )
         ');
     }

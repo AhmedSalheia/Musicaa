@@ -4,10 +4,12 @@
 namespace MUSICAA\controllers;
 
 
+use MUSICAA\models\DefaultSettings;
 use MUSICAA\models\Devices;
 use MUSICAA\models\Languages;
 use MUSICAA\models\Login;
 use MUSICAA\models\OS;
+use MUSICAA\models\Settings;
 use MUSICAA\models\Status;
 use MUSICAA\models\Theme;
 use MUSICAA\models\TokenMod;
@@ -90,5 +92,18 @@ class dbController extends AbstractController
         $languages = new Languages();
         $languages->createTable();
         $languages->addToTable([['name' => 'en']]);
+
+        $defaultSet = new DefaultSettings();
+        $defaultSet->createTable();
+        $defaultSet->os = 1;
+        $defaultSet->theme = 1;
+        $defaultSet->language = 1;
+        $defaultSet->additional_screen = 1;
+        $defaultSet->auto_update = 1;
+        $defaultSet->permissions = 7;
+        $defaultSet->save();
+
+        $settings = new Settings();
+        $settings->createTable();
     }
 }

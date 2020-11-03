@@ -34,6 +34,20 @@ trait Helper
         return $decr;
     }
 
+    public function toBin($int)
+    {
+        $decr = 0;
+        while($int !== 0)
+        {
+            $num = $int%2;
+            $int = (int)floor($int / 2);
+
+            $decr = ($decr*10) + $num;
+        }
+
+        return $decr.'';
+    }
+
     public function randText($num)
     {
         return str_split(str_shuffle('absdefghijklmnopqrstuvwxyz1234567890'),$num)[0];

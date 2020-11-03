@@ -22,6 +22,9 @@ $_['uploadErr'] = 'Error Uploading Img .... Please Try Again Later';
 $_['emailSendErr'] = 'could Not Send Verification Email, Try To Resend It Again';
 $_['emailSameErr'] = 'New Email Can\'t Be The Same As Old Email';
 $_['passSameErr'] = 'New Password Can\'t Be The Same As Old Password';
+$_['noTheme'] = 'The Wanted Theme Does Not Exist';
+$_['noLanguage'] = 'The Wanted Language Does Not Exist';
+$_['setSaveErr'] = 'Error Saving New Settings, Please Try Again Later';
 
 
 

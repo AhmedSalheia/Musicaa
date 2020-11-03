@@ -7,7 +7,7 @@ trait InputFilter
     use JsonFuncions;
 
     public function filterInt($input){
-        return filter_var($input, FILTER_SANITIZE_NUMBER_INT);
+        return (int) filter_var($input, FILTER_SANITIZE_NUMBER_INT);
     }
 
     public function filterFloat($input){

@@ -7,11 +7,15 @@ namespace MUSICAA\controllers\Api\v1\user;
 use Firebase\JWT\JWT;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\Data;
+use MUSICAA\models\DefaultSettings;
 use MUSICAA\models\Devices;
 use MUSICAA\models\GenderLabels;
 use MUSICAA\models\Genders;
+use MUSICAA\models\Languages;
 use MUSICAA\models\Login;
 use MUSICAA\models\OS;
+use MUSICAA\models\Settings;
+use MUSICAA\models\Theme;
 use MUSICAA\models\TokenMod;
 use MUSICAA\models\User;
 
@@ -105,8 +109,32 @@ class loginController extends \MUSICAA\controllers\AbstractController
                             $gender = Genders::getByPK($user->gender)->gender;
                             $user->gender = GenderLabels::getByPK($this->language)->$gender;
 
-                            unset($user->id, $user->verified, $user->password);
-                            $this->jsonRender(['data' => $user],$this->language);
+
+                            //////////////////////////////////////////// Start Settings: ////////////////////////////////////////////
+                            $prim = Login::getByUnique($user->id);
+                            if (is_array($prim)) {
+                                foreach ($prim as $item) {
+                                    $dev = Devices::getByPK($item->deviceId);
+                                    if ($dev->is_primary === 'y') {
+                                        $prim = Login::getByCol('deviceId', $dev->id)[0];
+                                        break;
+                                    }
+                                }
+
+                                $set = Settings::getByPK($prim->id);
+                                if ($set === false) {
+                                    $set = DefaultSettings::getByPK($device->OS);
+                                }
+                            }else
+                            {
+                                $set = DefaultSettings::getByPK($device->OS);
+                            }
+                            (new SettingsController())->decodeSettings($set);
+                            //////////////////////////////////////////// End Settings: ////////////////////////////////////////////
+
+
+                            unset($user->id, $user->verified, $user->password,$set->os,$set->loginId);
+                            $this->jsonRender(['data' => $user,'settings' => $set],$this->language);
 
                         }else{
                             $this->jsonRender($user_loginSaveErr,$this->language);

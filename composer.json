@@ -7,7 +7,8 @@
       "ext-fileinfo": "*",
         "firebase/php-jwt": "^5.2",
         "google/apiclient": "^2.7",
-      "ext-pdo": "*"
+      "ext-pdo": "*",
+      "ext-curl": "*"
     },
     "autoload": {
         "psr-4": {
