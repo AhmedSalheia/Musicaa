@@ -147,8 +147,8 @@ class Google_Service_DLP_Resource_ProjectsLocationsJobTriggers extends Google_Se
    * cloud_storage AND (state = PAUSED OR state = HEALTHY) * last_run_time >
    * \"2017-12-12T00:00:00+00:00\" The length of this field should be no more than
    * 500 characters.
-   * @opt_param string locationId Deprecated. This field has no effect.
    * @opt_param int pageSize Size of the page, can be limited by a server.
+   * @opt_param string locationId Deprecated. This field has no effect.
    * @opt_param string pageToken Page token to continue retrieval. Comes from
    * previous call to ListJobTriggers. `order_by` field must not change for
    * subsequent calls.

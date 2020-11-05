@@ -1,14 +1,14 @@
 {
     "name": "ahmed/musicaa",
     "require": {
-        "athlon1600/youtube-downloader": "^2.1",
+      "athlon1600/youtube-downloader": "^2.1",
       "ext-json": "*",
       "ext-openssl": "*",
       "ext-fileinfo": "*",
-        "firebase/php-jwt": "^5.2",
-        "google/apiclient": "^2.7",
+      "firebase/php-jwt": "^5.2",
       "ext-pdo": "*",
-      "ext-curl": "*"
+      "ext-curl": "*",
+        "google/apiclient": "^2.8"
     },
     "autoload": {
         "psr-4": {

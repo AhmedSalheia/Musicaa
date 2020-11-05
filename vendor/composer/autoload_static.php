@@ -12,6 +12,7 @@ class ComposerStaticInitf75f743f68625323408fb978b3de04a7
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
+        'a8d3953fd9959404dd22d3dfcd0a79f0' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -41,6 +42,7 @@ class ComposerStaticInitf75f743f68625323408fb978b3de04a7
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
             'Google\\Auth\\' => 12,
+            'Google\\' => 7,
         ),
         'F' => 
         array (
@@ -97,6 +99,10 @@ class ComposerStaticInitf75f743f68625323408fb978b3de04a7
         array (
             0 => __DIR__ . '/..' . '/google/auth/src',
         ),
+        'Google\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/apiclient/src',
+        ),
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
@@ -110,16 +116,11 @@ class ComposerStaticInitf75f743f68625323408fb978b3de04a7
             array (
                 0 => __DIR__ . '/..' . '/google/apiclient-services/src',
             ),
-            'Google_' => 
-            array (
-                0 => __DIR__ . '/..' . '/google/apiclient/src',
-            ),
         ),
     );
 
     public static $classMap = array (
-        'Google_Service_Exception' => __DIR__ . '/..' . '/google/apiclient/src/Google/Service/Exception.php',
-        'Google_Service_Resource' => __DIR__ . '/..' . '/google/apiclient/src/Google/Service/Resource.php',
+        'Google_Task_Composer' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

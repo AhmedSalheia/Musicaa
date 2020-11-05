@@ -137,7 +137,7 @@ class YouTubeDownloader
 
     public function getPlayerResponse($page_html)
     {
-        if (preg_match('/player_response":"(.*?)","/', $page_html, $matches)) {
+        if (preg_match('/player_response":"(.*?)\"}};/', $page_html, $matches)) {
             $match = stripslashes($matches[1]);
 
             $ret = json_decode($match, true);
@@ -225,6 +225,11 @@ class YouTubeDownloader
 
         // get JSON encoded parameters that appear on video pages
         $json = $this->getPlayerResponse($page_html);
+
+        if (empty($json)) {
+            $json = $this->getVideoInfo($this->extractVideoId($video_id));
+            $json = Utils::arrayGet($json, 'player_response');
+        }
 
         // get player.js location that holds signature function
         $url = $this->getPlayerScriptUrl($page_html);

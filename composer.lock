@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e281d4fab0000423dac155a30717c72",
+    "content-hash": "1f86c238570d7414824e631cf891f671",
     "packages": [
         {
             "name": "athlon1600/youtube-downloader",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Athlon1600/youtube-downloader.git",
-                "reference": "e92b8763059cd28f72bf29b00896473fb503f5dc"
+                "reference": "a595645dec6fc2975caaf8f37dafa3ca303ea2c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Athlon1600/youtube-downloader/zipball/e92b8763059cd28f72bf29b00896473fb503f5dc",
-                "reference": "e92b8763059cd28f72bf29b00896473fb503f5dc",
+                "url": "https://api.github.com/repos/Athlon1600/youtube-downloader/zipball/a595645dec6fc2975caaf8f37dafa3ca303ea2c4",
+                "reference": "a595645dec6fc2975caaf8f37dafa3ca303ea2c4",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +44,7 @@
                 "download youtube videos",
                 "youtube downloader"
             ],
-            "time": "2020-07-28T15:14:30+00:00"
+            "time": "2020-10-17T13:37:50+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -98,16 +98,16 @@
         },
         {
             "name": "google/apiclient",
-            "version": "v2.7.2",
+            "version": "v2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client.git",
-                "reference": "9df720d72c59456b5466e3f66e1e78cfe422a5ba"
+                "reference": "c8f6d09f50f859fa9457104bb0fb72c893804ede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/9df720d72c59456b5466e3f66e1e78cfe422a5ba",
-                "reference": "9df720d72c59456b5466e3f66e1e78cfe422a5ba",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/c8f6d09f50f859fa9457104bb0fb72c893804ede",
+                "reference": "c8f6d09f50f859fa9457104bb0fb72c893804ede",
                 "shasum": ""
             },
             "require": {
@@ -123,7 +123,7 @@
             "require-dev": {
                 "cache/filesystem-adapter": "^0.3.2",
                 "composer/composer": "^1.10",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
                 "phpcompatibility/php-compatibility": "^9.2",
                 "phpunit/phpunit": "^4.8.36|^5.0",
                 "squizlabs/php_codesniffer": "~2.3",
@@ -131,7 +131,7 @@
                 "symfony/dom-crawler": "~2.1"
             },
             "suggest": {
-                "cache/filesystem-adapter": "For caching certs and tokens (using Google_Client::setCache)"
+                "cache/filesystem-adapter": "For caching certs and tokens (using Google\\Client::setCache)"
             },
             "type": "library",
             "extra": {
@@ -140,11 +140,14 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Google_": "src/"
+                "psr-4": {
+                    "Google\\": "src/"
                 },
+                "files": [
+                    "src/aliases.php"
+                ],
                 "classmap": [
-                    "src/Google/Service/"
+                    "src/aliases.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -156,20 +159,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-09-18T20:02:04+00:00"
+            "time": "2020-10-27T23:20:13+00:00"
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.150",
+            "version": "v0.153",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "765bfb40c7a00e8fd891ff1969bade6e3c0889fc"
+                "reference": "db62bb19f32f81c9551f223c72be0682eb58ebd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/765bfb40c7a00e8fd891ff1969bade6e3c0889fc",
-                "reference": "765bfb40c7a00e8fd891ff1969bade6e3c0889fc",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/db62bb19f32f81c9551f223c72be0682eb58ebd8",
+                "reference": "db62bb19f32f81c9551f223c72be0682eb58ebd8",
                 "shasum": ""
             },
             "require": {
@@ -193,7 +196,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-10-11T00:26:14+00:00"
+            "time": "2020-11-01T00:25:23+00:00"
         },
         {
             "name": "google/auth",
@@ -905,7 +908,9 @@
     "platform": {
         "ext-json": "*",
         "ext-openssl": "*",
-        "ext-fileinfo": "*"
+        "ext-fileinfo": "*",
+        "ext-pdo": "*",
+        "ext-curl": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"

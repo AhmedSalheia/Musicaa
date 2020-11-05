@@ -20,6 +20,7 @@ use MUSICAA\models\GenderLabels;
 use MUSICAA\models\Genders;
 use MUSICAA\models\Onboarding;
 use MUSICAA\models\User;
+use MUSICAA\models\youtube\Video;
 
 class dbController extends AbstractController
 {
@@ -105,5 +106,8 @@ class dbController extends AbstractController
 
         $settings = new Settings();
         $settings->createTable();
+
+        $video = new Video();
+        $video->createTable();
     }
 }

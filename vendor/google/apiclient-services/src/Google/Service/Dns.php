@@ -23,7 +23,7 @@
  *
  * <p>
  * For more information about this service, see the API
- * <a href="http://developers.google.com/cloud-dns" target="_blank">Documentation</a>
+ * <a href="https://cloud.google.com/dns/docs" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -129,21 +129,21 @@ class Google_Service_Dns extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'sortOrder' => array(
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
+                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
                 'sortBy' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),
@@ -175,11 +175,11 @@ class Google_Service_Dns extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'digestType' => array(
+                'clientOperationId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'clientOperationId' => array(
+                'digestType' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -198,10 +198,6 @@ class Google_Service_Dns extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'digestType' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -209,6 +205,10 @@ class Google_Service_Dns extends Google_Service
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'maxResults' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),
@@ -259,17 +259,17 @@ class Google_Service_Dns extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'maxResults' => array(
+                'sortBy' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+                  'type' => 'string',
                 ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'sortBy' => array(
+                'maxResults' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type' => 'integer',
                 ),
               ),
             ),
@@ -347,13 +347,13 @@ class Google_Service_Dns extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'dnsName' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'dnsName' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),'patch' => array(
