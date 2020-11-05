@@ -16,10 +16,10 @@ define('JS', '/assets/js/');
 define('IMG', '/assets/images/');
 define('INI','./app/ini/');
 
-defined('DATABASE_HOST_NAME')? null : define('DATABASE_HOST_NAME','localhost');
+defined('DATABASE_HOST_NAME')? null : define('DATABASE_HOST_NAME','business29.web-hosting.com');
 defined('DATABASE_DB_NAME')? null : define('DATABASE_DB_NAME','progwlfo_musicaabase');
-defined('DATABASE_USER_NAME')? null : define('DATABASE_USER_NAME','root');
-defined('DATABASE_PASSWORD')? null : define('DATABASE_PASSWORD','');
+defined('DATABASE_USER_NAME')? null : define('DATABASE_USER_NAME','progwlfo_musicaabase');
+defined('DATABASE_PASSWORD')? null : define('DATABASE_PASSWORD','musicaabase123');
 defined('DATABASE_PORT_NUMBER')? null : define('DATABASE_PORT_NUMBER',3306);
 defined('DATABASE_CONN_DRIVER')? null : define('DATABASE_CONN_DRIVER',1);
 
@@ -27,10 +27,15 @@ defined('DEFAULT_LANG')? null : define('DEFAULT_LANG','en');
 
 
 $langs = Languages::getAll();
-$arr = [];
-foreach ($langs as $lang)
+if(is_array($langs))
 {
-    $arr[] = $lang->name;
+    $arr = [];
+    foreach ($langs as $lang)
+    {
+        $arr[] = $lang->name;
+    }
+}else{
+    $arr = ['en'];
 }
 
 defined('LANGS')? null : define('LANGS',$arr);

@@ -9,7 +9,7 @@ class FrontController
     use Helper;
 
     const NOT_FOUND_ACTION = 'notFoundAction';
-    const NOT_FOUND_CONTROLLER = 'MUSICAA\Controllers\NotFoundController';
+    const NOT_FOUND_CONTROLLER = 'MUSICAA\controllers\NotFoundController';
 
     private $_controller = 'index';
     private $_action = 'default';
@@ -106,6 +106,7 @@ class FrontController
             {
                 $controllerClassName = self::NOT_FOUND_CONTROLLER;
             }else{
+                header("HTTP/1.1 404 Not Found");
                 $this->jsonRender('The Wanted Category Doesn\'t Exist',$this->language);
             }
         }
@@ -116,6 +117,7 @@ class FrontController
             {
                 $this->_action = $actionName = self::NOT_FOUND_ACTION;
             }else{
+                header("HTTP/1.1 404 Not Found");
                 $this->jsonRender('The Wanted Action Doesn\'t Exist',$this->language);
             }
         }
