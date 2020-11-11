@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/Mailing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Mailing.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +67,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/models" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Compressed/phpdesktop-chrome-57.0-rc-php-7.1.3/www" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -119,7 +123,11 @@
       <workItem from="1604445758800" duration="4116000" />
       <workItem from="1604493150107" duration="3283000" />
       <workItem from="1604514075152" duration="3200000" />
-      <workItem from="1604574799024" duration="3134000" />
+      <workItem from="1604574799024" duration="4869000" />
+      <workItem from="1604584355277" duration="1582000" />
+      <workItem from="1604672606593" duration="273000" />
+      <workItem from="1604684129370" duration="1277000" />
+      <workItem from="1605049808484" duration="23000" />
     </task>
     <servers />
   </component>
@@ -151,10 +159,11 @@
     </state>
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604448382831" />
     <state x="690" y="324" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1604233670049" />
-    <state x="1099" y="282" key="FileChooserDialogImpl" timestamp="1603394745580">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="1099" y="312" key="FileChooserDialogImpl" timestamp="1605049828926">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="1099" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603394745580" />
+    <state x="1099" y="312" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1605049828926" />
     <state x="748" y="263" key="NewPhpClassDialog" timestamp="1604493193804">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

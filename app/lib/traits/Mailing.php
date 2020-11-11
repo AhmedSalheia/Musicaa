@@ -13,28 +13,26 @@ trait Mailing
 
     public function mail($to,$body,$subject)
     {
-        require_once "Mail.php";
-        extract(parse_ini_file(INI . 'mail.ini'),EXTR_OVERWRITE);
+        require_once('Mail.php');
+        require_once('Mail/mime.php');
 
-        $host = "ssl://smtp.gmail.com";
-        $port = "465";
-        $email_from = $username;
-        $email_subject = $subject;
-        $email_body =  $this->mailBody($body);
-        $email_address = $username;
+        $message = new Mail_mime();
 
-        $headers = array ('From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address,'MIME-Version' => 1, 'Content-type' => 'text/html;charset=iso-8859-1');
+        $message->setTXTBody("This is the text version.");
 
-        $smtp = \Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $this->dec($password)));
+        $message->setHTMLBody("This is the <strong>HTML</strong> version.");
 
-        $mail = $smtp->send($to, $headers, $email_body);
+        $recipients = 'person@example.net';
 
+        $headers['From'] = 'somesender@example.com';
+        $headers['To'] = 'person@example.net';
+        $headers['Subject'] = 'Sending test message using Pear';
 
-        if (\PEAR::isError($mail)) {
-            return false;
-        }
+        $mail =& Mail::factory('mail');
 
-        return true;
+        $result = $mail->send($recipients, $message->headers($headers), $message->get());
+
+        var_dump($result);
 
     }
 }

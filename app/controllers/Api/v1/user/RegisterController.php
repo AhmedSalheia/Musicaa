@@ -63,7 +63,9 @@ class RegisterController extends AbstractController
                 if ($save === true)
                 {
                     $verification = '<h4>Your VerificationController Code is <b>'.$ver.'</b> </h4>';
-                    if (!$this->mail($email,$verification,'Verify Your Account'))
+                    $mail = $this->mail($email,$verification,'Verify Your Account');
+                    var_dump($mail);
+                    if (!$mail)
                     {
                         $this->jsonRender($user_emailSendErr,$this->language);
                     }

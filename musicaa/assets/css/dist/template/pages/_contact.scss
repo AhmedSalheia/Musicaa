@@ -1,0 +1,20 @@
+#contact{
+  form{
+    width: 85%;
+    @media (max-width: 576px){
+      width: 100%;
+    }
+    margin: auto;
+    .input-btn{
+      @if($site-en){
+      text-align: right;
+      }@else {
+        text-align: left;
+      }
+      input:hover{
+        background-color:#F7705F !important;
+        transition: ease-in-out .4s;
+      }
+    }
+  }
+}
