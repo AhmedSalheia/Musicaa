@@ -49,8 +49,12 @@ class FrontController
 
             $url = explode('/',trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'), 6);
 
-            if (isset($url[1]) && $url[1] !== '' && in_array(strtoupper($url[1]),API_VER)){
-                $version = $url[1];
+            if (isset($url[1]) && $url[1] !== ''){
+                if (in_array(strtoupper($url[1]),API_VER)){
+                    $version = implode('_',explode('.',$url[1]));
+                }else{
+                    $this->jsonRender('The Selected Version Is Not Valid',$this->language);
+                }
             }else{
                 $this->jsonRender('No Version Selected',$this->language);
             }

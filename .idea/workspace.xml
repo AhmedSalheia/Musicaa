@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Crons.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Api/v1/cron/CronsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/FrontController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +130,8 @@
       <workItem from="1604672606593" duration="273000" />
       <workItem from="1604684129370" duration="1277000" />
       <workItem from="1605049808484" duration="23000" />
-      <workItem from="1605168199360" duration="2877000" />
+      <workItem from="1605168199360" duration="5520000" />
+      <workItem from="1605188716650" duration="2651000" />
     </task>
     <servers />
   </component>
@@ -144,10 +150,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1060" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603199304961" />
-    <state x="755" y="338" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602757537443">
+    <state x="755" y="338" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605189986023">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="755" y="338" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1602757537443" />
+    <state x="755" y="338" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1605189986023" />
     <state x="289" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604036234356">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -162,15 +168,15 @@
     </state>
     <state x="1099" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603394745580" />
     <state x="1099" y="312" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1605049828926" />
-    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1604493193804">
+    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1605190016255">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="748" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604493193804" />
+    <state x="748" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605190016255" />
     <state x="748" y="293" key="NewPhpClassDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1604233659051" />
-    <state x="794" y="463" key="NewPhpFileDialog" timestamp="1604034567588">
+    <state x="794" y="463" key="NewPhpFileDialog" timestamp="1605188785177">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="794" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604034567588" />
+    <state x="794" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605188785177" />
     <state x="478" y="241" key="SettingsEditor" timestamp="1604080240372">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -179,10 +185,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="569" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1604442177063" />
-    <state x="616" y="250" key="run.anything.popup" timestamp="1604505468001">
+    <state x="616" y="250" key="run.anything.popup" timestamp="1605189635140">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1604505468001" />
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1605189635140" />
     <state x="616" y="281" key="run.anything.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1604233051649" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1604428648594">
       <screen x="0" y="0" width="1920" height="1080" />
