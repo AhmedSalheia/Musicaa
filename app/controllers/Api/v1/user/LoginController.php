@@ -19,7 +19,7 @@ use MUSICAA\models\Theme;
 use MUSICAA\models\TokenMod;
 use MUSICAA\models\User;
 
-class loginController extends \MUSICAA\controllers\AbstractController
+class LoginController extends \MUSICAA\controllers\AbstractController
 {
     use Helper;
 
