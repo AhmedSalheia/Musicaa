@@ -22,7 +22,7 @@ use MUSICAA\models\Onboarding;
 use MUSICAA\models\User;
 use MUSICAA\models\youtube\Video;
 
-class dbController extends AbstractController
+class DbController extends AbstractController
 {
     public function defaultAction()
     {
