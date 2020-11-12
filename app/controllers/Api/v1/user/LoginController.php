@@ -115,12 +115,14 @@ class LoginController extends \MUSICAA\controllers\AbstractController
                             if (is_array($prim)) {
                                 foreach ($prim as $item) {
                                     $dev = Devices::getByPK($item->deviceId);
+                                    var_dump($dev);
                                     if ($dev->is_primary === 'y') {
                                         $prim = Login::getByCol('deviceId', $dev->id)[0];
                                         break;
                                     }
                                 }
 
+//                                var_dump($prim);
                                 $set = Settings::getByPK($prim->id);
                                 if ($set === false) {
                                     $set = DefaultSettings::getByPK($device->OS);

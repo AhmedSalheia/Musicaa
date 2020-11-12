@@ -74,7 +74,7 @@ class FrontController
             {
                 $this->_controller = 'api\\'.$version.'\\'.$category.'\\'. ucfirst(strtolower($url[3]));
             }else{
-                $this->jsonRender('No Action Selected',$this->language);
+                $this->jsonRender('No Section Selected',$this->language);
             }
 
 
@@ -116,7 +116,7 @@ class FrontController
                 $controllerClassName = self::NOT_FOUND_CONTROLLER;
             }else{
                 header("HTTP/1.1 404 Not Found");
-                $this->jsonRender('The Wanted Category Doesn\'t Exist',$this->language);
+                $this->jsonRender('The Wanted Section Doesn\'t Exist',$this->language);
             }
         }
 
