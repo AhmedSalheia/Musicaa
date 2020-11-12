@@ -24,12 +24,11 @@ class ViewController extends \MUSICAA\models\AbstractModel
         if ($type === NULL)
         {
 
+
+
         }else
         {
-            switch ($type)
-            {
-                u
-            }
+
         }
 
     }
