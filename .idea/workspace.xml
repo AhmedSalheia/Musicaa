@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/FrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_1/user/SessionController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,16 +77,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\musicaa\app\controllers\Api\v1_1\user" />
+      <recent name="D:\xampp\musicaa\app\controllers\Api\v1_1" />
+      <recent name="D:\xampp\musicaa\assets\images\onboarding" />
+      <recent name="D:\xampp\musicaa\app\models" />
+      <recent name="D:\xampp\musicaa\app\controllers\api\v1" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xampp\musicaa\app\models" />
       <recent name="D:\xampp\musicaa\app\ISO 3166-1 DB" />
       <recent name="D:\xampp\musicaa\app\views" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\xampp\musicaa\assets\images\onboarding" />
-      <recent name="D:\xampp\musicaa\app\models" />
-      <recent name="D:\xampp\musicaa\app\controllers\api\v1" />
-      <recent name="D:\xampp\musicaa\app\lib\traits" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -127,7 +128,7 @@
       <workItem from="1604684129370" duration="1277000" />
       <workItem from="1605049808484" duration="23000" />
       <workItem from="1605168199360" duration="5520000" />
-      <workItem from="1605188716650" duration="4948000" />
+      <workItem from="1605188716650" duration="6949000" />
     </task>
     <servers />
   </component>

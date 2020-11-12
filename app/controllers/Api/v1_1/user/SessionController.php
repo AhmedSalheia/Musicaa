@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MUSICAA\controllers\Api\v1\user;
+namespace MUSICAA\controllers\Api\v1_1\user;
 
 
 use MUSICAA\controllers\AbstractController;
