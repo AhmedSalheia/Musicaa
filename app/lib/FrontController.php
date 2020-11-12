@@ -60,7 +60,12 @@ class FrontController
             }
 
             if (isset($url[2]) && $url[2] !== ''){
-                $category = $url[2];
+                if (file_exists('./app/controllers/api/'.$version.'/'.$url[2].'/'))
+                {
+                    $category = $url[2];
+                }else{
+                    $this->jsonRender('The Wanted Category Doesn\'t Exist',$this->language);
+                }
             }else{
                 $this->jsonRender('No Category Selected',$this->language);
             }
