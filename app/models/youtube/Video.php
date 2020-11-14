@@ -16,7 +16,7 @@ class Video extends \MUSICAA\models\AbstractModel
 
     public static $tableName = 'video';
     public static $primaryKey = 'id';
-    public static $uniqueKey = '';
+    public static $uniqueKey = 'playlistId';
     public static $timeCol = '';
     public static $tableSchema = [
         'id'            =>  self::DATA_TYPE_STR,

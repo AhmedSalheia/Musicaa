@@ -22,47 +22,26 @@ class ViewController extends AbstractController
 
     public function channelAction()
     {
-//        $token = $this->requireAuth();
+        $token = $this->requireAuth();
         $id = $this->checkInput('post','channelId');
 
         $channel = $this->getChannel($id);
+        $playlists = $this->getPlaylists($id);
+        $videos = [];
 
+        foreach ($playlists as $playlist)
+        {
+            $videos[] = [$playlist->name => $this->getVideos($playlist->id)];
+        }
 
-                $queryParamsvd = [
-                    'maxResults' => 50,
-                    'playlistId' => 'PLoYRB6C09WUAwEReaDgIe1wmh6W5HPPc9',
-                    'pageToken'  => ''
-                ];
+        var_dump($videos);
+    }
 
-                        $videos = $this->service->playlistItems->listPlaylistItems('snippet,contentDetails', $queryParamsvd);
-                        var_dump($videos);
+    public function videoAction()
+    {
+        $id = $this->checkInput('get','id');
 
-//                        foreach ($videos as $video)
-//                        {
-//                            $v = $video->snippet->resourceId;
-//                            if($v->kind !== "youtube#video")
-//                            {
-//                                continue;
-//                            }
-//
-//                            $vid = new Video();
-//                            $vid->id = $v->videoId;
-//                            $vid->playlistId = $playlist->id;
-//                                    $queryParamsv = [
-//                                        'id' => $v->videoId
-//                                    ];
-//
-//                                    $response = $this->service->videos->listVideos('snippet', $queryParamsv)->getItems()[0]->snippet;
-//                            $vid->name = $response->title;
-//                            $vid->img = $response->thumbnails->high->url;
-//
-//
-//                            if ($vid->save() !== false)
-//                            {
-//                                continue;
-//                            }
-//                        }
-
+        var_dump($this->getVideoLink($id));
     }
 
 }

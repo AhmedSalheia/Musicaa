@@ -17,7 +17,7 @@ class AbstractController
 
     public function __construct()
     {
-//        ini_set('max_execution_time', 0);
+        ini_set('max_execution_time', 0);
 
         $this->client = new \Google_Client();
         $this->client->setApplicationName(API_Name);

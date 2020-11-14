@@ -70,5 +70,5 @@ define('TOKEN',array(
     "iss" => 'musicaa.app'
 ));
 
-define("API_KEY","AIzaSyC27cQuXdJQ9Xj72Usu-OOP1R-eAGNuGfM");
+define("API_KEY","AIzaSyCDAVZmLiwJtZfbU-1DyceiBT3Zry7I1js"); //AIzaSyC27cQuXdJQ9Xj72Usu-OOP1R-eAGNuGfM
 define("API_Name","Musicaa");

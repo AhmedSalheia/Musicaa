@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/youtube/Channels.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/youtube/Playlists.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/AbstractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AbstractController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/DbController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/DbController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/youtube/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/youtube/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/google/apiclient/src/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/google/apiclient/src/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/google/apiclient/src/aliases.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/google/apiclient/src/aliases.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +132,7 @@
       <workItem from="1605049808484" duration="23000" />
       <workItem from="1605168199360" duration="5520000" />
       <workItem from="1605188716650" duration="14504000" />
-      <workItem from="1605264985165" duration="19975000" />
+      <workItem from="1605264985165" duration="30450000" />
     </task>
     <servers />
   </component>
@@ -194,6 +182,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="478" y="241" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1604080240372" />
+    <state x="832" y="384" key="cloudConfig.SelfSettingsDialog" timestamp="1605338109782">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="832" y="384" key="cloudConfig.SelfSettingsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605338109782" />
     <state x="569" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605295228474">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
