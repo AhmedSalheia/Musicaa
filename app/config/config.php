@@ -69,3 +69,6 @@ define('TOKEN',array(
     "iat" => time(),
     "iss" => 'musicaa.app'
 ));
+
+define("API_KEY","AIzaSyC27cQuXdJQ9Xj72Usu-OOP1R-eAGNuGfM");
+define("API_Name","Musicaa");

@@ -29,10 +29,9 @@ trait InputFilter
 
                 return $_REQUEST[$input];
 
-            }else
-            {
-                $this->jsonRender(['message' => $input.' Not Provided','error_for' => $input],'en',false);
             }
+
+            $this->jsonRender(['message' => $input.' Not Provided','error_for' => $input],'en',false);
         }else{
             $this->jsonRender('Please Provide a Valid request, The Request type must be '.$method,'en');
         }

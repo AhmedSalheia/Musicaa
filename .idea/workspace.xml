@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/youtube/Channels.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/youtube/Playlists.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AbstractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AbstractController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/DbController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/DbController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Devices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Devices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/youtube/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/youtube/Video.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/google/apiclient/src/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/google/apiclient/src/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/google/apiclient/src/aliases.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/google/apiclient/src/aliases.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +80,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Desktop/Java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -129,7 +143,8 @@
       <workItem from="1604684129370" duration="1277000" />
       <workItem from="1605049808484" duration="23000" />
       <workItem from="1605168199360" duration="5520000" />
-      <workItem from="1605188716650" duration="9782000" />
+      <workItem from="1605188716650" duration="14504000" />
+      <workItem from="1605264985165" duration="19975000" />
     </task>
     <servers />
   </component>
@@ -156,20 +171,20 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="289" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604036234356" />
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604448382831">
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605313362895">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604448382831" />
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605313362895" />
     <state x="690" y="324" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1604233670049" />
-    <state x="1099" y="312" key="FileChooserDialogImpl" timestamp="1605049828926">
-      <screen x="0" y="40" width="1920" height="1040" />
-    </state>
-    <state x="1099" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603394745580" />
-    <state x="1099" y="312" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1605049828926" />
-    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1605190016255">
+    <state x="1099" y="282" key="FileChooserDialogImpl" timestamp="1605218236920">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="748" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605190016255" />
+    <state x="1099" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1605218236920" />
+    <state x="1099" y="312" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1605049828926" />
+    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1605312949144">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="748" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605312949144" />
     <state x="748" y="293" key="NewPhpClassDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1604233659051" />
     <state x="794" y="463" key="NewPhpFileDialog" timestamp="1605188785177">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -179,10 +194,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="478" y="241" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1604080240372" />
-    <state x="569" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604442177063">
+    <state x="569" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605295228474">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="569" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1604442177063" />
+    <state x="569" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1605295228474" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1605189635140">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -12,6 +12,19 @@ class AbstractController
     protected $_template;
     protected $_lang;
     protected $language='en';
+    protected $client;
+    protected $service;
+
+    public function __construct()
+    {
+//        ini_set('max_execution_time', 0);
+
+        $this->client = new \Google_Client();
+        $this->client->setApplicationName(API_Name);
+        $this->client->setDeveloperKey(API_KEY);
+
+        $this->service = new \Google_Service_YouTube($this->client);
+    }
 
     protected $_data = [];
 

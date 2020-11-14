@@ -12,6 +12,7 @@ trait Helper
     use Encription;
     use Mailing;
     use Auth;
+    use VideoRelated;
 
     public function redirect($page){
         session_write_close();

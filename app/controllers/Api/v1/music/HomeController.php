@@ -44,7 +44,6 @@ class HomeController extends \MUSICAA\controllers\AbstractController
 
                 foreach ($links as $link)
                 {
-//                    var_dump($link);echo "\n\n\n\n";
                     if ($link['format'] === "m4a, audio")
                     {
                         $video->link = $link['url'];
