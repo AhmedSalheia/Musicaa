@@ -5,7 +5,7 @@ namespace MUSICAA\controllers\Api\v1\music;
 
 
 use MUSICAA\lib\traits\Helper;
-use MUSICAA\models\youtube\Video;
+use MUSICAA\models\youtube\Undownloadable;
 use YouTube\YouTubeDownloader;
 
 class HomeController extends \MUSICAA\controllers\AbstractController
@@ -32,11 +32,11 @@ class HomeController extends \MUSICAA\controllers\AbstractController
         $items = $response->getItems();
 
         foreach ($items as $item) {
-            $video = Video::getByPK($item->id);
+            $video = Undownloadable::getByPK($item->id);
 
             if ($video === false)
             {
-                $video = new Video();
+                $video = new Undownloadable();
                 $video->id = $item->id;
 
                 $yt = new YouTubeDownloader();

@@ -6,6 +6,7 @@ namespace MUSICAA\lib\traits;
 
 use MUSICAA\models\youtube\Channels;
 use MUSICAA\models\youtube\Playlists;
+use MUSICAA\models\youtube\Undownloadable;
 use MUSICAA\models\youtube\Video;
 use YouTube\YouTubeDownloader;
 
@@ -21,7 +22,6 @@ trait VideoRelated
         {
             if ($link['format'] === "m4a, audio")
             {
-//                var_dump($link);;
                 return $link['url'];
             }
         }
@@ -69,17 +69,18 @@ trait VideoRelated
     public function getPlaylists($channelId,$pageToken=Null)
     {
         $playlists = Playlists::getByUnique($channelId);
+        $playlists = (is_object($playlists))? [$playlists]:$playlists;
+        $queryParams = [
+            'channelId' => $channelId,
+            'maxResults' => 50,
+            'pageToken' => ($pageToken !== Null)? $pageToken:''
+        ];
 
-        if ($playlists === false || $pageToken !== Null)
+        $response = $this->service->playlists->listPlaylists('snippet,contentDetails', $queryParams);
+        $items = $response->getPageInfo()->totalResults;
+
+        if ($playlists === false || $pageToken !== Null || $items !== count($playlists))
         {
-
-            $queryParams = [
-                'channelId' => $channelId,
-                'maxResults' => 50,
-                'pageToken' => ($pageToken !== Null)? $pageToken:''
-            ];
-
-            $response = $this->service->playlists->listPlaylists('snippet,contentDetails', $queryParams);
             $nextPage = $response->getNextPageToken();
             $playlists = [];
 
@@ -118,8 +119,10 @@ trait VideoRelated
     public function getVideos($playlistId,$pageToken=Null)
     {
         $videos = Video::getByUnique($playlistId);
-        var_dump($videos);
-//        exit();
+        $undownload = Undownloadable::getByUnique($playlistId);
+        $undownload = ($undownload === false)? []:$undownload;
+        $undownload = (is_object($undownload))? [$undownload]:$undownload;
+
         $queryParams = [
             'maxResults' => 50,
             'playlistId' => $playlistId,
@@ -129,16 +132,13 @@ trait VideoRelated
         $response = $this->service->playlistItems->listPlaylistItems('snippet,contentDetails', $queryParams);
         $items = $response->getPageInfo()->totalResults;
 
-        if ($videos === false || $pageToken !== Null || count($videos) !== $items)
+        if ($videos === false || $pageToken !== Null || is_object($videos) || count(array_merge($undownload,$videos)) !== $items)
         {
-
             $nextPage = $response->getNextPageToken();
-            $videos = [];
 
             foreach ($response->getItems() as $video)
             {
                 if ($video->snippet->resourceId->kind !== "youtube#video" ||
-                    strtolower($video->snippet->title) === 'private video' ||
                     Video::getByPK($video->snippet->resourceId->videoId) !== false)
                 {
                     continue;
@@ -148,14 +148,22 @@ trait VideoRelated
                 $vid->id = $video->snippet->resourceId->videoId;
                 $vid->playlistId = $playlistId;
                 $vid->name = $video->snippet->title;
-                $vid->img = $video->snippet->thumbnails->high->url;
+                @$vid->img = $video->snippet->thumbnails->high->url;
                 $vid->link = $this->getVideoLink($video->snippet->resourceId->videoId);
 
-                if ($vid->save('upd') === false)
+                $save = $vid->save('upd');
+                if ($save === false)
                 {
-                    var_dump($vid,$video);
-                    $this->jsonRender('Error Saving Video ['.$video->snippet->resourceId->videoId.'] Details', $this->language);
+                    $undown = new Undownloadable();
+                    $undown->id = $vid->id;
+                    $undown->playlistId = $vid->playlistId;
+                    $undown->name = $vid->name;
+                    $undown->img = (strtolower($vid->name) !== 'private video')?$vid->img:'NotFound';
+
+                    $undown->save('upd');
+                    continue;
                 }
+
                 $videos[] = $vid;
             }
 

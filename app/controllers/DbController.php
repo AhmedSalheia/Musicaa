@@ -22,7 +22,7 @@ use MUSICAA\models\Onboarding;
 use MUSICAA\models\User;
 use MUSICAA\models\youtube\Channels;
 use MUSICAA\models\youtube\Playlists;
-use MUSICAA\models\youtube\Video;
+use MUSICAA\models\youtube\Undownloadable;
 
 class DbController extends AbstractController
 {
@@ -115,7 +115,7 @@ class DbController extends AbstractController
         $playlists = new Playlists();
         $playlists->createTable();
 
-        $video = new Video();
+        $video = new Undownloadable();
         $video->createTable();
     }
 }

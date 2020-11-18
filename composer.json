@@ -8,7 +8,8 @@
       "firebase/php-jwt": "^5.2",
       "ext-pdo": "*",
       "ext-curl": "*",
-        "google/apiclient": "~2.0"
+        "google/apiclient": "~2.0",
+      "ext-http": "*"
     },
     "autoload": {
         "psr-4": {
