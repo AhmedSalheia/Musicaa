@@ -12,6 +12,8 @@ trait Helper
     use Encription;
     use Mailing;
     use Auth;
+    use HttpThings;
+    use ChannelThings;
     use VideoRelated;
 
     public function redirect($page){
@@ -50,6 +52,11 @@ trait Helper
     }
 
     public function randText($num)
+    {
+        return str_split(str_shuffle('absdefghijklmnopqrstuvwxyz1234567890'),$num)[0];
+    }
+
+    public static function randName($num)
     {
         return str_split(str_shuffle('absdefghijklmnopqrstuvwxyz1234567890'),$num)[0];
     }

@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/youtube/Undownloadable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/languages/en/api/errors/music.lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/traits/ChannelThings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/traits/HttpThings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/DbController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/DbController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/JsonFuncions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/JsonFuncions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/AbstractModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/AbstractModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/youtube/Playlists.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/youtube/Playlists.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Deisgn_Patterns" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Desktop/Java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,7 +80,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -141,7 +142,11 @@
       <workItem from="1605502889789" duration="6747000" />
       <workItem from="1605537695476" duration="38000" />
       <workItem from="1605543696879" duration="8877000" />
-      <workItem from="1605640279547" duration="2252000" />
+      <workItem from="1605640279547" duration="19200000" />
+      <workItem from="1605793929660" duration="7623000" />
+      <workItem from="1605859053325" duration="1532000" />
+      <workItem from="1605900088477" duration="15000" />
+      <workItem from="1605900413288" duration="4978000" />
     </task>
     <servers />
   </component>
@@ -168,29 +173,29 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="289" y="32" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604036234356" />
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605313362895">
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605725554739">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605313362895" />
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605725554739" />
     <state x="690" y="324" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1604233670049" />
-    <state x="1099" y="282" key="FileChooserDialogImpl" timestamp="1605537730672">
+    <state x="1099" y="282" key="FileChooserDialogImpl" timestamp="1605912545904">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1099" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1605537730672" />
+    <state x="1099" y="282" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1605912545904" />
     <state x="1099" y="312" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1605049828926" />
-    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1605312949144">
+    <state x="748" y="263" key="NewPhpClassDialog" timestamp="1605725801859">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="748" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605312949144" />
+    <state x="748" y="263" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605725801859" />
     <state x="748" y="293" key="NewPhpClassDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1604233659051" />
-    <state x="794" y="463" key="NewPhpFileDialog" timestamp="1605188785177">
+    <state x="794" y="463" key="NewPhpFileDialog" timestamp="1605799278082">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="794" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605188785177" />
-    <state x="478" y="241" key="SettingsEditor" timestamp="1604080240372">
+    <state x="794" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605799278082" />
+    <state x="478" y="241" key="SettingsEditor" timestamp="1605912644324">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="478" y="241" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1604080240372" />
+    <state x="478" y="241" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1605912644324" />
     <state x="832" y="384" key="cloudConfig.SelfSettingsDialog" timestamp="1605338109782">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -199,10 +204,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="569" y="176" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1605295228474" />
-    <state x="616" y="250" key="run.anything.popup" timestamp="1605189635140">
+    <state x="616" y="250" key="run.anything.popup" timestamp="1605800436505">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1605189635140" />
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1605800436505" />
     <state x="616" y="281" key="run.anything.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1604233051649" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1604428648594">
       <screen x="0" y="0" width="1920" height="1080" />

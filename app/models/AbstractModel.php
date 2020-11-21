@@ -164,11 +164,11 @@ class AbstractModel
 
         $stmt->execute();
 
-        if (method_exists(get_called_class(),'__construct')){
-            $result = $stmt->fetchAll(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class(), array(static::$tableSchema));
+        if (method_exists(static::class,'__construct')){
+            $result = $stmt->fetchAll(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, static::class, array(static::$tableSchema));
         }else{
-            $result = $stmt->fetchAll(\PDO::FETCH_CLASS,get_called_class());
+            $result = $stmt->fetchAll(\PDO::FETCH_CLASS, static::class);
         }
-        return $result;
+        return !empty($result)? $result:false;
     }
 }

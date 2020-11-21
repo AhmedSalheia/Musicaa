@@ -5,6 +5,7 @@ namespace MUSICAA\models\youtube;
 
 
 use MUSICAA\lib\database\DatabaseHandler;
+use MUSICAA\lib\traits\Helper;
 
 class Playlists extends \MUSICAA\models\AbstractModel
 {
@@ -35,5 +36,27 @@ class Playlists extends \MUSICAA\models\AbstractModel
                 FOREIGN KEY (channelId) REFERENCES channels(id)
             )
         ');
+    }
+
+    public static function getMainPlaylist($channelId)
+    {
+        $playlist = self::get('SELECT * FROM playlists WHERE channelId="'.$channelId.'" AND name="Main Playlist"')[0];
+        if ($playlist === false)
+        {
+            $channel = Channels::getByPK($channelId);
+
+            $playlist = new self();
+            $playlist->id = Helper::randName(35);
+            $playlist->name = "Main Playlist";
+            $playlist->img = $channel->img;
+            $playlist->channelId = $channel->id;
+
+            if ($playlist->save('upd') === false)
+            {
+                return false;
+            }
+        }
+
+        return $playlist;
     }
 }

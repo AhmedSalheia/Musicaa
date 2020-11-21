@@ -7,7 +7,6 @@ use MUSICAA\controllers\AbstractController;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\youtube\Channels;
 use MUSICAA\models\youtube\Playlists;
-use MUSICAA\models\youtube\Video;
 
 class ViewController extends AbstractController
 {
@@ -23,13 +22,12 @@ class ViewController extends AbstractController
         $token = $this->requireAuth();
         $id = $this->checkInput('post','channelId');
 
-        $channel = $this->getChannel($id);
         $playlists = $this->getPlaylists($id);
         $videos = [];
 
         foreach ($playlists as $playlist)
         {
-            $videos[] = [$playlist->name => $this->getVideos($playlist->id)];
+            $videos[] = [$playlist->name => $this->getVideos($playlist->id,Null,false)];
         }
 
         $this->jsonRender(['data'=>$videos],$this->language);
@@ -40,26 +38,40 @@ class ViewController extends AbstractController
         $token = $this->requireAuth();
         $id = $this->checkInput('post','videoId');
 
-        $video = Video::getByPK($id);
+        $video = $this->getVideoById($id);
+
         $playlist = Playlists::getByPK($video->playlistId);
         $channel = Channels::getByPK($playlist->channelId);
 
+        if ($this->getHttpCode($video->link) >= 400){
+            $video->link = $this->getVideoLink($video->id);
+            $video->save('upd');
+        }
 
-        $handle = curl_init($video->link);
-        curl_setopt($handle, CURLOPT_HEADER, true);
-        curl_setopt($handle, CURLOPT_NOBODY, true);
-        curl_setopt($handle, CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($handle, CURLOPT_TIMEOUT,10);
-        $response = curl_exec($handle);
-        $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-        curl_close($handle);
-
-        var_dump($video->link,$httpCode);
         $output = [
+            'video' => [
+                'id' => $video->id,
+                'name' => $video->name,
+                'link' => $video->link,
+                'playlist' => [
+                    'id'   => $playlist->id,
+                    'name' => $playlist->name,
+                    'img'  => $playlist->img,
 
+                    'channel' => [
+                        'id'    => $channel->id,
+                        'name'  => $channel->name,
+                        'img'   => $channel->img
+                    ]
+                ]
+            ],
+            'related' => [
+                $this->getRelated($video->id)
+            ]
         ];
 
-//        var_dump($channel);
+        $this->jsonRender($output,$this->language);
+
     }
 
 }
