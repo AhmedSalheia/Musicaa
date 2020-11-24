@@ -40,7 +40,7 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
         extract($this->_lang->get(),EXTR_PREFIX_ALL,'user');
 
         $token = $this->requireAuth();
-        $loginId = $token->data->login_id;
+        $loginId = $token->data->user_id;
         $device = Devices::getByPK($token->data->device_id);
 
         $user = User::getByPK($token->data->user_id);
@@ -69,67 +69,37 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
 
                 if ($firstname !== $user->firstname)
                 {
-                    $tracker = new Tracker();
-                    $tracker->colChanged = 'user.firstname';
-                    $tracker->loginId = $loginId;
-                    $tracker->changedFrom= $user->firstname;
-                    $tracker->changedTo= $firstname;
-                    $tracker->save();
+                    $this->trackUserData('firstname',$loginId,$user->firstname,$firstname);
                     $user->firstname = $firstname;
                 }
 
                 if ($middlename !== $user->middlename)
                 {
-                    $tracker = new Tracker();
-                    $tracker->colChanged = 'user.middlename';
-                    $tracker->loginId = $loginId;
-                    $tracker->changedFrom= $user->middlename;
-                    $tracker->changedTo= $middlename;
-                    $tracker->save();
+                    $this->trackUserData('middlename',$loginId,$user->middlename,$middlename);
                     $user->middlename = $middlename;
                 }
 
                 if ($lastname !== $user->lastname)
                 {
-                    $tracker = new Tracker();
-                    $tracker->colChanged = 'user.lastname';
-                    $tracker->loginId = $loginId;
-                    $tracker->changedFrom= $user->lastname;
-                    $tracker->changedTo= $lastname;
-                    $tracker->save();
+                    $this->trackUserData('lastname',$loginId,$user->lastname,$lastname);
                     $user->lastname = $lastname;
                 }
 
                 if ($phone !== $user->phone)
                 {
-                    $tracker = new Tracker();
-                    $tracker->colChanged = 'user.phone';
-                    $tracker->loginId = $loginId;
-                    $tracker->changedFrom= $user->phone;
-                    $tracker->changedTo= $phone;
-                    $tracker->save();
+                    $this->trackUserData('phone',$loginId,$user->phone,$phone);
                     $user->phone = $phone;
                 }
 
                 if ($country !== $user->country)
                 {
-                    $tracker = new Tracker();
-                    $tracker->colChanged = 'user.country';
-                    $tracker->loginId = $loginId;
-                    $tracker->changedFrom= $user->country;
-                    $tracker->changedTo= $country;
-                    $tracker->save();
+                    $this->trackUserData('country',$loginId,$user->country,$country);
                     $user->country = $country;
                 }
 
                 if ($gender !== $user->gender)
                 {
-                    $tracker = new Tracker();
-                    $tracker->colChanged = 'user.gender';
-                    $tracker->loginId = $loginId;
-                    $tracker->changedFrom= $user->gender;
-                    $tracker->changedTo= $gender;
-                    $tracker->save();
+                    $this->trackUserData('gender',$loginId,$user->gender,$gender);
                     $user->gender = $gender;
                 }
 
@@ -143,14 +113,7 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
                         $name = $this->randText(6).'.'.$img_extn;
                         if (move_uploaded_file($img,'.'.IMG.$name))
                         {
-
-                            $tracker = new Tracker();
-                            $tracker->colChanged = 'user.img';
-                            $tracker->loginId = $loginId;
-                            $tracker->changedFrom= $user->img;
-                            $tracker->changedTo= $name;
-                            $tracker->save();
-
+                            $this->trackUserData('img',$loginId,$user->img,$name);
                             $user->img = $name;
 
                         }else
@@ -173,12 +136,8 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
 
                     if ($email !== $user->email)
                     {
-                        $tracker = new Tracker();
-                        $tracker->colChanged = 'user.email';
-                        $tracker->loginId = $loginId;
-                        $tracker->changedFrom= $user->email;
-                        $tracker->changedTo= $email;
-                        $tracker->save();
+                        $this->trackUserData('email',$loginId,$user->email,$email);
+
                         $user->email = $email;
                         $user->verified = 'n';
 
@@ -215,14 +174,10 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
 
                         if ($password !== $this->dec($user->password))
                         {
+                            $password = $this->enc($password);
+                            $this->trackUserData('password',$loginId,$user->password,$password);
 
-                            $tracker = new Tracker();
-                            $tracker->colChanged = 'user.password';
-                            $tracker->loginId = $loginId;
-                            $tracker->changedFrom= $user->password;
-                            $tracker->changedTo= $this->enc($password);
-                            $tracker->save();
-                            $user->password = $this->enc($password);
+                            $user->password = $password;
 
                         }else
                         {

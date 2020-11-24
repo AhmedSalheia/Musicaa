@@ -14,6 +14,7 @@ use MUSICAA\models\Status;
 use MUSICAA\models\Theme;
 use MUSICAA\models\TokenMod;
 use MUSICAA\models\Tracker;
+use MUSICAA\models\TrackUserData;
 use MUSICAA\models\Verification;
 use MUSICAA\models\Data;
 use MUSICAA\models\GenderLabels;
@@ -89,6 +90,9 @@ class DbController extends AbstractController
 
         $tracker = new Tracker();
         $tracker->createTable();
+
+        $trackUserData = new TrackUserData();
+        $trackUserData->createTable();
 
         $theme = new Theme();
         $theme->createTable();

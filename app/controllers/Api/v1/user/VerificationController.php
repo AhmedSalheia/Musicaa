@@ -41,17 +41,18 @@ class VerificationController extends AbstractController
                         if ($user->save('upd'))
                         {
                             $ver->delete();
-
+                            $this->track($user->id,'verify','success');
                             $this->jsonRender(['message' => $user_verifiedSuc],$this->language,true);
 
                         }else
                         {
+                            $this->track($user->id,'verify','Error Save');
                             $this->jsonRender($user_errSaveData,$this->language);
                         }
 
                     }else
                     {
-
+                        $this->track($user->id,'verify','Error Code');
                         $this->jsonRender($user_verCodeErr,$this->language);
 
                     }
@@ -93,7 +94,7 @@ class VerificationController extends AbstractController
                 if ($ver !== false)
                 {
 
-                        $verification = '<h4>Your VerificationController Code is <b>'.$ver->verification.'</b> </h4>';
+                    $verification = '<h4>Your VerificationController Code is </h4><h1>'.$ver->verification.'</h1>';
                         $this->mail($email,$verification,'Verify Your Account');
 
                         $this->jsonRender(['message' => 'Code Sent To Your Email'],$this->language);

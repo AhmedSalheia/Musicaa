@@ -72,9 +72,11 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
 
         $token = $this->requireAuth();
         $loginId = $token->data->login_id;
+        $userId  = $token->data->user_id;
 
         $set = new Settings();
         $set->loginId = $loginId;
+        $settings = Settings::getByPK($loginId);
 
         $mood = $this->filterStr($this->checkInput('post','mood'));
         $theme = Theme::getByPK($mood);
@@ -87,6 +89,10 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
             }
         }
 
+        if ($settings !== false && $settings->theme !== $theme->id)
+        {
+            $this->trackUserData('set.theme',$userId,$settings->theme,$theme->id);
+        }
         $set->theme = $theme->id;
 
         $lang = $this->filterStr($this->checkInput('post','language'));
@@ -99,17 +105,45 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
                 $this->jsonRender($user_noLanguage,$this->language);
             }
         }
+        if ($settings !== false && $settings->language !== $language->id){
+            $this->trackUserData('set.language', $userId, $settings->language, $language->id);
+        }
         $set->language = $language->id;
 
-        $set->additional_screen = $this->filterInt($this->checkInput('post','additional_screen'));
-        $set->auto_update = $this->filterInt($this->checkInput('post','auto_update'));
+        $additional_screen = $this->filterInt($this->checkInput('post','additional_screen'));
+        $auto_update = $this->filterInt($this->checkInput('post','auto_update'));
+
+        if ($additional_screen < 0 || $additional_screen > 1 || $auto_update < 0 || $auto_update > 1)
+        {
+            $this->jsonRender($user_wrongData,$this->language);
+        }
+
+        $set->additional_screen = $additional_screen;
+        $set->auto_update = $auto_update;
+
+        if ($settings !== false && $settings->additional_screen !== (string)$additional_screen){
+            $this->trackUserData('set.add_sec', $userId, $settings->additional_screen, $additional_screen);
+        }
+        if ($settings !== false && $settings->auto_update !== (string)$auto_update){
+            $this->trackUserData('set.auto_upd', $userId, $settings->auto_update, $auto_update);
+        }
 
         // Permissions:
         $run = $this->filterInt($this->checkInput('post','background'));
         $aud = $this->filterInt($this->checkInput('post','audio'));
         $loc = $this->filterInt($this->checkInput('post','location'));
 
-        $set->permissions = $this->fromBin($run.$aud.$loc);
+        if ($run < 0 || $run > 1 || $aud < 0 || $aud > 1 || $loc < 0 || $loc > 1)
+        {
+            $this->jsonRender($user_wrongData,$this->language);
+        }
+
+        $per = $this->fromBin($run . $aud . $loc);
+
+        if ($settings !== false && $settings->permissions !== (string)$per){
+            $this->trackUserData('set.permissions', $userId, $settings->permissions, $per);
+        }
+        $set->permissions = $per;
 
         if ($set->save() !== false)
         {
@@ -131,8 +165,8 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
                 $data = $this->toBin($set->permissions);
                 $set->permissions = [
                     'Running In Background'     =>  (bool) $data[0],
-                    'Entry Permit Audio Files'  =>  (bool) $data[0],
-                    'Location '                 =>  (bool) $data[0]
+                    'Entry Permit Audio Files'  =>  (bool) $data[1],
+                    'Location '                 =>  (bool) $data[2]
                 ];
             }else if($key === 'theme'){
 

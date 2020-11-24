@@ -9,7 +9,7 @@
       "ext-pdo": "*",
       "ext-curl": "*",
         "google/apiclient": "~2.0",
-      "ext-http": "*"
+      "phpmailer/phpmailer": "^6.1"
     },
     "autoload": {
         "psr-4": {

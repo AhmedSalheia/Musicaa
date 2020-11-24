@@ -54,6 +54,8 @@ class RegisterController extends AbstractController
 
             if ($save === true)
             {
+                $this->track($user->id,'register','user.register');
+
                 $ver = $this->randText(6);
                 $verify = new Verification();
                 $verify->userId = $user->id;
@@ -62,14 +64,14 @@ class RegisterController extends AbstractController
                 $save = $verify->save();
                 if ($save === true)
                 {
-                    $verification = '<h4>Your VerificationController Code is <b>'.$ver.'</b> </h4>';
-//                    $mail = $this->mail($email,$verification,'Verify Your Account');
+                    $verification = '<h4>Your VerificationController Code is </h4><h1>'.$ver.'</h1>';
+                    $mail = $this->mail($email,$verification,'Verify Your Account');
 
-//                    var_dump($mail);
-//                    if (!$mail)
-//                    {
-//                        $this->jsonRender($user_emailSendErr,$this->language);
-//                    }
+                    var_dump($mail);
+                    if (!$mail)
+                    {
+                        $this->jsonRender($user_emailSendErr,$this->language);
+                    }
                 }
 
                 $this->jsonRender($user_registerSuc,$this->language,true);

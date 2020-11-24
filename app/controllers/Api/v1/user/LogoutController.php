@@ -24,7 +24,7 @@ class LogoutController extends \MUSICAA\controllers\AbstractController
 
         if($tokenMod->save() !== false)
         {
-
+            $this->track($token->data->user_id,'logout',$token->data->login_id);
             $this->jsonRender($user_logoutSuc,$this->language,true);
 
         }else

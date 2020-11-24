@@ -4,35 +4,44 @@
 namespace MUSICAA\lib\traits;
 
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 trait Mailing
 {
-    public function mailBody($str)
-    {
-        return $str;
-    }
-
     public function mail($to,$body,$subject)
     {
-        require_once('Mail.php');
-        require_once('Mail/mime.php');
+        try
+        {
+            $mail = new PHPMailer(true);
 
-        $message = new Mail_mime();
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->Port       = 465;
+            $mail->SMTPSecure = 'ssl';
+            $mail->SMTPAuth   = true;
 
-        $message->setTXTBody("This is the text version.");
+            $mail->Username = 'ahmedsalheia.as@gmail.com';
+            $mail->Password = 'vnowjjdiirwvxpsv';
+            $mail->SetFrom('ahmedsalheia.as@outlook.com', 'Musicaa App');
+            $mail->addAddress($to);
 
-        $message->setHTMLBody("This is the <strong>HTML</strong> version.");
+//            $mail->SMTPDebug  = 1;
+//$mail->Debugoutput = function($str, $level) {echo "debug level $level; message: $str";}; //$mail->Debugoutput = 'echo';
 
-        $recipients = 'person@example.net';
+            $mail->IsHTML(true);
 
-        $headers['From'] = 'somesender@example.com';
-        $headers['To'] = 'person@example.net';
-        $headers['Subject'] = 'Sending test message using Pear';
+            $mail->Subject = $subject;
+            $mail->Body    = $body;
 
-        $mail =& Mail::factory('mail');
+            if($mail->send()) {
+                return true;
+            }
 
-        $result = $mail->send($recipients, $message->headers($headers), $message->get());
-
-        var_dump($result);
-
+        }catch(Exception $ex)
+        {
+            return false;
+        }
+        return false;
     }
 }

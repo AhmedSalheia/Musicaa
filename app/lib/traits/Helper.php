@@ -5,6 +5,8 @@ namespace MUSICAA\lib\traits;
 
 use Firebase\JWT\JWT;
 use MUSICAA\models\TokenMod;
+use MUSICAA\models\Tracker;
+use MUSICAA\models\TrackUserData;
 
 trait Helper
 {
@@ -59,5 +61,30 @@ trait Helper
     public static function randName($num)
     {
         return str_split(str_shuffle('absdefghijklmnopqrstuvwxyz1234567890'),$num)[0];
+    }
+
+    public function track($userId,$action,$at)
+    {
+        $tracker = new Tracker();
+        $tracker->userId = $userId;
+        $tracker->action = $action;
+        $tracker->at = $at;
+        $tracker->save();
+    }
+
+    public function trackUserData($col,$userId,$from,$to)
+    {
+        $tracker = new Tracker();
+        $tracker->userId = $userId;
+        $tracker->action = 'change';
+        $tracker->at = 'user.'.$col;
+        $tracker->user_rel = 'y';
+        $tracker->save();
+
+        $trackUser = new TrackUserData();
+        $trackUser->trackId = $tracker->id;
+        $trackUser->changedFrom = $from;
+        $trackUser->changedTo= $to;
+        $trackUser->save();
     }
 }

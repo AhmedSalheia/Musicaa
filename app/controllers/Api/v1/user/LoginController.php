@@ -122,7 +122,6 @@ class LoginController extends \MUSICAA\controllers\AbstractController
                                     }
                                 }
 
-//                                var_dump($prim);
                                 $set = Settings::getByPK($prim->id);
                                 if ($set === false) {
                                     $set = DefaultSettings::getByPK($device->OS);
@@ -134,6 +133,7 @@ class LoginController extends \MUSICAA\controllers\AbstractController
                             (new SettingsController())->decodeSettings($set);
                             //////////////////////////////////////////// End Settings: ////////////////////////////////////////////
 
+                            $this->track($user->id,'login',$login->id);
 
                             unset($user->id, $user->verified, $user->password,$set->os,$set->loginId);
                             $this->jsonRender(['data' => $user,'settings' => $set],$this->language);

@@ -9,10 +9,10 @@ use MUSICAA\lib\database\DatabaseHandler;
 class Tracker extends AbstractModel
 {
     public $id;
-    public $loginId;
-    public $colChanged;
-    public $changedFrom;
-    public $changedTo;
+    public $userId;
+    public $action;
+    public $at;
+    public $user_rel="n";
     public $timeChanged;
 
     public static $tableName = 'tracker';
@@ -21,10 +21,10 @@ class Tracker extends AbstractModel
     public static $timeCol = 'timeChanged';
     public static $tableSchema = [
         'id'            =>  self::DATA_TYPE_INT,
-        'loginId'       =>  self::DATA_TYPE_INT,
-        'colChanged'    =>  self::DATA_TYPE_STR,
-        'changedFrom'   =>  self::DATA_TYPE_STR,
-        'changedTo'     =>  self::DATA_TYPE_STR,
+        'userId'        =>  self::DATA_TYPE_INT,
+        'action'        =>  self::DATA_TYPE_STR,
+        'at'            =>  self::DATA_TYPE_STR,
+        'user_rel'      =>  self::DATA_TYPE_STR,
         'timeChanged'   =>  self::DATA_TYPE_STR
     ];
 
@@ -33,11 +33,12 @@ class Tracker extends AbstractModel
         DatabaseHandler::factory()->exec('
             CREATE TABLE tracker(
                 id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-                loginId INT NOT NULL,
-                colChanged VARCHAR(50) NOT NULL,
-                changedFrom VARCHAR(100) NOT NULL,
-                changedTo VARCHAR(100) NOT NULL,
-                timeChanged DATETIME DEFAULT now()
+                userId INT NOT NULL,
+                action VARCHAR(50) NOT NULL,
+                at VARCHAR(50) NOT NULL,
+                user_rel ENUM("y","n") NOT NULL,
+                timeChanged DATETIME DEFAULT now(),
+                FOREIGN KEY (userId) REFERENCES user(id)
             )
         ');
     }
