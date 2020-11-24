@@ -19,6 +19,11 @@ class AbstractModel
         return trim($sql,',');
     }
 
+    private static function prepareCols(array $arr)
+    {
+        return implode(",",$arr);
+    }
+
     private function prepareValue(\PDOStatement &$stmt){
         foreach (static::$tableSchema as $columnName => $type){
             if ($type == 'anything'){
@@ -92,8 +97,8 @@ class AbstractModel
     }
 
 // SELECTING ALL :
-    public static function getAll(){
-        $sql = 'SELECT * FROM '.static::$tableName.' ORDER BY '.static::$primaryKey . ' DESC';
+    public static function getAll(array $cols=["*"]){
+        $sql = 'SELECT '.(self::prepareCols($cols)).' FROM '.static::$tableName.' ORDER BY '.static::$primaryKey . ' DESC';
         $stmt = DatabaseHandler::factory()->prepare($sql);
         $stmt->execute();
         $results =  $stmt->fetchAll(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class());
@@ -102,8 +107,8 @@ class AbstractModel
 
 // SELECTING ONE ELEMENT :
 
-    public static function getByPK($pk){
-        $sql = 'SELECT * FROM '.static::$tableName. ' WHERE '.static::$primaryKey.' = "'.$pk.'"';
+    public static function getByPK($pk,array $cols=["*"]){
+        $sql = 'SELECT '.(self::prepareCols($cols)).' FROM '.static::$tableName. ' WHERE '.static::$primaryKey.' = "'.$pk.'"';
         $stmt = DatabaseHandler::factory()->prepare($sql);
         if($stmt->execute() === true){
             if (method_exists(get_called_class(),'__construct')){
@@ -116,8 +121,8 @@ class AbstractModel
         return false;
     }
 
-    public static function getByUnique($unique){
-        $sql = 'SELECT * FROM '.static::$tableName. ' WHERE '.static::$uniqueKey.' = "'.$unique.'"';
+    public static function getByUnique($unique,array $cols=["*"]){
+        $sql = 'SELECT '.(self::prepareCols($cols)).' FROM '.static::$tableName. ' WHERE '.static::$uniqueKey.' = "'.$unique.'"';
         $stmt = DatabaseHandler::factory()->prepare($sql);
         if($stmt->execute() === true){
             if (method_exists(get_called_class(),'__construct')){
@@ -130,9 +135,9 @@ class AbstractModel
         return false;
     }
 
-    public static function getByCol($col,$data,$lim=false,$arr = 'DESC',$order=false){
+    public static function getByCol($col,$data,array $cols=["*"],$lim=false,$arr = 'DESC',$order=false){
 
-        $sql = 'SELECT * FROM '.static::$tableName. ' WHERE '.$col.' = "'.$data.'" ORDER By '.(($order === false)? static::$primaryKey:$order).' '.$arr.(($lim != false)? ' LIMIT '.$lim:'');
+        $sql = 'SELECT '.(self::prepareCols($cols)).' FROM '.static::$tableName. ' WHERE '.$col.' = "'.$data.'" ORDER By '.(($order === false)? static::$primaryKey:$order).' '.$arr.(($lim != false)? ' LIMIT '.$lim:'');
         $stmt = DatabaseHandler::factory()->prepare($sql);
         if($stmt->execute() === true){
             if (method_exists(get_called_class(),'__construct')){

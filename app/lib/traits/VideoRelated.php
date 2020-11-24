@@ -3,8 +3,6 @@
 
 namespace MUSICAA\lib\traits;
 
-
-use MUSICAA\models\youtube\Channels;
 use MUSICAA\models\youtube\Playlists;
 use MUSICAA\models\youtube\Undownloadable;
 use MUSICAA\models\youtube\Video;
@@ -65,7 +63,7 @@ trait VideoRelated
         return $videos;
     }
 
-    public function getVideoById($id)
+    public function getVideoById($id,$userId)
     {
         $this->_lang->load('api.errors.music');
         extract($this->_lang->get(),EXTR_PREFIX_ALL,'music');
@@ -84,7 +82,7 @@ trait VideoRelated
             $playlists = $this->getPlaylists($response->snippet->channelId);
 
             foreach ($playlists as $playlist) {
-                $this->getVideos($playlist->id, Null, false);
+                $this->getVideos($playlist->id, $userId,Null, false);
             }
 
             $video = Video::getByPK($id);
@@ -113,8 +111,20 @@ trait VideoRelated
                 }
             }
         }
+        $video->is_favorite = $this->is_favorite($userId,$video->id);
 
         return $video;
+    }
+
+    public function getVideoCategory($id)
+    {
+        $queryParams = [
+            'id' => $id
+        ];
+
+        $response = $this->service->videos->listVideos('snippet,contentDetails,statistics', $queryParams)->getItems()[0];
+
+        return $response->snippet->categoryId;
     }
 
 }

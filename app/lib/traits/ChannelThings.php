@@ -5,6 +5,8 @@ namespace MUSICAA\lib\traits;
 
 
 use MUSICAA\models\youtube\Channels;
+use MUSICAA\models\youtube\Favorite;
+use MUSICAA\models\youtube\FavoriteSong;
 use MUSICAA\models\youtube\Playlists;
 use MUSICAA\models\youtube\Undownloadable;
 use MUSICAA\models\youtube\Video;
@@ -26,7 +28,7 @@ trait ChannelThings
             $response = $this->service->channels->listChannels('snippet,contentDetails,statistics', $queryParams);
             $item = $response->getItems()[0];
 
-            if ($item->kind !== "youtube#channel")
+            if ($item->kind !== YOUTUBE_CHANNEL)
             {
                 return false;
             }
@@ -67,7 +69,7 @@ trait ChannelThings
 
             foreach ($response->getItems() as $playlist)
             {
-                if ($playlist->kind !== "youtube#playlist")
+                if ($playlist->kind !== YOUTUBE_PLAYLIST)
                 {
                     continue;
                 }
@@ -97,7 +99,7 @@ trait ChannelThings
 
 
 
-    public function getVideos($playlistId,$pageToken=Null,$showLinks = true)
+    public function getVideos($playlistId,$userId,$pageToken=Null,$showLinks=true)
     {
         $videos = Video::getByUnique($playlistId);
 
@@ -120,7 +122,7 @@ trait ChannelThings
 
             foreach ($response->getItems() as $video)
             {
-                if ($video->snippet->resourceId->kind !== "youtube#video" ||
+                if ($video->snippet->resourceId->kind !== YOUTUBE_VIDEO ||
                     Video::getByPK($video->snippet->resourceId->videoId) !== false)
                 {
                     continue;
@@ -133,9 +135,7 @@ trait ChannelThings
                 $vid->img = $this->getImage($video);
                 $vid->link = $this->getVideoLink($video->snippet->resourceId->videoId);
 
-                $save = $vid->save('upd');
-
-                if ($save === false)
+                if ($vid->save('upd') === false)
                 {
                     $undown = new Undownloadable();
                     $undown->id = $vid->id;
@@ -146,15 +146,24 @@ trait ChannelThings
                     $undown->save('upd');
                     continue;
                 }
-
-                unset($vid->link);
                 $videos[] = $vid;
             }
 
             if ($nextPage !== NULL) {
-                $videos = array_merge($videos, $this->getVideos($playlistId, $nextPage));
+                $videos = array_merge($videos, $this->getVideos($playlistId,$userId,$nextPage));
             }
 
+        }
+
+        if ($showLinks === false)
+        {
+            $videos = (is_object($videos))? [$videos]:$videos;
+
+            foreach ($videos as $vid)
+            {
+                $vid->is_favorite = $this->is_favorite($userId,$vid->id);
+                unset($vid->link,$vid->playlistId);
+            }
         }
 
         return $videos;
@@ -179,5 +188,22 @@ trait ChannelThings
         }
 
         return Channels::getByPK($resource->snippet->channelId)->img;
+    }
+
+    public function is_favorite($userID,$videoID)
+    {
+        $favorite = Favorite::getByUnique($userID);
+
+        if ($favorite !== false)
+        {
+            $favoriteSong = FavoriteSong::getByUnique($videoID);
+
+            if ($favoriteSong !== false && is_object($favoriteSong))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

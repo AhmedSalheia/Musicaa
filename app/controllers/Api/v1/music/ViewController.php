@@ -20,6 +20,8 @@ class ViewController extends AbstractController
     public function channelAction()
     {
         $token = $this->requireAuth();
+        $userID = $token->data->user_id;
+
         $id = $this->checkInput('post','channelId');
 
         $playlists = $this->getPlaylists($id);
@@ -27,7 +29,7 @@ class ViewController extends AbstractController
 
         foreach ($playlists as $playlist)
         {
-            $videos[] = [$playlist->name => $this->getVideos($playlist->id,Null,false)];
+            $videos[] = [$playlist->name => $this->getVideos($playlist->id,$userID,Null,false)];
         }
 
         $this->jsonRender(['data'=>$videos],$this->language);
@@ -36,9 +38,11 @@ class ViewController extends AbstractController
     public function videoAction()
     {
         $token = $this->requireAuth();
+        $userID = $token->data->user_id;
+
         $id = $this->checkInput('post','videoId');
 
-        $video = $this->getVideoById($id);
+        $video = $this->getVideoById($id,$userID);
 
         $playlist = Playlists::getByPK($video->playlistId);
         $channel = Channels::getByPK($playlist->channelId);
@@ -53,6 +57,7 @@ class ViewController extends AbstractController
                 'id' => $video->id,
                 'name' => $video->name,
                 'link' => $video->link,
+                'is_favorite' => $video->is_favorite,
                 'playlist' => [
                     'id'   => $playlist->id,
                     'name' => $playlist->name,

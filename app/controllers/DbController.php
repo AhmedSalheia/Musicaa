@@ -21,6 +21,8 @@ use MUSICAA\models\Genders;
 use MUSICAA\models\Onboarding;
 use MUSICAA\models\User;
 use MUSICAA\models\youtube\Channels;
+use MUSICAA\models\youtube\Favorite;
+use MUSICAA\models\youtube\FavoriteSong;
 use MUSICAA\models\youtube\Playlists;
 use MUSICAA\models\youtube\Undownloadable;
 
@@ -117,5 +119,11 @@ class DbController extends AbstractController
 
         $video = new Undownloadable();
         $video->createTable();
+
+        $favorite = new Favorite();
+        $favorite->createTable();
+
+        $favoriteSong = new FavoriteSong();
+        $favoriteSong->createTable();
     }
 }
