@@ -44,6 +44,8 @@ class FavoriteController extends AbstractController
             $videos[] = $vid;
         }
 
+        $this->track($userID,'Favorite.show',count($videos));
+
         $this->jsonRender(['data' => $videos],$this->language);
     }
 
@@ -63,6 +65,7 @@ class FavoriteController extends AbstractController
             default:
                 $id = $this->filterStr($this->checkInput('post','videoId'));
 
+                $this->track($userID,'Favorite.add.vid',$id);
                 if (Video::getByPK($id) !== false)
                 {
                     $favorite = Favorite::getByUnique($userID);
@@ -117,6 +120,9 @@ class FavoriteController extends AbstractController
             case 'playlist':
 
                 $id = $this->filterStr($this->checkInput('post','playlistId'));
+
+                $this->track($userID,'Favorite.add.play',$id);
+
                 $playlist = Playlists::getByPK($id);
 
                 if ($playlist !== false)

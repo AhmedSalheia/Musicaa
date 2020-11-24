@@ -13,9 +13,12 @@ class SearchController extends \MUSICAA\controllers\AbstractController
     public function defaultAction()
     {
         $token = $this->requireAuth();
+        $userID = $token->data->user_id;
 
         $q = implode(",",explode(" ",$this->filterStr($this->checkInput("post","q"))));
         $nextPage = '';
+
+        $this->track($userID,'search',$q);
 
         if (isset($_POST['nextPage']) && $_POST['nextPage'] !== '')
         {

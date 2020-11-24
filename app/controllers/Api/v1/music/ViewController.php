@@ -24,6 +24,7 @@ class ViewController extends AbstractController
 
         $id = $this->checkInput('post','channelId');
 
+        $this->track($userID,'view.channel',$id);
         $playlists = $this->getPlaylists($id);
         $videos = [];
 
@@ -42,6 +43,7 @@ class ViewController extends AbstractController
 
         $id = $this->checkInput('post','videoId');
 
+        $this->track($userID,'view.video',$id);
         $video = $this->getVideoById($id,$userID);
 
         $playlist = Playlists::getByPK($video->playlistId);
