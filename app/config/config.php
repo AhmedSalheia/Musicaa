@@ -41,6 +41,7 @@ if(is_array($langs))
 defined('LANGS')? null : define('LANGS',$arr);
 
 define('API_VER', ['V1']);
+define('CURRENT_VER', 'V1');
 define('SUPPORTED_LANGS',LANGS);
 define('REQUEST_SCHEME',['https']);
 
