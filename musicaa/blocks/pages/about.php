@@ -7,7 +7,9 @@
                         <div class="col-12 col-md  home-text ">
 
                             <h2>About US</h2>
-                            <p >Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut</p>
+                            <p class="pr-md-5">
+                                Freely music with great features, so you can listen to your favorite playlist on one click online and offline
+                            </p>
                             <a href="#"><button class=" btn-outline  mt-3 mt-md-0 mb-1 mb-md-0" >DONLWOD APP</button></a>
 
                         </div>

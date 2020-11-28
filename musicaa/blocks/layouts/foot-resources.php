@@ -48,6 +48,15 @@
 
 
                 },
+                768: {
+                    slidesPerView: 1.99,
+                    spaceBetween: 50,
+                    centeredSlides: false,
+
+
+
+                },
+
                 800: {
                     slidesPerView:1.9 ,
                     spaceBetween: 80,
@@ -56,6 +65,11 @@
 
 
                 },
+                // 1220: {
+                //     slidesPerView:2.0,
+                //     spaceBetween: 80,
+                //     centeredSlides: false,
+                // },
 
 
 

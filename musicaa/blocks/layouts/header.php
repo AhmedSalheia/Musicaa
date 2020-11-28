@@ -26,12 +26,12 @@
                                      <li >
                                          <a href="./#contact" data-scroll="contact">contact</a>
                                      </li>
-                                     <li >
-                                         <a href="./PrivacyPolicy.php" >Privacy Policy</a>
-                                     </li>
-                                     <li >
-                                         <a href="./TermsAndConditions.php" data-scroll="TermsAndConditions">Terms And Conditions</a>
-                                     </li>
+<!--                                     <li >-->
+<!--                                         <a href="./PrivacyPolicy.php" >Privacy Policy</a>-->
+<!--                                     </li>-->
+<!--                                     <li >-->
+<!--                                         <a href="./TermsAndConditions.php" data-scroll="TermsAndConditions">Terms And Conditions</a>-->
+<!--                                     </li>-->
                                  </ul>
                              </nav>
                 </div>

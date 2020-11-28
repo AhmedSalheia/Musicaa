@@ -20,12 +20,12 @@
                             <a href="#contact" >contact</a>
                         </li>
 
-                        <li >
-                            <a href="PrivacyPolicy.php"  >Privacy Policy</a>
-                        </li>
-                        <li >
-                            <a href="TermsAndConditions.php" >Terms And Conditions</a>
-                        </li>
+<!--                        <li >-->
+<!--                            <a href="PrivacyPolicy.php"  >Privacy Policy</a>-->
+<!--                        </li>-->
+<!--                        <li >-->
+<!--                            <a href="TermsAndConditions.php" >Terms And Conditions</a>-->
+<!--                        </li>-->
                         <li class="" >
                             <a href="#" style="border-bottom: 0 !important;">Arabic</a>
                         </li>

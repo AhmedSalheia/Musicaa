@@ -136,3 +136,13 @@ body .container-fluid {
 @import "template/pages/sections";
 @import "template/pages/contact";
 @import "template/layouts/footer";
+
+
+body div.block:not(#sections){
+  min-height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+}

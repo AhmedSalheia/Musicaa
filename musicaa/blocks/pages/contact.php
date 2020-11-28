@@ -1,9 +1,14 @@
-<div id="contact" class="block mb-md-5 mt-md-2 wow bounceInUp " data-wow-duration="1.3s" data-wow-delay="40ms" >
+<div id="contact" class="block  mt-md-3 wow bounceInUp " data-wow-duration="1.3s" data-wow-delay="40ms" >
     <div class="container">
 
         <div class="head-start text-center mb-3">
             <h2>contact</h2>
-            <p > Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+            <p >
+                If have any suggestion or problem don’t hesitate to contact us directly
+                <br>
+                E-mail: Prography@gmail.com
+
+            </p>
         </div>
 
 

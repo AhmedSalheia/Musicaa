@@ -4,7 +4,9 @@
 
         <div class="head-start  text-center mb-2">
             <h2>App Features</h2>
-            <p > Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+            <p >
+                We provide you many features with musica application that ensure you to have frolic moments
+            </p>
         </div>
 
 
@@ -24,7 +26,9 @@
 
                     <div  class="featuers-head pt-1 ">
                         <h3>Free listening</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+                        <p>
+                            You can listen freely to music, just click on your song of your favorite singer
+                        </p>
                     </div>
                 </div>
                 </div>
@@ -36,7 +40,9 @@
 
                         <div  class="featuers-head pt-1 ">
                             <h3>Running background</h3>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+                            <p>
+                                The amazing thing is you can play your song and open any app at the same time
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -49,8 +55,9 @@
 
                     <div  class="featuers-head pt-1 ">
                         <h3>Live broadcast near you</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-                    </div>
+                        <p>
+                            You can choose a live near your country by high quality and more and more exciting
+                        </p>                    </div>
                 </div>
             </div>
 
@@ -62,7 +69,9 @@
 
                     <div  class="featuers-head pt-1 ">
                         <h3>Play phone music</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+                        <p>
+                            Guess what! You can playlist songs on your mobile via the Musica app
+                        </p>
                     </div>
                 </div>
             </div>
@@ -74,7 +83,9 @@
 
                     <div  class="featuers-head pt-1 ">
                         <h3>Run without internet</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+                        <p>
+                            You can listen to music without the internet connection or which download on your phone, so save any song and listen for it in another time
+                        </p>
                     </div>
                 </div>
             </div>

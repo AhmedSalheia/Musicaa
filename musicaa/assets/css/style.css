@@ -279,12 +279,6 @@ header a .line-menu {
   padding: 85px 0;
 }
 
-@media (min-width: 1200px) {
-  .home-text p {
-    padding-right: 16px;
-  }
-}
-
 #about button, #home button {
   border: none;
   background-color: #F7705F;
@@ -367,6 +361,12 @@ header a .line-menu {
   height: 542px;
   margin-right: 20px;
   position: relative;
+}
+@media (min-width: 1400px) {
+  #sections .swiper-container .swiper-wrapper .swiper-slide {
+    width: 500px !important;
+    height: 650px;
+  }
 }
 @media (max-width: 800px) {
   #sections .swiper-container .swiper-wrapper .swiper-slide {
@@ -544,6 +544,14 @@ footer .list-unstyled {
   display: none;
   z-index: 20;
   right: 10px;
+}
+
+body div.block:not(#sections) {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
 }
 
 /*# sourceMappingURL=style.css.map */

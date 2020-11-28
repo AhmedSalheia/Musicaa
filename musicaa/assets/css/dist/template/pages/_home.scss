@@ -8,10 +8,10 @@
 
     @media(min-width: 1200px) {
     @if($site-en){
-      padding-right: 16px;
+      //padding-right: 10px;
     }@else {
-      padding-right: 0;
-      padding-left: 16px;
+      //padding-right: 0;
+      //padding-left: 10px;
     }
     }
 

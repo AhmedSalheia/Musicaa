@@ -9,16 +9,17 @@
                         <div class="offset-1"></div>
                         <div>
                         <h4>About us</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
-                        </div>
+                        <p>
+                            Freely music with great features, so you can listen to your favorite playlist on one click online and offline
+                        </p>                        </div>
                     </div>
 
                     <div class=" col-7 col-md-3 ">
                         <h4>contact</h4>
                         <ul class="list-unstyled">
                             <li class="mb-md-2">email : prograpy@gmail.com</li>
-                            <li class="mb-md-2">phone :+970567731101</li>
-                            <li class="mb-md-2">WhatsApp :+970567731101</li>
+                            <li class="mb-md-2"> <a href="./PrivacyPolicy.php" class="text-white" >Privacy Policy</a></li>
+                            <li class="mb-md-2"><a href="./TermsAndConditions.php"  class="text-white" >Terms And Conditions</a></li>
                         </ul>
                     </div>
 
