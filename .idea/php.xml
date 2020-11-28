@@ -21,7 +21,16 @@
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpStepFilterConfiguration">
+    <skipped_functions>
+      <skipped_function name="Composer\Autoload\ClassLoader-&gt;findFile" />
+      <skipped_function name="Composer\Autoload\ClassLoader-&gt;loadClass" />
+      <skipped_function name="require" />
+      <skipped_function name="composerRequiref75f743f68625323408fb978b3de04a7" />
+      <skipped_function name="ComposerAutoloaderInitf75f743f68625323408fb978b3de04a7::getLoader" />
+    </skipped_functions>
+  </component>
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />

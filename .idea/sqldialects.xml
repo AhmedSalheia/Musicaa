@@ -2,7 +2,10 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/app/ISO 3166-1 DB/ISO_3166.sql" dialect="MariaDB" />
-    <file url="file://$PROJECT_DIR$/app/models/TokenMod.php" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/app/models/User.php" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/app/models/Status.php" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/app/models/TokenMod.php" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/app/models/User.php" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/app/models/youtube/Undownloadable.php" dialect="MariaDB" />
+    <file url="PROJECT" dialect="MariaDB" />
   </component>
 </project>
