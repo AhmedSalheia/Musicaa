@@ -14,45 +14,23 @@ class HomeController extends \MUSICAA\controllers\AbstractController
 
     public function defaultAction()
     {
+	    $token = $this->requireAuth();
 
-        $client = new \Google_Client();
-        $client->setApplicationName('API code samples');
-        $client->setDeveloperKey('AIzaSyC27cQuXdJQ9Xj72Usu-OOP1R-eAGNuGfM');
+	    $vpage = 1;
+	    $cpage = 1;
 
-// Define service object for making API requests.
-        $service = new \Google_Service_YouTube($client);
+	    if (isset($_POST['vpage']))
+	    {
+	    	$vpage = $this->filterInt($this->checkInput('post','vpage'));
+	    }
 
-        $queryParams = [
-            'chart' => 'mostPopular',
-            'videoCategoryId' => '10',
-            'pageToken' => 'CAUQAA'
-        ];
+	    if (isset($_POST['cpage']))
+	    {
+		    $cpage = $this->filterInt($this->checkInput('post','cpage'));
+	    }
 
-        $response = $service->videos->listVideos('snippet,contentDetails,statistics', $queryParams);
-        $items = $response->getItems();
+		$response = $this->getHomeVideos($token->data->user_id,$vpage,$cpage);
 
-        foreach ($items as $item) {
-            $video = Undownloadable::getByPK($item->id);
-
-            if ($video === false)
-            {
-                $video = new Undownloadable();
-                $video->id = $item->id;
-
-                $yt = new YouTubeDownloader();
-                $links = $yt->getDownloadLinks("https://www.youtube.com/watch?v=" . $item->id);
-
-                foreach ($links as $link)
-                {
-                    if ($link['format'] === "m4a, audio")
-                    {
-                        $video->link = $link['url'];
-                        break;
-                    }
-                }
-
-                $video->save();
-            }
-        }
+        $this->jsonRender(['data'=>$response],$this->language);
     }
 }

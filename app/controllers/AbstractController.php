@@ -13,6 +13,7 @@ class AbstractController
     protected $_lang;
     protected $language='en';
     protected $client;
+    public $API_KEY = TOKENS[0];
     protected $service;
 
     public function __construct()
@@ -21,7 +22,7 @@ class AbstractController
 
         $this->client = new \Google_Client();
         $this->client->setApplicationName(API_Name);
-        $this->client->setDeveloperKey(API_KEY);
+        $this->client->setDeveloperKey($this->API_KEY);
 
         $this->service = new \Google_Service_YouTube($this->client);
     }

@@ -27,13 +27,13 @@ class FavoriteController extends AbstractController
 
         if ($favorite === false)
         {
-            $this->jsonRender($musica_NoFavorite,$this->language);
+            $this->jsonRender($music_NoFavorite,$this->language);
         }
 
         $favSongs = FavoriteSong::getByCol('favoriteId',$favorite->id);
         if ($favSongs === false)
         {
-            $this->jsonRender($musica_NoFavorite,$this->language);
+            $this->jsonRender($music_NoFavorite,$this->language);
         }
 
         $videos = [];
@@ -144,20 +144,21 @@ class FavoriteController extends AbstractController
                     $videos = Video::getByUnique($playlist->id);
                     $videos = (is_object($videos))? [$videos]:$videos;
 
-                    foreach ($videos as $video)
-                    {
-                        $favSong = new FavoriteSong();
-                        $favSong->favoriteId = $favorite->id;
-                        $favSong->videoId = $video->id;
+	                if ($videos !== false) {
 
-                        if ($favSong->save('upd') === false)
-                        {
-                            $err = $music_FavAddErr;
-                            goto printErr;
-                        }
-                    }
+		                foreach ($videos as $video) {
+			                $favSong = new FavoriteSong();
+			                $favSong->favoriteId = $favorite->id;
+			                $favSong->videoId = $video->id;
 
-                    $this->jsonRender($music_FavAddSuc,$this->language,true);
+			                if ($favSong->save('upd') === false) {
+				                $err = $music_FavAddErr;
+				                goto printErr;
+			                }
+		                }
+	                }
+
+	                $this->jsonRender($music_FavAddSuc, $this->language, true);
 
                 }else{
                     $err = $music_FavAddErr;

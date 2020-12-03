@@ -21,5 +21,11 @@
     $template = new Template($template_parts);
     $lang = new Language();
 
-    $frontController = new FrontController($template, $lang);
-    $frontController->dispatch();
+    try {
+	    $frontController = new FrontController($template, $lang);
+	    $frontController->dispatch();
+    }catch (\Exception $e)
+    {
+    	var_dump($_SERVER['REQUEST_URI']);
+//    	var_dump($e);
+    }

@@ -3,6 +3,10 @@
 
 namespace MUSICAA\lib\traits;
 
+use MUSICAA\models\youtube\Channels;
+use MUSICAA\models\youtube\Favorite;
+use MUSICAA\models\youtube\FavoriteSong;
+use MUSICAA\models\youtube\Ids;
 use MUSICAA\models\youtube\Playlists;
 use MUSICAA\models\youtube\Undownloadable;
 use MUSICAA\models\youtube\Video;
@@ -39,7 +43,7 @@ trait VideoRelated
             'videoCategoryId' => '10'
         ];
 
-        $response = $this->service->search->listSearch('snippet', $queryParams);
+	    $response = $this->service->search->listSearch('snippet',$queryParams);
         $videos = [];
 
         foreach ($response->getItems() as $item)
@@ -55,7 +59,7 @@ trait VideoRelated
             $videos[] = $video;
         }
 
-        foreach ($videos as $i => $video)
+        foreach ($videos as $video)
         {
             unset($video->link,$video->playlistId);
         }
@@ -127,4 +131,122 @@ trait VideoRelated
         return $response->snippet->categoryId;
     }
 
+	public function getHomeVideos($userId,$vpage=1,$cpage=1)
+	{
+		$videos = [];
+		$videos['videos'] = [];
+		$videos['channels'] = [];
+		$ids = [];
+		$ids['videos'] = [];
+		$ids['channels'] = [];
+		$ids['lastPage']['v'] = $vpage;
+		$ids['lastPage']['c'] = $cpage;
+		$id = json_decode(Ids::getByPK($userId)->ids);
+
+		$climit = 10;
+		$vmax = 24;
+
+		if ($vpage>1 || $cpage>1)
+		{
+			$vpage = ($vpage>1)? $vpage:2;
+			$cpage = ($cpage>1)? $cpage:2;
+
+			$ids['videos'] = array_slice($id->videos,0,$vmax*($vpage-1));
+			$ids['channels'] = array_slice($id->channels,0,$climit*($cpage-1));
+		}
+
+
+		$favorite = Favorite::getByUnique($userId);
+		if ($favorite !== false)
+		{
+			$songs = FavoriteSong::getByCol('favoriteId',$favorite->id,["*"]);
+
+			if($songs !== false){
+
+				if (is_object($songs))
+				{
+					$songs = [$songs];
+				}
+
+				shuffle($songs);
+
+				if (count($songs)>8)
+				{
+					$songs = array_slice($songs,0,8);
+				}
+
+				$count = count($songs);
+
+				$vlimit = (int)($vmax / $count);
+
+				foreach ($songs as $song)
+				{
+					$channel = Channels::getByPK(Playlists::getByPK(Video::getByPK($song->videoId)->playlistId)->channelId);
+					if (in_array($channel->id, $ids['channels'], false) === false){
+						$ids['channels'][] = $channel->id;
+						$videos['channels'][] = $channel;
+					}
+
+					$count = 1;
+					foreach ($this->getRelated($song->videoId) as $item)
+					{
+						if ($count > $vlimit)
+						{
+							break;
+						}
+
+						if (in_array($item->id, $ids['videos'], false) === false){
+							$ids['videos'][] = $item->id;
+							$videos['videos'][] = $item;
+							$count++;
+						}
+					}
+				}
+
+				if (count($videos['channels']) > $climit)
+				{
+					$videos['channels'] = array_slice($videos['channels'],0,$climit);
+				}
+
+				if (count($videos['channels']) < $climit)
+				{
+					foreach (Channels::get('SELECT * FROM channels ORDER BY RAND()') as $channel){
+						if (count($videos['channels']) > $climit)
+						{
+							break;
+						}
+						if (in_array($channel->id, $ids['channels'], false) === false){
+							$ids['channels'][] = $channel->id;
+							$videos['channels'][] = $channel;
+						}
+					}
+				}
+			}
+		}else{
+			$videos['videos'] = Video::get('SELECT * FROM video ORDER BY RAND() LIMIT 0,24');
+			$videos['channels'] = Channels::get('SELECT * FROM channels ORDER BY RAND() LIMIT 0,10');
+		}
+
+		foreach ($videos['videos'] as $video)
+		{
+			if (isset($video->link))
+			{
+				unset($video->link);
+			}
+			if (isset($video->playlistId))
+			{
+				unset($video->playlistId);
+			}
+		}
+
+		$id = new Ids();
+		$id->userId = $userId;
+		$id->ids = json_encode($ids);
+
+		$id->save('upd');
+
+		$videos['video_count'] = count($videos['videos']);
+		$videos['channel_count'] = count($videos['channels']);
+		return $videos;
+    }
 }

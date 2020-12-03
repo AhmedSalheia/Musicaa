@@ -24,6 +24,7 @@ use MUSICAA\models\User;
 use MUSICAA\models\youtube\Channels;
 use MUSICAA\models\youtube\Favorite;
 use MUSICAA\models\youtube\FavoriteSong;
+use MUSICAA\models\youtube\Ids;
 use MUSICAA\models\youtube\Playlists;
 use MUSICAA\models\youtube\Undownloadable;
 
@@ -129,5 +130,8 @@ class DbController extends AbstractController
 
         $favoriteSong = new FavoriteSong();
         $favoriteSong->createTable();
+
+        $ids = new Ids();
+        $ids->createTable();
     }
 }
