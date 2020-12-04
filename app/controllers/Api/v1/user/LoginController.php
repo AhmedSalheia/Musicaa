@@ -26,8 +26,14 @@ class LoginController extends \MUSICAA\controllers\AbstractController
 
     public function defaultAction()
     {
-        $this->_lang->load('api.errors.user');
-        extract($this->_lang->get(),EXTR_PREFIX_ALL,'user');
+        if ($this->_lang !== Null)
+        {
+            $data = $this->_lang->get();
+            if(empty($this->_lang->get())) {
+                $this->_lang->load('api.errors.user');
+            }
+            extract($data, EXTR_PREFIX_ALL, 'user');
+        }
 
         $email = $this->checkInput('post','email');
         $pass = $this->checkInput('post','password');

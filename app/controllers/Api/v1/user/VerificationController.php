@@ -4,6 +4,7 @@
 namespace MUSICAA\controllers\Api\v1\user;
 
 use \MUSICAA\controllers\AbstractController;
+use MUSICAA\lib\Language;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\User;
 use MUSICAA\models\Verification;
@@ -42,6 +43,10 @@ class VerificationController extends AbstractController
                         {
                             $ver->delete();
                             $this->track($user->id,'verify','success');
+
+                            $login = new LoginController();
+                            $login->setLang($this->_lang);
+                            $login->defaultAction();
                             $this->jsonRender(['message' => $user_verifiedSuc],$this->language,true);
 
                         }else

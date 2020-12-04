@@ -45,7 +45,8 @@ class AbstractModel
         $stmt = DatabaseHandler::factory()->prepare($sql);
         $this->prepareValue($stmt);
         if ($stmt->execute()){
-            $this->{static::$primaryKey} = DatabaseHandler::factory()->lastInsertId();
+            $id = DatabaseHandler::factory()->lastInsertId();
+            $this->{static::$primaryKey} = ($id !== "0")? $id:$this->{static::$primaryKey};
             return true;
         }
         return false;
@@ -93,7 +94,8 @@ class AbstractModel
 
         $sql = 'DELETE FROM '.static::$tableName.' WHERE '.static::$primaryKey.'= "'.$data.'"';
         $stmt = DatabaseHandler::factory()->prepare($sql);
-        return $stmt->execute();
+        $stmt->execute();
+        return !($stmt->rowCount() === 0);
     }
 
 // SELECTING ALL :

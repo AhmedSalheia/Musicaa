@@ -158,7 +158,7 @@ class FavoriteController extends AbstractController
 		                }
 	                }
 
-	                $this->jsonRender($music_FavAddSuc, $this->language, true);
+	                $this->jsonRender(['message'=>$music_FavAddSuc], $this->language, true);
 
                 }else{
                     $err = $music_FavAddErr;
