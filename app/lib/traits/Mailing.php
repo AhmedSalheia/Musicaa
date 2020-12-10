@@ -11,6 +11,7 @@ trait Mailing
 {
     public function mail($to,$body,$subject)
     {
+        extract(parse_ini_file(INI.'mail.ini'));
         try
         {
             $mail = new PHPMailer(true);
@@ -21,13 +22,11 @@ trait Mailing
             $mail->SMTPSecure = 'ssl';
             $mail->SMTPAuth   = true;
 
-            $mail->Username = 'ahmedsalheia.as@gmail.com';
-            $mail->Password = 'vnowjjdiirwvxpsv';
-            $mail->SetFrom('ahmedsalheia.as@outlook.com', 'Musicaa App');
+            $username = $this->dec($username);
+            $mail->Username = $username;
+            $mail->Password = $this->dec($password);
+            $mail->SetFrom($username, 'Musicaa App');
             $mail->addAddress($to);
-
-//            $mail->SMTPDebug  = 1;
-//$mail->Debugoutput = function($str, $level) {echo "debug level $level; message: $str";}; //$mail->Debugoutput = 'echo';
 
             $mail->IsHTML(true);
 
