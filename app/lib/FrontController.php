@@ -60,7 +60,7 @@ class FrontController
             }
 
             if (isset($url[2]) && $url[2] !== ''){
-                if (file_exists('./app/controllers/Api/'.$version.'/'.$url[2].'/'))
+                if (file_exists('../app/controllers/Api/'.$version.'/'.$url[2].'/'))
                 {
                     $category = $url[2];
                 }else{
