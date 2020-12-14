@@ -31,6 +31,7 @@ class LoginController extends \MUSICAA\controllers\AbstractController
             $data = $this->_lang->get();
             if(empty($this->_lang->get())) {
                 $this->_lang->load('api.errors.user');
+                $data = $this->_lang->get();
             }
             extract($data, EXTR_PREFIX_ALL, 'user');
         }
