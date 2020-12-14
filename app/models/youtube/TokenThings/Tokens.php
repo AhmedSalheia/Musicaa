@@ -27,7 +27,7 @@ class Tokens extends \MUSICAA\models\AbstractModel
         DatabaseHandler::factory()->exec('
             CREATE TABLE tokens(
                 id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-                TOKEN TEXT NOT NULL UNIQUE,
+                TOKEN VARCHAR(100) NOT NULL UNIQUE,
                 is_prim ENUM("n","y") DEFAULT "n"
             )
         ');
