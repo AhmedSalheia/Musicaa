@@ -9,7 +9,7 @@ use MUSICAA\lib\database\DatabaseHandler;
 class Tokens extends \MUSICAA\models\AbstractModel
 {
     public $id;
-    public $token;
+    public $TOKEN;
     public $is_prim="n";
 
     public static $tableName = 'tokens';
@@ -18,7 +18,7 @@ class Tokens extends \MUSICAA\models\AbstractModel
     public static $timeCol = '';
     public static $tableSchema = [
         'id'            =>  self::DATA_TYPE_STR,
-        'token'         =>  self::DATA_TYPE_STR,
+        'TOKEN'         =>  self::DATA_TYPE_STR,
         'is_prim'       =>  self::DATA_TYPE_STR
     ];
 

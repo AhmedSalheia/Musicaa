@@ -146,8 +146,8 @@ class DbController extends AbstractController
         $tokens = new Tokens();
         $tokens->createTable();
         $tokens->addToTable([
-            ['token'=>'AIzaSyC27cQuXdJQ9Xj72Usu-OOP1R-eAGNuGfM','is_prim'=>'y'],
-            ['token'=>'AIzaSyCDAVZmLiwJtZfbU-1DyceiBT3Zry7I1js','is_prim'=>'n']
+            ['TOKEN'=>'AIzaSyC27cQuXdJQ9Xj72Usu-OOP1R-eAGNuGfM','is_prim'=>'y'],
+            ['TOKEN'=>'AIzaSyCDAVZmLiwJtZfbU-1DyceiBT3Zry7I1js','is_prim'=>'n']
         ]);
     }
 }

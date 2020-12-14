@@ -3,6 +3,7 @@
     use MUSICAA\lib\FrontController;
     use MUSICAA\lib\Language;
     use MUSICAA\lib\Template;
+    use MUSICAA\models\youtube\TokenThings\Tokens;
 
     session_start();
 
@@ -26,5 +27,28 @@
         $frontController->dispatch();
     }catch (\Exception $e)
     {
-        header("Refresh:0");
+        $tokens = Tokens::getAll();
+
+        token:
+
+        shuffle($tokens);
+        if ($tokens[0]->TOKEN === YOUTUBE_TOKEN)
+        {
+            goto token;
+        }else
+        {
+            $oldToken = Tokens::getByCol('TOKEN',YOUTUBE_TOKEN)[0];
+            $newToken = $tokens[0];
+
+            $oldToken->is_prim = 'n';
+            $newToken->is_prim = 'y';
+
+            if($oldToken->save() !== false)
+            {
+                if ($newToken->save() !== false)
+                {
+                    header("Refresh:0");
+                }
+            }
+        }
     }
