@@ -25,7 +25,7 @@ $_['passSameErr'] = 'New Password Can\'t Be The Same As Old Password';
 $_['noTheme'] = 'The Wanted Theme Does Not Exist';
 $_['noLanguage'] = 'The Wanted Language Does Not Exist';
 $_['setSaveErr'] = 'Error Saving New Settings, Please Try Again Later';
-$_['user_wrongData'] = 'You Must Provide 0 OR 1 Only in this fields';
+$_['wrongData'] = 'You Must Provide 0 OR 1 Only in this fields';
 
 
 $_['registerSuc'] = 'User Registered Successfully';

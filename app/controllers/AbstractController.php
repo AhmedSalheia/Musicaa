@@ -3,6 +3,7 @@
 namespace MUSICAA\controllers;
 
 use MUSICAA\lib\FrontController;
+use MUSICAA\models\youtube\TokenThings\Tokens;
 
 class AbstractController
 {
@@ -13,7 +14,7 @@ class AbstractController
     protected $_lang;
     protected $language='en';
     protected $client;
-    public $API_KEY = TOKENS[0];
+    public $API_KEY = YOUTUBE_TOKEN;
     protected $service;
 
     public function __construct()

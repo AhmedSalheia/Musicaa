@@ -26,6 +26,7 @@ use MUSICAA\models\youtube\Favorite;
 use MUSICAA\models\youtube\FavoriteSong;
 use MUSICAA\models\youtube\Ids;
 use MUSICAA\models\youtube\Playlists;
+use MUSICAA\models\youtube\TokenThings\Tokens;
 use MUSICAA\models\youtube\Undownloadable;
 use MUSICAA\models\youtube\UserPlaylists;
 use MUSICAA\models\youtube\UserPlaylistSongs;
@@ -141,5 +142,12 @@ class DbController extends AbstractController
 
         $UserPlaylistSongs = new UserPlaylistSongs();
         $UserPlaylistSongs->createTable();
+
+        $tokens = new Tokens();
+        $tokens->createTable();
+        $tokens->addToTable([
+            ['token'=>'AIzaSyC27cQuXdJQ9Xj72Usu-OOP1R-eAGNuGfM','is_prim'=>'y'],
+            ['token'=>'AIzaSyCDAVZmLiwJtZfbU-1DyceiBT3Zry7I1js','is_prim'=>'n']
+        ]);
     }
 }
