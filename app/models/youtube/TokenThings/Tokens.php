@@ -40,7 +40,7 @@ class Tokens extends \MUSICAA\models\AbstractModel
         foreach ($data as $datum)
         {
             $senddata = new self();
-            $senddata->token = $datum->token;
+            $senddata->TOKEN = $datum->TOKEN;
             $senddata->is_prim = $datum->is_prim;
 
             if(!$senddata->save())
