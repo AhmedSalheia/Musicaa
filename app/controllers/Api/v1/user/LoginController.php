@@ -70,7 +70,6 @@ class LoginController extends \MUSICAA\controllers\AbstractController
 
                             if ($device->save() === false)
                             {
-                                echo "0";
                                 $this->jsonRender($user_devSaveErr,$this->language);
                             }
                         }
@@ -147,24 +146,24 @@ class LoginController extends \MUSICAA\controllers\AbstractController
                             $this->jsonRender(['data' => $user,'settings' => $set],$this->language);
 
                         }else{
-                            echo "1";
+
                             $this->jsonRender($user_loginSaveErr,$this->language);
                         }
 
                     }else
                     {
-                        echo "2";
+
                         $this->jsonRender($user_osErr,$this->language);
                     }
 
                 }else{
-                    echo "3";
+
                     $this->jsonRender($user_passErr,$this->language);
 
                 }
 
             }else{
-                echo "4";
+
                 $this->jsonRender($user_notVer,$this->language);
 
             }
