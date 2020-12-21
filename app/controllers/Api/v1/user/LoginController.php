@@ -17,7 +17,14 @@ use MUSICAA\models\OS;
 use MUSICAA\models\Settings;
 use MUSICAA\models\Theme;
 use MUSICAA\models\TokenMod;
+use MUSICAA\models\Tracker;
+use MUSICAA\models\TrackUserData;
 use MUSICAA\models\User;
+use MUSICAA\models\Verification;
+use MUSICAA\models\youtube\Favorite;
+use MUSICAA\models\youtube\FavoriteSong;
+use MUSICAA\models\youtube\UserPlaylists;
+use MUSICAA\models\youtube\UserPlaylistSongs;
 
 class LoginController extends \MUSICAA\controllers\AbstractController
 {
@@ -174,5 +181,61 @@ class LoginController extends \MUSICAA\controllers\AbstractController
 
         }
 
+    }
+
+    public function deleteAction()
+    {
+        foreach (TrackUserData::getAll() as $track)
+        {
+            $track->delete();
+        }
+
+        foreach (Tracker::getAll() as $track)
+        {
+            $track->delete();
+        }
+
+        foreach (Verification::getAll() as $track)
+        {
+            $track->delete();
+        }
+
+        foreach (UserPlaylistSongs::getAll() as $track)
+        {
+            $track->delete();
+        }
+
+        foreach (UserPlaylists::getAll() as $track)
+        {
+            $track->delete();
+        }
+
+        foreach (FavoriteSong::getAll() as $track)
+        {
+            $track->delete();
+        }
+
+        foreach (Favorite::getAll() as $track)
+        {
+            $track->delete();
+        }
+
+        foreach (Settings::getAll() as $track)
+        {
+            $track->delete();
+        }
+        foreach (TokenMod::getAll() as $track)
+        {
+            $track->delete();
+        }
+
+        foreach (Login::getAll() as $item)
+        {
+            var_dump($item->delete());
+        }
+        foreach (User::getAll() as $user)
+        {
+            var_dump($user->delete());
+        }
     }
 }
