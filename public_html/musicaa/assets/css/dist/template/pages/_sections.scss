@@ -1,0 +1,137 @@
+#sections{
+  position: relative;
+
+ .swiper-container{
+
+  background: none;
+  .swiper-wrapper{
+    @media (max-width: 575.98px) {
+      width: 80% !important;
+    }
+    padding-bottom:8%;
+    .swiper-slide{
+      width: 270.6px !important;
+      height: 542px;
+      margin-right: 20px;
+      position: relative;
+
+      @media (min-width: 1400px){
+        width: 500px !important;
+        height: 650px;
+
+      }
+
+
+      @media (max-width: 800px) {
+        width: 200px !important;
+        max-height: 400px;
+
+
+      }
+      @media (max-width: 576px) {
+        width: 151px !important;
+        max-height: 300px;
+
+      }
+
+
+      :before{
+        content: "";
+        background-color: rgba(0, 0%, 0%, 0.049);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+      }
+
+
+
+
+    }}
+
+
+ }
+  .swiper-pagination {
+
+
+
+    .swiper-pagination-bullet {
+      width: 25px;
+      height: 49px;
+      background-image: url("../../assets/images/logo-gray.webp");
+      z-index: 2;
+      margin:1%;
+      @media (max-width: 1200px) {
+        width: 21px;
+        height: 43px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+
+
+      &-active {
+        transition-duration: 300ms;
+        background-image: url("../../assets/images/icon-musicaa.webp");
+
+      }
+
+
+    }
+    span.swiper-pagination-bullet:focus {
+      outline: 0px;
+    }
+  }
+
+.content{
+
+  display: none;
+}
+
+.content.active{
+  display: block;
+}
+
+
+  .parallax-bg {
+    position: absolute;
+
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    border: 0.1px solid #FFFFFF;
+    @media (max-width: 576px) {
+      background-size: contain;
+      @if($site-en){
+        left: 10px;
+      }@else {
+        left: 0;
+        right: 10px;
+      }
+    }
+
+    @media (min-width: 922px) {
+      background-size: contain;
+      @if($site-en){
+        left: 40%;
+      }@else {
+        left: 0;
+        right:  40%;
+      }
+    }
+  }
+}
+#sections .swiper-container .swiper-wrapper .swiper-slide :before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
