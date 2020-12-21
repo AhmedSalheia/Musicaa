@@ -11,20 +11,19 @@ trait Mailing
 {
     public function mail($to,$body,$subject)
     {
-        extract(parse_ini_file(INI.'mail.ini'));
         try
         {
             $mail = new PHPMailer(true);
 
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'musicaa.app';
             $mail->Port       = 465;
             $mail->SMTPSecure = 'ssl';
             $mail->SMTPAuth   = true;
 
-            $username = $this->dec($username);
+            $username = 'noreply@musicaa.app';
             $mail->Username = $username;
-            $mail->Password = $this->dec($password);
+            $mail->Password = '6jS0U#YG^!jJ';
             $mail->SetFrom($username, 'Musicaa App');
             $mail->addAddress($to);
 
@@ -37,10 +36,11 @@ trait Mailing
                 return true;
             }
 
+            return false;
+
         }catch(Exception $ex)
         {
             return false;
         }
-        return false;
     }
 }

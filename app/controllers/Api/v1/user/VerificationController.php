@@ -3,8 +3,7 @@
 
 namespace MUSICAA\controllers\Api\v1\user;
 
-use \MUSICAA\controllers\AbstractController;
-use MUSICAA\lib\Language;
+use MUSICAA\controllers\AbstractController;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\User;
 use MUSICAA\models\Verification;
