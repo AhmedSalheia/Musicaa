@@ -76,8 +76,9 @@ define("SPECIALS",["api",'dashboard']);
 
 ///////////////////  Youtube Things  ///////////////////
 
-$token = \MUSICAA\models\youtube\TokenThings\Tokens::getByCol('is_prim','y')[0];
-define('YOUTUBE_TOKEN', $token->TOKEN);
+// $token = \MUSICAA\models\youtube\TokenThings\Tokens::getByCol('is_prim','y')[0];
+// var_dump($token);
+define('YOUTUBE_TOKEN', '');
 define('YOUTUBE_CHANNEL','youtube#channel');
 define('YOUTUBE_PLAYLIST','youtube#playlist');
 define('YOUTUBE_VIDEO','youtube#video');

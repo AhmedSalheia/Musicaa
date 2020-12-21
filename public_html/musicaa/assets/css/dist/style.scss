@@ -1,0 +1,148 @@
+@import "template/layouts/variables";
+@import "all";
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13.5px;
+  color:#000;
+  margin: 0;
+  padding: 0;
+
+  @if($site-en){
+    direction: ltr;
+    text-align: left;
+  }@else {
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+body .container-fluid {
+  @media (min-width: 768px)and(max-width: 992px){
+    p{
+      width:90%;
+      font-size: 13.5px !important;
+    }
+
+
+  }
+  @if($site-en){
+    padding-right: 0;
+    padding-left: 140px;
+    @media (min-width: 992px)and(max-width: 1400px){
+      padding-left: 130px;
+    }
+
+    @media (min-width: 768px){
+
+      padding-left: 60px;
+
+    }
+
+    @media (min-width: 577px)and(max-width: 768px){
+
+      padding-left: 50px;
+      p{
+        width: 80%;
+      }
+    }
+    @media(max-width: 576px){
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }@else {
+    padding-right: 140px;
+    padding-left: 0;
+
+    @media (min-width: 992px)and(max-width: 1400px){
+      padding-left: 0;
+      padding-right: 130px;
+    }
+    @media (min-width: 768px){
+
+      padding-left: 0;
+      padding-right: 60px;
+      p{
+        width: 90%;
+      }
+    }
+
+    @media (min-width: 577px)and(max-width: 768px){
+
+      padding-left:0;
+      padding-right: 50px;
+      p{
+        width: 80%;
+      }
+    }
+    @media(max-width: 576px){
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+}
+
+
+
+
+
+
+@media (min-width: 992px)and(max-width: 1400px) {
+  body .container:not( .h)   {
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+}
+
+@media (min-width: 1400px) {
+  body .container:not( .h)   {
+    padding-left: 178px;
+    padding-right: 178px;
+  }
+}
+
+.loader{
+  position: fixed;
+  top: 0; left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%; height: 100%;
+  background: #F7705F;
+  z-index: 9999;
+
+  img{
+    animation: move 5s ease-in-out infinite;
+    display: inline-block;
+    position: relative;
+  }
+
+
+}
+
+@keyframes move {
+
+  0%  { bottom:0px; top:40%;}
+  25%  { bottom:0px; top:-20%;}
+  50%  { bottom:0px; top:40%;}
+  75%  { bottom:0px; top:-20%;}
+  100%  {bottom:0px; top:40%;}
+}
+
+@import "template/layouts/header";
+@import "template/pages/mobile-menu";
+@import "template/pages/home";
+@import "template/pages/sections";
+@import "template/pages/contact";
+@import "template/layouts/footer";
+
+
+body div.block:not(#sections){
+  min-height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+}

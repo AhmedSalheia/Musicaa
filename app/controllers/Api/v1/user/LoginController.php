@@ -122,7 +122,6 @@ class LoginController extends \MUSICAA\controllers\AbstractController
                             if (is_array($prim)) {
                                 foreach ($prim as $item) {
                                     $dev = Devices::getByPK($item->deviceId);
-                                    var_dump($dev);
                                     if ($dev->is_primary === 'y') {
                                         $prim = Login::getByCol('deviceId', $dev->id)[0];
                                         break;
