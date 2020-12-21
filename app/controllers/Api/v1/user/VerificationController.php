@@ -18,7 +18,7 @@ class VerificationController extends AbstractController
         extract($this->_lang->get(),EXTR_PREFIX_ALL,'user');
 
         $email =$this->checkInput('post','email');
-        $code = $this->checkInput('post','ma');
+        $code = $this->checkInput('post','verify_code');
 
         $user = User::getByUnique(strtolower($email));
 
