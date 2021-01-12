@@ -22,6 +22,8 @@
     $template = new Template($template_parts);
     $lang = new Language();
 
+    tryAgain:
+
     try{
 
         $fp = fopen('log.php','ab');
@@ -52,7 +54,8 @@
             {
                 if ($newToken->save() !== false)
                 {
-                    header("Refresh:0");
+                    echo 'tryAgain';
+                    goto tryAgain;
                 }
             }
         }
