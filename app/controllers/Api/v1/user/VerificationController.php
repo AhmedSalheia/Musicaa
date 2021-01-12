@@ -1,9 +1,9 @@
 <?php
 
 
-namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\user;
+namespace MUSICAA\controllers\Api\v1\user;
 
-use MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController;
+use MUSICAA\controllers\AbstractController;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\User;
 use MUSICAA\models\Verification;

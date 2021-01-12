@@ -1,12 +1,12 @@
 <?php
 
 
-namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\data;
+namespace MUSICAA\controllers\Api\v1\data;
 
 
 use MUSICAA\lib\traits\Helper;
 
-class ApidataController extends \MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController
+class ApidataController extends \MUSICAA\controllers\AbstractController
 {
 	use Helper;
 

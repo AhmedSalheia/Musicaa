@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\user;
+namespace MUSICAA\controllers\Api\v1\user;
 
 
 use Firebase\JWT\JWT;
@@ -26,7 +26,7 @@ use MUSICAA\models\youtube\FavoriteSong;
 use MUSICAA\models\youtube\UserPlaylists;
 use MUSICAA\models\youtube\UserPlaylistSongs;
 
-class LoginController extends \MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController
+class LoginController extends \MUSICAA\controllers\AbstractController
 {
     use Helper;
 

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\user;
+namespace MUSICAA\controllers\Api\v1\user;
 
 
 use Firebase\JWT\JWT;
@@ -14,7 +14,7 @@ use MUSICAA\models\Tracker;
 use MUSICAA\models\User;
 use MUSICAA\models\Verification;
 
-class ProfileController extends \MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController
+class ProfileController extends \MUSICAA\controllers\AbstractController
 {
     use Helper;
 

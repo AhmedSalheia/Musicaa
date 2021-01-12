@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\music;
+namespace MUSICAA\controllers\Api\v1\music;
 
 
 use MUSICAA\lib\traits\Helper;
@@ -9,7 +9,7 @@ use MUSICAA\models\youtube\UserPlaylists;
 use MUSICAA\models\youtube\UserPlaylistSongs;
 use MUSICAA\models\youtube\Video;
 
-class PlaylistController extends \MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController
+class PlaylistController extends \MUSICAA\controllers\AbstractController
 {
     use Helper;
 

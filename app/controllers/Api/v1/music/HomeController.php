@@ -1,14 +1,14 @@
 <?php
 
 
-namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\music;
+namespace MUSICAA\controllers\Api\v1\music;
 
 
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\youtube\Undownloadable;
 use YouTube\YouTubeDownloader;
 
-class HomeController extends \MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController
+class HomeController extends \MUSICAA\controllers\AbstractController
 {
     use Helper;
 
