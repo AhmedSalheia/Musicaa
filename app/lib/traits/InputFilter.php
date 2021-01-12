@@ -18,6 +18,10 @@ trait InputFilter
         return htmlentities(strip_tags($input), ENT_QUOTES,"UTF-8");
     }
 
+    public function filterEmail($input){
+        return filter_var($input,FILTER_VALIDATE_EMAIL);
+    }
+
     public function checkInput($method,$input)
     {
         $this->jsonRender(['received'=>strtolower($_SERVER['REQUEST_METHOD']),'required'=>strtolower($method),'in'=>$input,'POST_data'=>$_POST[$input],'GET_data'=>$_GET[$input]],'en');
