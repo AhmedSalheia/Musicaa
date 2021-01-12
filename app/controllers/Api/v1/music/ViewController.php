@@ -1,9 +1,9 @@
 <?php
 
 
-namespace MUSICAA\controllers\Api\v1\music;
+namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\music;
 
-use MUSICAA\controllers\AbstractController;
+use MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\youtube\Channels;
 use MUSICAA\models\youtube\Playlists;

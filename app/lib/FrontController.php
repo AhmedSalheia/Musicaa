@@ -20,6 +20,7 @@ class FrontController
     private $_template;
     private $_lang;
     private $language='en';
+    private $type='public';
 
     public function __construct(Template $template , Language $lang)
     {
@@ -44,62 +45,91 @@ class FrontController
                 $this->_params = explode('/',$url[2]);
             }
 
-        }elseif(isset($url[0]) && $url[0] != '' && strtolower($url[0]) === 'api'){
-            header('Content-Type: application/json');
+        }elseif(isset($url[0]) && $url[0] != ''){
 
-            $url = explode('/',trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'), 6);
+            $url = strtolower($url[0]);
+            $this->type = ((isset(VIEWS_PATH[$url]) && VIEWS_PATH[$url]!== NULL)? $url: 'public');
 
-            if (isset($url[1]) && $url[1] !== ''){
-                if (in_array(strtoupper($url[1]),API_VER)){
-                    $version = implode('_',explode('.',$url[1]));
-                }else{
-                    $this->jsonRender('The Selected Version Is Not Valid',$this->language);
-                }
-            }else{
-                $this->jsonRender('No Version Selected',$this->language);
-            }
-
-            if (isset($url[2]) && $url[2] !== ''){
-                if (file_exists('../app/controllers/Api/'.$version.'/'.$url[2].'/'))
-                {
-                    $category = $url[2];
-                }else{
-                    $this->jsonRender('The Wanted Category Doesn\'t Exist',$this->language);
-                }
-            }else{
-                $this->jsonRender('No Category Selected',$this->language);
-            }
-
-            if (isset($url[3]) && $url[3] !== '')
+            switch ($url)
             {
-                $this->_controller = 'api\\'.$version.'\\'.$category.'\\'. ucfirst(strtolower($url[3]));
-            }else{
-                $this->jsonRender('No Section Selected',$this->language);
-            }
+                case 'api':
+                    header('Content-Type: application/json');
+
+                    $url = explode('/',trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'), 6);
+
+                    if (isset($url[1]) && $url[1] !== ''){
+                        if (in_array(strtoupper($url[1]),API_VER)){
+                            $version = implode('_',explode('.',$url[1]));
+                        }else{
+                            $this->jsonRender('The Selected Version Is Not Valid',$this->language);
+                        }
+                    }else{
+                        $this->jsonRender('No Version Selected',$this->language);
+                    }
+
+                    if (isset($url[2]) && $url[2] !== ''){
+                        if (file_exists('../app/controllers/Api/'.$version.'/'.$url[2].'/'))
+                        {
+                            $category = $url[2];
+                        }else{
+                            $this->jsonRender('The Wanted Category Doesn\'t Exist',$this->language);
+                        }
+                    }else{
+                        $this->jsonRender('No Category Selected',$this->language);
+                    }
+
+                    if (isset($url[3]) && $url[3] !== '')
+                    {
+                        $this->_controller = 'api\\'.$version.'\\'.$category.'\\'. ucfirst(strtolower($url[3]));
+                    }else{
+                        $this->jsonRender('No Section Selected',$this->language);
+                    }
 
 
-            if (isset($url[4]) && $url[4] !== '')
-            {
-                $this->_action = $url[4];
-            }
+                    if (isset($url[4]) && $url[4] !== '')
+                    {
+                        $this->_action = $url[4];
+                    }
 
-            if (isset($url[5]) && $url[5] != ''){
-                $this->_params = explode('/',$url[5]);
-            }
+                    if (isset($url[5]) && $url[5] != ''){
+                        $this->_params = explode('/',$url[5]);
+                    }
 
-            if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) && in_array(strtolower(explode('-',$_SERVER['HTTP_ACCEPT_LANGUAGE'])[0]), SUPPORTED_LANGS)){
-                $this->language = strtolower(explode('-',$_SERVER['HTTP_ACCEPT_LANGUAGE'])[0]);
-                $_SESSION['lang'] = $this->language;
-            }else{
-                $this->jsonRender('Please Send A Supported Language with the header of the request',$this->language);
-            }
+                    if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) && in_array(strtolower(explode('-',$_SERVER['HTTP_ACCEPT_LANGUAGE'])[0]), SUPPORTED_LANGS)){
+                        $this->language = strtolower(explode('-',$_SERVER['HTTP_ACCEPT_LANGUAGE'])[0]);
+                        $_SESSION['lang'] = $this->language;
+                    }else{
+                        $this->jsonRender('Please Send A Supported Language with the header of the request',$this->language);
+                    }
 
-            if (!isset($_SERVER['REQUEST_SCHEME']) || !in_array($_SERVER['REQUEST_SCHEME'],REQUEST_SCHEME)){
-                $supported = '';
-                foreach (REQUEST_SCHEME as $item) {
-                    $supported .= ','.$item;
-                }
-                $this->jsonRender('Sorry We Don\'t Provide the Wanted http Schema, we recommend using: '.trim($supported,',').'.',$this->language);
+                    if (!isset($_SERVER['REQUEST_SCHEME']) || !in_array($_SERVER['REQUEST_SCHEME'],REQUEST_SCHEME)){
+                        $supported = '';
+                        foreach (REQUEST_SCHEME as $item) {
+                            $supported .= ','.$item;
+                        }
+                        $this->jsonRender('Sorry We Don\'t Provide the Wanted http Schema, we recommend using: '.trim($supported,',').'.',$this->language);
+                    }
+                    break;
+                case 'dashboard':
+
+                    $url = explode('/',trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'), 4);
+
+                    $this->_controller = 'dashboard\\'.$this->_controller;
+                    if (isset($url[1]) && $url[1] !== ''){
+
+                        $this->_controller = 'dashboard\\'.$url[1];
+
+                        if (isset($url[2]) && $url[2] !== ''){
+                            $this->_action = $url[2];
+                        }
+
+                        if (isset($url[3]) && $url[3] !== ''){
+                            $this->_params = explode('/',$url[3]);
+                        }
+
+                    }
+
+                    break;
             }
 
         }
@@ -138,6 +168,7 @@ class FrontController
         $controller->setTemplate($this->_template);
         $controller->setLang($this->_lang);
         $controller->setLanguage($this->language);
+        $controller->setType($this->type);
 
         $controller->$actionName();
     }

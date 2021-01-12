@@ -10,33 +10,44 @@ use MUSICAA\models\TokenMod;
 trait Auth
 {
 
-    public function requireAuth()
+    public function requireAuth($for='api')
     {
-
-        if (isset($_SERVER['HTTP_TOKEN']) && $_SERVER['HTTP_TOKEN'] !== '')
+        if ($for === 'api')
         {
+            if (isset($_SERVER['HTTP_TOKEN']) && $_SERVER['HTTP_TOKEN'] !== '')
+            {
 
-            try {
+                try {
 
-                $token = JWT::decode($_SERVER['HTTP_TOKEN'],TOK_KEY, array('HS256'));
-                $tokenMod = TokenMod::getByPK($token->data->login_id);
-                if(@(int) $tokenMod->modi === (int) $token->data->MOD)
+                    $token = JWT::decode($_SERVER['HTTP_TOKEN'],TOK_KEY, array('HS256'));
+                    $tokenMod = TokenMod::getByPK($token->data->login_id);
+                    if(@(int) $tokenMod->modi === (int) $token->data->MOD)
+                    {
+
+                        return $token;
+
+                    }
+
+                    $this->jsonRender('Bad Token Provided, Please Provide Now Token','en');
+
+                }catch (\Exception $e)
                 {
-
-                    return $token;
-
+                    $this->jsonRender('This Token Is Invalid, Please Verify a valid Token','en');
                 }
 
-                $this->jsonRender('Bad Token Provided, Please Provide Now Token','en');
-
-            }catch (\Exception $e)
+            }else{
+                $this->jsonRender('Please Send A Valid Token with the header of the request','en');
+            }
+        }elseif($for === 'dashboard')
+        {
+            if (!isset($_SESSION['musicaa_app_admin_session']))
             {
-                $this->jsonRender('This Token Is Invalid, Please Verify a valid Token','en');
+                $this->redirect(URL.'index/login?ref='.urlencode($_SERVER['REQUEST_URI']));
             }
 
-        }else{
-            $this->jsonRender('Please Send A Valid Token with the header of the request','en');
+            return unserialize($_SESSION['musicaa_app_admin_session'],['allowed_classes' => false]);
         }
+
         return 1;
     }
 

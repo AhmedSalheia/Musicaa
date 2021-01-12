@@ -10,6 +10,7 @@ class Languages extends AbstractModel
 {
     public $id;
     public $name;
+    public $full_name;
 
     public static $tableName = 'languages';
     public static $primaryKey = 'id';
@@ -17,7 +18,8 @@ class Languages extends AbstractModel
     public static $timeCol = '';
     public static $tableSchema = [
         'id'            =>  self::DATA_TYPE_INT,
-        'name'          =>  self::DATA_TYPE_STR
+        'name'          =>  self::DATA_TYPE_STR,
+        'full_name'     =>  self::DATA_TYPE_STR
     ];
 
     public function createTable()
@@ -25,7 +27,8 @@ class Languages extends AbstractModel
         DatabaseHandler::factory()->exec('
             CREATE TABLE languages(
                 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                name VARCHAR(2) NOT NULL
+                name VARCHAR(2) NOT NULL,
+                full_name VARCHAR(20) NOT NULL
             )
         ');
     }
@@ -38,6 +41,7 @@ class Languages extends AbstractModel
         {
             $senddata = new self();
             $senddata->name = $datum->name;
+            $senddata->full_name = $datum->full_name;
 
             if(!$senddata->save())
             {

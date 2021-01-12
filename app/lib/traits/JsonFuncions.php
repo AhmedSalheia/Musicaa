@@ -14,6 +14,7 @@ trait JsonFuncions
             $status = is_array($message);
             $message = ($status)? $message:['message' => $message];
         }
+        http_response_code(($status)? 200:400);
 
         echo json_encode(['response' => $message, 'status' => $status,'Content-Language' => $language],JSON_UNESCAPED_SLASHES);
         exit();

@@ -104,7 +104,7 @@ class DbController extends AbstractController
 
         $languages = new Languages();
         $languages->createTable();
-        $languages->addToTable([['name' => 'en']]);
+        $languages->addToTable([['name' => 'en','full_name'=>'English']]);
 
         $defaultSet = new DefaultSettings();
         $defaultSet->createTable();

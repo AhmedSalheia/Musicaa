@@ -87,39 +87,4 @@ trait Helper
         $trackUser->changedTo= $to;
         $trackUser->save();
     }
-
-	public function tryCatchYoutube($data,$queryParams,...$args)
-	{
-		try {
-			if (!empty($args)) {
-				$service = $this->service;
-
-				foreach ($args as $arg)
-				{
-					if ($arg === array_reverse($args)[0])
-					{
-						$service = $service->$arg($data,$queryParams);
-					}else{
-						$service = $service->$arg;
-					}
-				}
-			}else{
-				echo 'error';
-				exit();
-			}
-
-			return $service;
-		}catch (\Exception $e)
-		{
-			if(json_decode($e->getMessage())->error->code === 403)
-			{
-				$next = array_search($this->API_KEY, TOKENS, true)+1;
-				if ($next > count(TOKENS)-1)
-				{
-					$next = 0;
-				}
-				$this->API_KEY = TOKENS[$next];
-			}
-		}
-    }
 }

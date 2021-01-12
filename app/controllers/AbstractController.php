@@ -16,6 +16,7 @@ class AbstractController
     protected $client;
     public $API_KEY = YOUTUBE_TOKEN;
     protected $service;
+    protected $type;
 
     public function __construct()
     {
@@ -63,21 +64,75 @@ class AbstractController
     {
         $this->language = $language;
     }
+    public function setType($type)
+    {
+        $this->type = $type;
+        $this->_template->setType($this->type);
+    }
 
-    protected function _view(){
+    public function getNotFound($type)
+    {
+        $parts = $this->_template->getParts($this->type);
+        $for = TEMPLATE_PATH[$this->type] ?? TEMPLATE_PATH['public'];
+        if (!file_exists($for)) {
+            $for = TEMPLATE_PATH['public'];
+        }
+
+        $title = '404 NOT FOUND';
+        require_once $for . 'templateheaderstart.php';
+
+        if (isset($parts['header']['css']))
+        {
+            foreach ($parts['header']['css'] as $css)
+            {
+                echo "<link rel='stylesheet' href='".$css."' />";
+            }
+        }
+        if (isset($parts['header']['js']))
+        {
+            foreach ($parts['header']['js'] as $js)
+            {
+                echo "<script src='".$js."'></script>";
+            }
+        }
+
+        require_once $for . 'templateheaderend.php';
+
+        if (file_exists(VIEWS_PATH[$this->type] . 'notfound' . DS . strtolower($type) .'.view.php'))
+        {
+            require_once VIEWS_PATH[$this->type] . 'notfound' . DS . strtolower($type) .'.view.php';
+        }else
+        {
+            require_once VIEWS_PATH['public'] . 'notfound' . DS . strtolower($type) .'.view.php';
+        }
+        if (isset($parts['footer']['js']))
+        {
+            foreach ($parts['footer']['js'] as $js)
+            {
+                echo "<script src='".$js."'></script>";
+            }
+        }
+        require_once $for . 'templatefooter.php';
+    }
+
+    protected function _view($block=[],$allow=[]){
         if ($this->_action == FrontController::NOT_FOUND_ACTION){
-            require_once VIEWS_PATH . 'notfound' . DS . 'notfound.view.php';
+
+            $this->getNotFound('notfound');
+
         }else{
-            $view = VIEWS_PATH . $this->_controller . DS . $this->_action. '.view.php';
+            $view = VIEWS_PATH[$this->type] . str_replace('dashboard\\','',$this->_controller) . DS . $this->_action. '.view.php';
             if (file_exists($view)){
                 $this->_data = array_merge($this->_data, $this->_lang->get());
 
                 $this->_template->setActionViewFile($view);
                 $this->_template->setAppData($this->_data);
 
-                $this->_template->renderApp();
+                $this->_template->renderApp($block,$allow);
             }else{
-                require_once VIEWS_PATH . 'notfound' . DS . 'noview.view.php';
+
+                $this->getNotFound('noview');
+
             }
         }
 

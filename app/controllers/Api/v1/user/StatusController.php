@@ -1,13 +1,13 @@
 <?php
 
 
-namespace MUSICAA\controllers\Api\v1\user;
+namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\user;
 
 
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\Status;
 
-class StatusController extends \MUSICAA\controllers\AbstractController
+class StatusController extends \MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController
 {
 
     use Helper;

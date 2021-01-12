@@ -6,23 +6,53 @@ if (!defined('DS')){
     define('DS', DIRECTORY_SEPARATOR);
 }
 
-define('APP_PATH', realpath(__DIR__) .DS.'..');
-define('VIEWS_PATH', APP_PATH . DS . 'views' . DS);
-define('TEMPLATE_PATH', APP_PATH . DS . 'template' . DS);
-define('LANG_PATH', APP_PATH . DS . 'languages' . DS);
+/*
+ * DATABASE CONSTS
+ * **/
 
-define('CSS', '/assets/css/');
-define('JS', '/assets/js/');
-define('IMG', '/assets/images/');
-define('INI','../app/ini/');
-
-defined('DATABASE_HOST_NAME')? null : define('DATABASE_HOST_NAME','business29.web-hosting.com'); //business29.web-hosting.com
+defined('DATABASE_HOST_NAME')? null : define('DATABASE_HOST_NAME','localhost'); //business29.web-hosting.com
 defined('DATABASE_DB_NAME')? null : define('DATABASE_DB_NAME','progwlfo_musicaabase');
-defined('DATABASE_USER_NAME')? null : define('DATABASE_USER_NAME','progwlfo_musicaabase'); //progwlfo_musicaabase
-defined('DATABASE_PASSWORD')? null : define('DATABASE_PASSWORD','musicaabase123'); //musicaabase123
+defined('DATABASE_USER_NAME')? null : define('DATABASE_USER_NAME','root'); //progwlfo_musicaabase
+defined('DATABASE_PASSWORD')? null : define('DATABASE_PASSWORD',''); //musicaabase123
 defined('DATABASE_PORT_NUMBER')? null : define('DATABASE_PORT_NUMBER',3306);
 defined('DATABASE_CONN_DRIVER')? null : define('DATABASE_CONN_DRIVER',1);
 
+
+
+
+/*
+ * FILES CONSTS
+ * **/
+
+define('APP_PATH', realpath(__DIR__) .DS.'..');
+define("SPECIALS",["api",'dashboard']);
+define('VIEWS_PATH', [
+    'public'    =>  APP_PATH . DS . 'views' . DS,
+    'dashboard' =>  APP_PATH . DS . 'views' . DS . 'dashboard' . DS
+]);
+define('TEMPLATE_PATH', [
+    'public'    =>  APP_PATH . DS . 'template' . DS,
+    'dashboard' =>  APP_PATH . DS . 'template' . DS . 'dashboard' . DS
+]);
+define('LANG_PATH', APP_PATH . DS . 'languages' . DS);
+
+
+
+/*
+ * FRONT CONSTS
+ * **/
+define('CSS', '/assets/css/');
+define('JS', '/assets/js/');
+define('IMG', '/assets/images/');
+define('DASH_IMG', '/assets/static/images/');
+define('INI','../app/ini/');
+
+define('URL','/dashboard/');
+
+
+/*
+ * LANGUAGE CONSTS
+ * **/
 defined('DEFAULT_LANG')? null : define('DEFAULT_LANG','en');
 
 
@@ -39,6 +69,13 @@ if(is_array($langs))
 }
 
 defined('LANGS')? null : define('LANGS',$arr);
+
+
+
+
+/*
+ * API CONSTS
+ ***/
 
 define('API_VER', ['V1']);
 define('CURRENT_VER', 'V1');
@@ -72,7 +109,6 @@ define('TOKEN',array(
 ));
 
 define("API_Name","Musicaa");
-define("SPECIALS",["api",'dashboard']);
 
 ///////////////////  Youtube Things  ///////////////////
 

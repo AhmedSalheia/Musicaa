@@ -1,10 +1,10 @@
 <?php
 
 
-namespace MUSICAA\controllers\Api\v1\user;
+namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\user;
 
 
-use MUSICAA\controllers\AbstractController;
+use MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\GenderLabels;
 use MUSICAA\models\Genders;

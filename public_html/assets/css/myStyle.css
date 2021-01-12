@@ -1,0 +1,26 @@
+.sidebar-menu>li
+{
+    transition: all 0.3s ease-in-out;
+}
+.sidebar-menu>li:hover
+{
+    background: #f7705f;
+    color: white!important;
+}
+.sidebar-menu>li:hover>a .title
+{
+    color: white!important;
+}
+.sidebar-menu>li:hover>a [class*=" ti-"],
+.sidebar-menu>li:hover>a [class^=ti-]
+{
+    color: white!important;
+}
+.sidebar-menu li .dropdown-menu li a
+{
+    color: #12003a!important;
+}
+.sidebar-menu li .dropdown-menu li:hover a
+{
+    color: white!important;
+}

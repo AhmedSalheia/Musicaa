@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MUSICAA\controllers\Api\v1\user;
+namespace MUSICAA\controllers\dashboard\dashboard\dashboard\Api\v1\user;
 
 
 use MUSICAA\lib\traits\Helper;
@@ -12,7 +12,7 @@ use MUSICAA\models\Login;
 use MUSICAA\models\Settings;
 use MUSICAA\models\Theme;
 
-class SettingsController extends \MUSICAA\controllers\AbstractController
+class SettingsController extends \MUSICAA\controllers\dashboard\dashboard\dashboard\AbstractController
 {
     use Helper;
 

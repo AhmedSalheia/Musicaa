@@ -8,10 +8,14 @@ class IndexController extends AbstractController
 {
     use Helper;
     public function defaultAction(){
-
+        echo 'home';
     }
     public function tryEmailAction()
     {
-        var_dump($this->mail('ahmedsalheia.as@gmail.com','Hi There','HIIIIIIIIIIIIIIIIIIIIIIIIIII!!!'));
+        echo 'hi';
+        if (isset($_GET['sub']))
+        {
+            $this->redirect('/');
+        }
     }
 }

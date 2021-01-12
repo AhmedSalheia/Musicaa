@@ -23,6 +23,11 @@
     $lang = new Language();
 
     try{
+
+        $fp = fopen('log.php','ab');
+        fwrite($fp,$_SERVER['REQUEST_METHOD']);
+        fclose($fp);
+
         $frontController = new FrontController($template, $lang);
         $frontController->dispatch();
     }catch (\Exception $e)
