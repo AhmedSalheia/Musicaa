@@ -20,9 +20,10 @@ trait InputFilter
 
     public function checkInput($method,$input)
     {
-        $method = strtoupper($method);
-
-        if ($_SERVER['REQUEST_METHOD'] === $method)
+        $this->jsonRender(['received'=>strtolower($_SERVER['REQUEST_METHOD']),'required'=>strtolower($method),'in'=>$input,'POST_data'=>$_POST[$input],'GET_data'=>$_GET[$input]],'en');
+        // $this->jsonRender($_REQUEST,'en');
+        exit();
+        if (strtolower($_SERVER['REQUEST_METHOD']) === strtolower($method))
         {
             if (isset($_REQUEST[$input]) && $_REQUEST[$input] !== '')
             {
@@ -33,7 +34,7 @@ trait InputFilter
 
             $this->jsonRender(['message' => $input.' Not Provided','error_for' => $input],'en',false);
         }else{
-            $this->jsonRender('Please Provide a Valid request, The Request type must be '.$method,'en');
+            $this->jsonRender('Please Provide a Valid request, The Request type must be '.strtoupper($method),'en');
         }
     }
 }
