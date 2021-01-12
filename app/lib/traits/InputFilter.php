@@ -24,9 +24,9 @@ trait InputFilter
 
     public function checkInput($method,$input)
     {
-        $this->jsonRender(['received'=>strtolower($_SERVER['REQUEST_METHOD']),'required'=>strtolower($method),'in'=>$input,'POST_data'=>$_POST[$input],'GET_data'=>$_GET[$input]],'en');
+//        @$this->jsonRender(['received'=>strtolower($_SERVER['REQUEST_METHOD']),'required'=>strtolower($method),'in'=>$input,'POST_data'=>$_POST[$input],'GET_data'=>$_GET[$input]],'en');
         // $this->jsonRender($_REQUEST,'en');
-        exit();
+//        exit();
         if (strtolower($_SERVER['REQUEST_METHOD']) === strtolower($method))
         {
             if (isset($_REQUEST[$input]) && $_REQUEST[$input] !== '')

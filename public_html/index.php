@@ -25,7 +25,7 @@
     try{
 
         $fp = fopen('log.php','ab');
-        fwrite($fp,$_SERVER['REQUEST_METHOD']);
+        fwrite($fp,"\n".$_SERVER['REQUEST_METHOD']);
         fclose($fp);
 
         $frontController = new FrontController($template, $lang);
