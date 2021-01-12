@@ -49,14 +49,15 @@ trait VideoRelated
         foreach ($response->getItems() as $item)
         {
             $video = Video::getByPK($item->id->videoId);
-            if ($video === false)
+            if ($video === false && isset($item->snippet))
             {
                 $video = new Video();
                 $video->id = $item->id->videoId;
                 $video->name = $item->snippet->title;
                 $video->img = $this->getImage($item);
+
+                $videos[] = $video;
             }
-            $videos[] = $video;
         }
 
         foreach ($videos as $video)
