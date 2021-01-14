@@ -46,12 +46,6 @@ Header set Cache-Control "max-age=2592000, public"
 
 RewriteEngine on
 
-#RewriteCond %{HTTP_HOST} ^musicaa.dev [NC,OR]
-#
-#RewriteCond %{HTTP_HOST} ^http://www.musicaa.dev [NC]
-#
-#RewriteRule ^(.*)$ https://www.musicaa.dev/$1 [L,R=301,NC]
-
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php

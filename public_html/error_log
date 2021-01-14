@@ -1,0 +1,52 @@
+[12-Jan-2021 21:50:39 America/New_York] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, first array member is not a valid class name or object in /home/progwlfo/try.musicaa.app/app/lib/database/PDODatabaseHandler.php on line 17
+[12-Jan-2021 21:50:39 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in /home/progwlfo/try.musicaa.app/app/models/AbstractModel.php:105
+Stack trace:
+#0 /home/progwlfo/try.musicaa.app/app/config/config.php(59): MUSICAA\models\AbstractModel::getAll()
+#1 /home/progwlfo/try.musicaa.app/public_html/index.php(15): require_once('/home/progwlfo/...')
+#2 {main}
+  thrown in /home/progwlfo/try.musicaa.app/app/models/AbstractModel.php on line 105
+[14-Jan-2021 04:50:05 America/New_York] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, first array member is not a valid class name or object in /home/progwlfo/try.musicaa.app/app/lib/database/PDODatabaseHandler.php on line 17
+[14-Jan-2021 04:50:05 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in /home/progwlfo/try.musicaa.app/app/models/AbstractModel.php:105
+Stack trace:
+#0 /home/progwlfo/try.musicaa.app/app/config/config.php(59): MUSICAA\models\AbstractModel::getAll()
+#1 /home/progwlfo/try.musicaa.app/public_html/index.php(15): require_once('/home/progwlfo/...')
+#2 {main}
+  thrown in /home/progwlfo/try.musicaa.app/app/models/AbstractModel.php on line 105
+[14-Jan-2021 05:29:37 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:29:37 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:31:45 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:31:46 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:32:42 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:32:43 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:33:56 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:33:57 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:36:13 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:36:13 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:39:32 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:39:32 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:44:51 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 05:44:51 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:11:04 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:11:05 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:15:54 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:16:02 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:17:51 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:19:23 America/New_York] PHP Fatal error:  Uncaught Error: Class 'MUSICAA\lib\FrontController' not found in /home/progwlfo/try.musicaa.app/public_html/index.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/progwlfo/try.musicaa.app/public_html/index.php on line 29
+[14-Jan-2021 06:19:59 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:20:45 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:21:47 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:26:09 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:26:12 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:32:13 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:32:16 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:34:24 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:34:26 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:36:17 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:36:18 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:40:42 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:40:42 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:41:21 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27
+[14-Jan-2021 06:41:21 America/New_York] PHP Warning:  Sorry The Language File Does Not Exist in /home/progwlfo/try.musicaa.app/app/lib/Language.php on line 27

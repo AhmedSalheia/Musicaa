@@ -1,4 +1,5 @@
 <?php
+
     namespace MUSICAA;
     use MUSICAA\lib\FrontController;
     use MUSICAA\lib\Language;

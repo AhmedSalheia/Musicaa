@@ -55,6 +55,14 @@ class FrontController
                 case 'api':
                     header('Content-Type: application/json');
 
+                    if (!isset($_SERVER['REQUEST_SCHEME']) || !in_array($_SERVER['REQUEST_SCHEME'],REQUEST_SCHEME)){
+                        $supported = '';
+                        foreach (REQUEST_SCHEME as $item) {
+                            $supported .= ','.$item;
+                        }
+                        $this->jsonRender('Sorry We Don\'t Provide the Wanted http Schema, we recommend using: '.trim($supported,',').'.',$this->language);
+                    }
+
                     $url = explode('/',trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'), 6);
 
                     if (isset($url[1]) && $url[1] !== ''){
@@ -102,13 +110,6 @@ class FrontController
                         $this->jsonRender('Please Send A Supported Language with the header of the request',$this->language);
                     }
 
-                    if (!isset($_SERVER['REQUEST_SCHEME']) || !in_array($_SERVER['REQUEST_SCHEME'],REQUEST_SCHEME)){
-                        $supported = '';
-                        foreach (REQUEST_SCHEME as $item) {
-                            $supported .= ','.$item;
-                        }
-                        $this->jsonRender('Sorry We Don\'t Provide the Wanted http Schema, we recommend using: '.trim($supported,',').'.',$this->language);
-                    }
                     break;
                 case 'dashboard':
 
