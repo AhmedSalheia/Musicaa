@@ -237,5 +237,20 @@ class LoginController extends \MUSICAA\controllers\AbstractController
         {
             var_dump($user->delete());
         }
+
+        $user = new User();
+        $user->email = 'test@gmail.com';
+        $user->password = $this->enc('123456789');
+        $user->firstname = 'test';
+        $user->lastname = 'test';
+        $user->phone = '0597847916';
+        $user->country = USER::get('Select * from iso_3166_1 Where iso LIKE "%PS%"')[0]->iso;
+        $user->gender = 1;
+
+        $user->save();
+        $verf = new Verification();
+        $verf->userId = $user->id;
+        $verf->verification = "1111";
+        $verf->save();
     }
 }
