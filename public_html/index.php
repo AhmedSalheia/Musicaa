@@ -23,8 +23,6 @@
     $template = new Template($template_parts);
     $lang = new Language();
 
-    tryAgain:
-
     try{
         $frontController = new FrontController($template, $lang);
         $frontController->dispatch();
@@ -50,8 +48,7 @@
             {
                 if ($newToken->save() !== false)
                 {
-                    echo 'tryAgain';
-                    goto tryAgain;
+                    header("refresh: 0");
                 }
             }
         }
