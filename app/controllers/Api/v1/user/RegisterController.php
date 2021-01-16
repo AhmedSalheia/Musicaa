@@ -61,6 +61,12 @@ class RegisterController extends AbstractController
                 $verify->userId = $user->id;
                 $verify->verification = $ver;
 
+                /////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
+                if ($email === 'test@test.com')                                                                                 //////
+                {                                                                                                               //////
+                    $verify->verification = "111111";                                                                           //////
+                }                                                                                                               //////
+                /////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
                 $save = $verify->save();
                 if ($save === true)
                 {
