@@ -26,6 +26,7 @@ $_['noTheme'] = 'The Wanted Theme Does Not Exist';
 $_['noLanguage'] = 'The Wanted Language Does Not Exist';
 $_['setSaveErr'] = 'Error Saving New Settings, Please Try Again Later';
 $_['wrongData'] = 'You Must Provide 0 OR 1 Only in this fields';
+$_['passwordResetErr'] = 'Error Resetting Your Password, Please Try Again Later';
 
 
 $_['registerSuc'] = 'User Registered Successfully';
@@ -36,3 +37,4 @@ $_['SeslogoutAllSuc']   = 'Primary Session Terminated Successfully, This has Ter
 $_['statusCloseSuc']   = 'Successfully Closed the active status';
 $_['changeStatusSuc']   = 'Successfully Changed the active status To ';
 $_['saveDataSuc'] = 'New Data Saved Successfully';
+$_['passwordResetSuc'] = 'Password Has Been Reset Successfully';

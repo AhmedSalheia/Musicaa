@@ -183,6 +183,51 @@ class LoginController extends \MUSICAA\controllers\AbstractController
 
     }
 
+    public function resetPasswordAction()
+    {
+        $this->_lang->load('api.errors.user');
+        extract($this->_lang->get(),EXTR_PREFIX_ALL,'user');
+
+        $email = $this->filterStr($this->checkInput('post','email'));
+        $user = User::getByUnique($email);
+
+        if ($user !== false)
+        {
+
+            if ($user->verified === 'y')
+            {
+
+                $password = $this->enc($this->randText(12));
+                $user->password = $password;
+
+                if ($user->save('upd') !== false)
+                {
+                    $this->trackUserData('user.password',$user->id,$user->password,$password);
+                    $verification = '<h4>Password For '.$user->email.' Has Changed, Musicaa App</h4>';
+                    if (!$this->mail($email,$verification,'Musicaa Account Password Change'))
+                    {
+                        $this->jsonRender($user_emailSendErr,$this->language);
+                    }
+
+                    $this->jsonRender($passwordResetSuc,$this->language);
+                }else
+                {
+                    $this->jsonRender($passwordResetErr,$this->language);
+                }
+
+            }else{
+
+                $this->jsonRender($user_notVer,$this->language);
+
+            }
+
+        }else
+        {
+
+            $this->jsonRender($user_notExists,$this->language);
+
+        }
+    }
     /////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
     public function deleteAction()/////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
     {/////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////

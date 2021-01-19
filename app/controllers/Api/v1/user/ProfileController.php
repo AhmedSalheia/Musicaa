@@ -175,7 +175,12 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
                         if ($password !== $this->dec($user->password))
                         {
                             $password = $this->enc($password);
-                            $this->trackUserData('password',$loginId,$user->password,$password);
+                            $this->trackUserData('user.password',$loginId,$user->password,$password);
+                            $verification = '<h4>Password For '.$user->email.' Has Changed, Musicaa App</h4>';
+                            if (!$this->mail($email,$verification,'Musicaa Account Password Change'))
+                            {
+                                $this->jsonRender($user_emailSendErr,$this->language);
+                            }
 
                             $user->password = $password;
 
