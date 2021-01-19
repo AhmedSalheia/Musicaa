@@ -202,8 +202,8 @@ class LoginController extends \MUSICAA\controllers\AbstractController
 
                 if ($user->save('upd') !== false)
                 {
-                    $this->trackUserData('user.password',$user->id,$user->password,$password);
-                    $verification = '<h4>Password For '.$user->email.' Has Changed, Musicaa App</h4>';
+                    $this->trackUserData('user.password.reset',$user->id,$user->password,$password);
+                    $verification = '<h4>Password For '.$user->email.' Has Been Reset</h4>';
                     if (!$this->mail($email,$verification,'Musicaa Account Password Change'))
                     {
                         $this->jsonRender($user_emailSendErr,$this->language);

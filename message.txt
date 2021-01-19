@@ -1,1 +1,1 @@
-added resetPassword Action 
+added email send at reset password 
