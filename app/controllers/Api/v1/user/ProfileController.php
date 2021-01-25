@@ -149,7 +149,7 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
                         $save = $verify->save();
                         if ($save === true)
                         {
-                            $verification = '<h4>Your VerificationController Code is <b>'.$ver.'</b> </h4>';
+                            $verification = '<h4>Your Verification Code is <b>'.$ver.'</b> </h4>';
                             if (!$this->mail($email,$verification,'Verify Your Account'))
                             {
                                 $this->jsonRender($user_emailSendErr,$this->language);
