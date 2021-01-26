@@ -5,6 +5,7 @@ namespace MUSICAA\controllers;
 
 
 use MUSICAA\lib\traits\Helper;
+use MUSICAA\models\User;
 
 class ResetController extends AbstractController
 {
@@ -66,9 +67,56 @@ class ResetController extends AbstractController
 
     public function changePasswordAction()
     {
+        $this->_lang->load('api.errors.user');
+        extract($this->_lang->get(),EXTR_PREFIX_ALL,'user');
+
+        if (!isset($_SESSION['res_email']))
+        {
+            $this->redirect('/reset');
+        }
+
         if(isset($_POST['sub']))
         {
+            $pass = $this->filterStr($this->checkInput('post','password'));
+            $rePass = $this->filterStr($this->checkInput('post','rePassword'));
 
+            if ($pass === $rePass)
+            {
+                $user = User::getByUnique($_SESSION['res_email']);
+
+                if ($user !== false)
+                {
+
+                    $user->password = $this->enc($pass);
+
+                    if ($user->save('upd') !== false)
+                    {
+                        $this->trackUserData('user.password',$user->id,'reset',$user->password);
+
+                        $verification = '<h4>Password Has Been Reset Successfully</h4>';
+
+                        if (!$this->mail($user->email,$verification,'Musicaa Account Password Change'))
+                        {
+                            $this->jsonRender($user_emailSendErr,$this->language);
+                        }
+
+                        $this->jsonRender($user_passwordResetSuc,$this->language,true);
+                    }else
+                    {
+                        $this->jsonRender($user_passwordResetErr,$this->language);
+                    }
+
+                }else
+                {
+
+                    $this->jsonRender($user_notExists,$this->language);
+
+                }
+
+            }else
+            {
+                $this->jsonRender($user_passSameErr,$this->language);
+            }
         }
 
         $this->_view();

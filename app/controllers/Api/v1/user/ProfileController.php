@@ -69,37 +69,37 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
 
                 if ($firstname !== $user->firstname)
                 {
-                    $this->trackUserData('firstname',$loginId,$user->firstname,$firstname);
+                    $this->trackUserData('user.profile.firstname',$loginId,$user->firstname,$firstname);
                     $user->firstname = $firstname;
                 }
 
                 if ($middlename !== $user->middlename)
                 {
-                    $this->trackUserData('middlename',$loginId,$user->middlename,$middlename);
+                    $this->trackUserData('user.profile.middlename',$loginId,$user->middlename,$middlename);
                     $user->middlename = $middlename;
                 }
 
                 if ($lastname !== $user->lastname)
                 {
-                    $this->trackUserData('lastname',$loginId,$user->lastname,$lastname);
+                    $this->trackUserData('user.profile.lastname',$loginId,$user->lastname,$lastname);
                     $user->lastname = $lastname;
                 }
 
                 if ($phone !== $user->phone)
                 {
-                    $this->trackUserData('phone',$loginId,$user->phone,$phone);
+                    $this->trackUserData('user.profile.phone',$loginId,$user->phone,$phone);
                     $user->phone = $phone;
                 }
 
                 if ($country !== $user->country)
                 {
-                    $this->trackUserData('country',$loginId,$user->country,$country);
+                    $this->trackUserData('user.profile.country',$loginId,$user->country,$country);
                     $user->country = $country;
                 }
 
                 if ($gender !== $user->gender)
                 {
-                    $this->trackUserData('gender',$loginId,$user->gender,$gender);
+                    $this->trackUserData('user.profile.gender',$loginId,$user->gender,$gender);
                     $user->gender = $gender;
                 }
 
@@ -136,7 +136,7 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
 
                     if ($email !== $user->email)
                     {
-                        $this->trackUserData('email',$loginId,$user->email,$email);
+                        $this->trackUserData('user.profile.email',$loginId,$user->email,$email);
 
                         $user->email = $email;
                         $user->verified = 'n';

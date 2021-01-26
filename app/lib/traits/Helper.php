@@ -87,4 +87,15 @@ trait Helper
         $trackUser->changedTo= $to;
         $trackUser->save();
     }
+
+    public function message($message,$status,$redirect='')
+    {
+        if ($redirect === '')
+        {
+            $redirect = $_SERVER['REQUEST_URI'];
+        }
+
+        $_SESSION['msg'] = ['message'=>$message,'status'=>$status];
+        $this->redirect($redirect);
+    }
 }
