@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controllers/ResetController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/reset/changePassword.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/reset/default.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/reset/verify.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/languages/en/api/errors/user.lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/languages/en/api/errors/user.lang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/HttpThings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/HttpThings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/template/loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/loader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/template/templatefooter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/templatefooter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/template/templateheaderend.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/templateheaderend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/template/templateheaderstart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/templateheaderstart.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +255,8 @@
       <workItem from="1611089930050" duration="355000" />
       <workItem from="1611576224567" duration="1130000" />
       <workItem from="1611580539350" duration="1566000" />
-      <workItem from="1611596341331" duration="1810000" />
+      <workItem from="1611596341331" duration="2016000" />
+      <workItem from="1611645615536" duration="8848000" />
     </task>
     <servers />
   </component>

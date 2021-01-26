@@ -30,7 +30,6 @@ class LoginController extends \MUSICAA\controllers\AbstractController
 {
     use Helper;
 
-
     public function defaultAction()
     {
         if ($this->_lang !== Null)
@@ -194,31 +193,26 @@ class LoginController extends \MUSICAA\controllers\AbstractController
         if ($user !== false)
         {
 
-            if ($user->verified === 'y')
+            $password = $user->password;
+            $user->password = $this->randText(6);
+            $user->verified = 'n';
+
+            if ($user->save('upd') !== false)
             {
+                $this->trackUserData('user.password.reset',$user->id,$password,$user->password);
+                $verification = '<h4>Password For '.$user->email.' Has Been Reset, Reset Code Is <b style="font-size: 20px">'.$user->password.'</b>
+                    <br>or refer to this link <a href="'.$_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/reset/verify/'.$this->enc($user->email).'/'.$user->password.'">'.substr($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/reset/verify/'.$this->enc($user->email).'/'.$user->password,0,40).'...</a> 
+                    <br>Refer To This Link <a href="'.$_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/reset/'.$this->enc($user->email).'">If It Was Not You</a></h4>';
 
-                $password = $this->enc($this->randText(12));
-                $user->password = $password;
-
-                if ($user->save('upd') !== false)
+                if (!$this->mail($email,$verification,'Musicaa Account Password Change'))
                 {
-                    $this->trackUserData('user.password.reset',$user->id,$user->password,$password);
-                    $verification = '<h4>Password For '.$user->email.' Has Been Reset</h4>';
-                    if (!$this->mail($email,$verification,'Musicaa Account Password Change'))
-                    {
-                        $this->jsonRender($user_emailSendErr,$this->language);
-                    }
-
-                    $this->jsonRender($passwordResetSuc,$this->language);
-                }else
-                {
-                    $this->jsonRender($passwordResetErr,$this->language);
+                    $this->jsonRender($user_emailSendErr,$this->language);
                 }
 
-            }else{
-
-                $this->jsonRender($user_notVer,$this->language);
-
+                $this->jsonRender($user_passwordResetSuc,$this->language,true);
+            }else
+            {
+                $this->jsonRender($user_passwordResetErr,$this->language);
             }
 
         }else
@@ -228,6 +222,46 @@ class LoginController extends \MUSICAA\controllers\AbstractController
 
         }
     }
+
+    public function resetVerificationAction()
+    {
+        $this->_lang->load('api.errors.user');
+        extract($this->_lang->get(),EXTR_PREFIX_ALL,'user');
+
+        $email = $this->filterStr($this->checkInput('post','email'));
+        $ver = $this->filterStr($this->checkInput('post','verify_code'));
+
+        $user = User::getByUnique($email);
+
+        if ($user !== false)
+        {
+
+            if ($ver === $user->password)
+            {
+                $user->verified = 'y';
+
+                if ($user->save('upd') !== false)
+                {
+                    $this->trackUserData('user.password.ver',$user->id,'n','y');
+
+                    $this->jsonRender($user_passwordResetSuc,$this->language,true);
+                }else
+                {
+                    $this->jsonRender($user_updUserErr,$this->language);
+                }
+            }else
+            {
+                $this->jsonRender($user_verCodeErr,$this->language);
+            }
+
+        }else
+        {
+
+            $this->jsonRender($user_notExists,$this->language);
+
+        }
+    }
+
     /////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
     public function deleteAction()/////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
     {/////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////

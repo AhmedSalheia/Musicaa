@@ -10,12 +10,4 @@ class IndexController extends AbstractController
     public function defaultAction(){
         echo 'home';
     }
-    public function tryEmailAction()
-    {
-        echo 'hi';
-        if (isset($_GET['sub']))
-        {
-            $this->redirect('/');
-        }
-    }
 }

@@ -20,4 +20,27 @@ trait HttpThings
 
         return $httpCode;
     }
+
+    public function sendRequest($type,$link,array $data = [])
+    {
+        $handle = curl_init($link);
+
+        curl_setopt_array($handle, array(
+            CURLOPT_HTTPHEADER => array(
+                'Accept-Language: '.$_SESSION['lang']
+            ),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_SSL_VERIFYPEER => false
+        ));
+
+        if (strtolower($type) === 'post')
+        {
+            curl_setopt_array($handle,array(
+                CURLOPT_POST => true,
+                CURLOPT_POSTFIELDS => http_build_query($data)
+            ));
+        }
+
+        return curl_exec($handle);
+    }
 }
