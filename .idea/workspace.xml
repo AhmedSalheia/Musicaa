@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/ApidataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/ApidataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/CountriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/CountriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/GendersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/GendersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/OnboardingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/OnboardingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/PrivacypolicyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/PrivacypolicyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/TermsandconditionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/TermsandconditionsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/FavoriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/FavoriteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/PlaylistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/PlaylistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/LogoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/StatusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/StatusController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1_1/user/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_1/user/SessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ResetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ResetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/ChannelThings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/ChannelThings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/InputFilter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/JsonFuncions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/JsonFuncions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/TermsandconditionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/data/TermsAndConditionsController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +242,7 @@
       <workItem from="1611596341331" duration="2016000" />
       <workItem from="1611645615536" duration="11897000" />
       <workItem from="1611660262441" duration="148000" />
-      <workItem from="1611739384580" duration="2178000" />
+      <workItem from="1611739384580" duration="2448000" />
     </task>
     <servers />
   </component>
