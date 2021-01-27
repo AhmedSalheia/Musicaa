@@ -7,7 +7,7 @@ namespace MUSICAA\lib\traits;
 trait JsonFuncions
 {
 
-    public function jsonRender(array $data,$language,$message=null,$status=NULL){
+    public function jsonRender(array $data,$language,$message='',$status=NULL){
 
         if ($status === NULL)
         {
