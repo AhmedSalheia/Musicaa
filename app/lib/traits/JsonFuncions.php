@@ -17,12 +17,16 @@ trait JsonFuncions
 
         $output = [
             'response' => [
-                'message'   =>  $message,
-                'data'  => $data
+                'message'   =>  $message
             ],
             'status' => $status,
             'Content-Language' => $language
         ];
+
+        if (!empty($data))
+        {
+            $output['response']['data'] = $data;
+        }
 
         echo json_encode($output,JSON_UNESCAPED_SLASHES);
         exit();
