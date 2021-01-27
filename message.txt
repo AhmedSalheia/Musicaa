@@ -1,1 +1,1 @@
-added ignoring files 
+changed TermsandconditionsController file name 

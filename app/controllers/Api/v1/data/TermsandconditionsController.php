@@ -7,7 +7,7 @@ namespace MUSICAA\controllers\Api\v1\data;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\Data;
 
-class TermsAndConditionsController extends \MUSICAA\controllers\AbstractController
+class TermsandconditionsController extends \MUSICAA\controllers\AbstractController
 {
     use Helper;
 
