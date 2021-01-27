@@ -97,25 +97,25 @@ class ResetController extends AbstractController
 
                         if (!$this->mail($user->email,$verification,'Musicaa Account Password Change'))
                         {
-                            $this->jsonRender($user_emailSendErr,$this->language);
+                            $this->jsonRender([],$this->language,$user_emailSendErr);
                         }
 
-                        $this->jsonRender($user_passwordResetSuc,$this->language,true);
+                        $this->jsonRender([],$this->language,$user_passwordResetSuc,true);
                     }else
                     {
-                        $this->jsonRender($user_passwordResetErr,$this->language);
+                        $this->jsonRender([],$this->language,$user_passwordResetErr);
                     }
 
                 }else
                 {
 
-                    $this->jsonRender($user_notExists,$this->language);
+                    $this->jsonRender([],$this->language,$user_notExists);
 
                 }
 
             }else
             {
-                $this->jsonRender($user_passSameErr,$this->language);
+                $this->jsonRender([],$this->language,$user_passSameErr);
             }
         }
 

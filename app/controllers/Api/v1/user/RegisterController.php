@@ -75,21 +75,21 @@ class RegisterController extends AbstractController
 
                     if (!$mail)
                     {
-                        $this->jsonRender($user_emailSendErr,$this->language);
+                        $this->jsonRender([],$this->language,$user_emailSendErr);
                     }
                 }
 
-                $this->jsonRender($user_registerSuc,$this->language,true);
+                $this->jsonRender([],$this->language,$user_registerSuc,true);
 
             }else{
 
-                $this->jsonRender($user_cantRegister,$this->language);
+                $this->jsonRender([],$this->language,$user_cantRegister);
 
             }
 
         }else
         {
-            $this->jsonRender($user_already,$this->language);
+            $this->jsonRender([],$this->language,$user_already);
         }
     }
 }

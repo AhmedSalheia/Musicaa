@@ -60,7 +60,7 @@ class FrontController
                         foreach (REQUEST_SCHEME as $item) {
                             $supported .= ','.$item;
                         }
-                        $this->jsonRender('Sorry We Don\'t Provide the Wanted http Schema, we recommend using: '.trim($supported,',').'.',$this->language);
+                        $this->jsonRender([],$this->language,'Sorry We Don\'t Provide the Wanted http Schema, we recommend using: '.trim($supported,',').'.');
                     }
 
                     $url = explode('/',trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'), 6);
@@ -69,10 +69,10 @@ class FrontController
                         if (in_array(strtoupper($url[1]),API_VER)){
                             $version = implode('_',explode('.',$url[1]));
                         }else{
-                            $this->jsonRender('The Selected Version Is Not Valid',$this->language);
+                            $this->jsonRender([],$this->language,'The Selected Version Is Not Valid');
                         }
                     }else{
-                        $this->jsonRender('No Version Selected',$this->language);
+                        $this->jsonRender([],$this->language,'No Version Selected');
                     }
 
                     if (isset($url[2]) && $url[2] !== ''){
@@ -80,17 +80,17 @@ class FrontController
                         {
                             $category = $url[2];
                         }else{
-                            $this->jsonRender('The Wanted Category Doesn\'t Exist',$this->language);
+                            $this->jsonRender([],$this->language,'The Wanted Category Doesn\'t Exist');
                         }
                     }else{
-                        $this->jsonRender('No Category Selected',$this->language);
+                        $this->jsonRender([],$this->language,'No Category Selected');
                     }
 
                     if (isset($url[3]) && $url[3] !== '')
                     {
                         $this->_controller = 'api\\'.$version.'\\'.$category.'\\'. ucfirst(strtolower($url[3]));
                     }else{
-                        $this->jsonRender('No Section Selected',$this->language);
+                        $this->jsonRender([],$this->language,'No Section Selected');
                     }
 
 
@@ -107,7 +107,7 @@ class FrontController
                         $this->language = strtolower(explode('-',$_SERVER['HTTP_ACCEPT_LANGUAGE'])[0]);
                         $_SESSION['lang'] = $this->language;
                     }else{
-                        $this->jsonRender('Please Send A Supported Language with the header of the request',$this->language);
+                        $this->jsonRender([],$this->language,'Please Send A Supported Language with the header of the request');
                     }
 
                     break;
@@ -147,7 +147,7 @@ class FrontController
                 $controllerClassName = self::NOT_FOUND_CONTROLLER;
             }else{
                 header("HTTP/1.1 404 Not Found");
-                $this->jsonRender('The Wanted Section Doesn\'t Exist',$this->language);
+                $this->jsonRender([],$this->language,'The Wanted Section Doesn\'t Exist');
             }
         }
 
@@ -158,7 +158,7 @@ class FrontController
                 $this->_action = $actionName = self::NOT_FOUND_ACTION;
             }else{
                 header("HTTP/1.1 404 Not Found");
-                $this->jsonRender('The Wanted Action Doesn\'t Exist',$this->language);
+                $this->jsonRender([],$this->language,'The Wanted Action Doesn\'t Exist');
             }
         }
 

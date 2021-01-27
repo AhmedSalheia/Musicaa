@@ -20,11 +20,11 @@ class TermsAndConditionsController extends \MUSICAA\controllers\AbstractControll
         if ($data !== false)
         {
             $data->id = 'Terms&Conditions';
-            $this->jsonRender(['data' => $data, 'role' => ROLE],$this->language);
+            $this->jsonRender(['terms' => $data, 'role' => ROLE],$this->language);
         }else{
 
             $this->mail('ahmedsalheia.as@gmail.com','We Have Detected Error In Getting Terms Data From Database','Error In Musicaa App API');
-            $this->jsonRender($data_terror,$this->language);
+            $this->jsonRender([],$this->language,$data_terror);
 
         }
     }

@@ -20,11 +20,11 @@ class PrivacypolicyController extends \MUSICAA\controllers\AbstractController
         if ($data !== false)
         {
             $data->id = 'Privacy Policy';
-            $this->jsonRender(['data' => $data, 'role' => ROLE],$this->language);
+            $this->jsonRender(['privacy' => $data, 'role' => ROLE],$this->language);
         }else{
 
             $this->mail('ahmedsalheia.as@gmail.com','We Have Detected Error In Getting Privacy Data From Database','Error In Musicaa App API');
-            $this->jsonRender($data_perror,$this->language);
+            $this->jsonRender([],$this->language,$data_perror);
 
         }
     }

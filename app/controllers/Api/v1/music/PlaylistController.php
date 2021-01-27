@@ -24,10 +24,10 @@ class PlaylistController extends \MUSICAA\controllers\AbstractController
 
         if ($userPlaylists !== false)
         {
-            $this->jsonRender(['data'=>$userPlaylists],$this->language);
+            $this->jsonRender(['Playlists'=>$userPlaylists],$this->language);
         }
 
-        $this->jsonRender($music_EmptyPlyData,$this->language);
+        $this->jsonRender([],$this->language,$music_EmptyPlyData);
     }
 
     public function createAction()
@@ -48,10 +48,10 @@ class PlaylistController extends \MUSICAA\controllers\AbstractController
         if ($playlist->save() !== false)
         {
             unset($playlist->userId);
-            $this->jsonRender(['data' => $playlist,'message'=>$music_plylstCreateSuc],$this->language);
+            $this->jsonRender(['Playlist' => $playlist],$this->language,$music_plylstCreateSuc);
         }
 
-        $this->jsonRender($music_plylstCreateErr,$this->language);
+        $this->jsonRender([],$this->language,$music_plylstCreateErr);
     }
 
     public function addAction()
@@ -65,14 +65,14 @@ class PlaylistController extends \MUSICAA\controllers\AbstractController
         $songId = $this->filterStr($this->checkInput('post','songId'));
         if (Video::getByPK($songId) === false)
         {
-            $this->jsonRender($music_songDoesNotExistErr,$this->language);
+            $this->jsonRender([],$this->language,$music_songDoesNotExistErr);
         }
 
         $plylstID = $this->filterStr($this->checkInput('post','playlistId'));
         $playlist = UserPlaylists::getByPK($plylstID);
         if ($playlist === false)
         {
-            $this->jsonRender($music_plylstDontErr,$this->language);
+            $this->jsonRender([],$this->language,$music_plylstDontErr);
         }
 
 
@@ -84,13 +84,13 @@ class PlaylistController extends \MUSICAA\controllers\AbstractController
             $plySong->songId = $songId;
 
             if ($plySong->save() !== false) {
-                $this->jsonRender(['message' => $music_plySongAddSuc], $this->language);
+                $this->jsonRender([], $this->language,$music_plySongAddSuc,true);
             }
 
-            $this->jsonRender($music_plySongAddErr, $this->language);
+            $this->jsonRender([], $this->language,$music_plySongAddErr);
         }
 
-        $this->jsonRender($music_plySongAddAlrErr, $this->language);
+        $this->jsonRender([], $this->language,$music_plySongAddAlrErr);
     }
 
     public function viewAction()
@@ -113,10 +113,10 @@ class PlaylistController extends \MUSICAA\controllers\AbstractController
                 $output[] = $song;
             }
 
-            $this->jsonRender(['data'=>$output],$this->language);
+            $this->jsonRender([$output],$this->language);
         }
 
-        $this->jsonRender(['massage' => $music_EmptySongData],$this->language);
+        $this->jsonRender([],$this->language,$music_EmptySongData);
     }
 
     public function deleteAction()
@@ -130,13 +130,13 @@ class PlaylistController extends \MUSICAA\controllers\AbstractController
         $songId = $this->filterStr($this->checkInput('post','songId'));
         if (Video::getByPK($songId) === false)
         {
-            $this->jsonRender($music_songDoesNotExistErr,$this->language);
+            $this->jsonRender([],$this->language,$music_songDoesNotExistErr);
         }
 
         $plylstID = $this->filterStr($this->checkInput('post','playlistId'));
         if (UserPlaylists::getByPK($plylstID) === false)
         {
-            $this->jsonRender($music_plylstDontErr,$this->language);
+            $this->jsonRender([],$this->language,$music_plylstDontErr);
         }
 
         $playSong = UserPlaylistSongs::get('SELECT * FROM userplaylistsongs where playlistId="'.$plylstID.'" AND songId="'.$songId.'"');
@@ -146,11 +146,11 @@ class PlaylistController extends \MUSICAA\controllers\AbstractController
             $playSong = $playSong[0];
             if($playSong->delete() !== false)
             {
-                $this->jsonRender(['massage' => $music_plySongDelSuc], $this->language);
+                $this->jsonRender([], $this->language,$music_plySongDelSuc,true);
             }
 
-            $this->jsonRender($music_plySongDelErr, $this->language);
+            $this->jsonRender([], $this->language,$music_plySongDelErr);
         }
-        $this->jsonRender($music_plySongNoDelErr, $this->language);
+        $this->jsonRender([], $this->language,$music_plySongNoDelErr);
     }
 }

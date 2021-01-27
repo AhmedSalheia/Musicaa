@@ -63,7 +63,7 @@ class SessionController extends AbstractController
             $this->jsonRender($output, $this->language);
         }else
         {
-            $this->jsonRender($user_needAdmin,$this->language);
+            $this->jsonRender([],$this->language,$user_needAdmin);
         }
 
     }
@@ -94,11 +94,11 @@ class SessionController extends AbstractController
 
                     if ($tokenMod->save() === false)
                     {
-                        $this->jsonRender($user_logoutErr,$this->language);
+                        $this->jsonRender([],$this->language,$user_logoutErr);
                     }
                 }
 
-                $this->jsonRender($user_SeslogoutAllSuc,$this->language,true);
+                $this->jsonRender([],$this->language,$user_SeslogoutAllSuc,true);
 
             }else{
 
@@ -107,15 +107,15 @@ class SessionController extends AbstractController
 
                 if ($tokenMod->save())
                 {
-                    $this->jsonRender($user_SeslogoutSuc, $this->language,true);
+                    $this->jsonRender([], $this->language,$user_SeslogoutSuc,true);
                 }else{
-                    $this->jsonRender($user_logoutErr, $this->language);
+                    $this->jsonRender([], $this->language,$user_logoutErr);
                 }
 
             }
         }else
         {
-            $this->jsonRender($user_needAdmin,$this->language);
+            $this->jsonRender([],$this->language,$user_needAdmin);
         }
     }
 }

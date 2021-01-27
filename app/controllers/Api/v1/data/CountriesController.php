@@ -32,12 +32,12 @@ class CountriesController extends \MUSICAA\controllers\AbstractController
                 $output[] = $arr;
             }
 
-            $this->jsonRender(['data' => $output],$this->language);
+            $this->jsonRender(['countries' => $output],$this->language);
 
         }else{
 
             $this->mail('ahmedsalheia.as@gmail.com','We Have Detected Error In Getting Countries Data From Database','Error In Musicaa App API');
-            $this->jsonRender($data_perror,$this->language);
+            $this->jsonRender([],$this->language,$data_perror);
 
         }
     }

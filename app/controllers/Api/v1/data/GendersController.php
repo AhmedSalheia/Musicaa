@@ -30,12 +30,12 @@ class GendersController extends \MUSICAA\controllers\AbstractController
                 $datum->gender = $labels->{$datum->gender};
             }
 
-            $this->jsonRender(['data' => $data],$this->language);
+            $this->jsonRender(['genders' => $data],$this->language);
 
         }else{
 
             $this->mail('ahmedsalheia.as@gmail.com','We Have Detected Error In Getting Genders Data From Database','Error In Musicaa App API');
-            $this->jsonRender($data_gerror,$this->language);
+            $this->jsonRender([],$this->language,$data_gerror);
 
         }
 

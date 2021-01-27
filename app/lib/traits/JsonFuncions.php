@@ -7,16 +7,24 @@ namespace MUSICAA\lib\traits;
 trait JsonFuncions
 {
 
-    public function jsonRender($message,$language,$status=NULL){
+    public function jsonRender(array $data,$language,$message=null,$status=NULL){
 
         if ($status === NULL)
         {
-            $status = is_array($message);
-            $message = ($status)? $message:['message' => $message];
+            $status = !empty($data);
         }
         http_response_code(($status)? 200:400);
 
-        echo json_encode(['response' => $message, 'status' => $status,'Content-Language' => $language],JSON_UNESCAPED_SLASHES);
+        $output = [
+            'response' => [
+                'message'   =>  $message,
+                'data'  => $data
+            ],
+            'status' => $status,
+            'Content-Language' => $language
+        ];
+
+        echo json_encode($output,JSON_UNESCAPED_SLASHES);
         exit();
     }
 

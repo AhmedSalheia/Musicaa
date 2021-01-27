@@ -46,34 +46,34 @@ class VerificationController extends AbstractController
                             $login = new LoginController();
                             $login->setLang($this->_lang);
                             $login->defaultAction();
-                            $this->jsonRender(['message' => $user_verifiedSuc],$this->language,true);
+                            $this->jsonRender([],$this->language,$user_verifiedSuc,true);
 
                         }else
                         {
                             $this->track($user->id,'verify','Error Save');
-                            $this->jsonRender($user_errSaveData,$this->language);
+                            $this->jsonRender([],$this->language,$user_errSaveData);
                         }
 
                     }else
                     {
                         $this->track($user->id,'verify','Error Code');
-                        $this->jsonRender($user_verCodeErr,$this->language);
+                        $this->jsonRender([],$this->language,$user_verCodeErr);
 
                     }
 
                 }else{
-                    $this->jsonRender($user_verErr,$this->language);
+                    $this->jsonRender([],$this->language,$user_verErr);
                 }
 
             }else
             {
-                $this->jsonRender($user_alrVerified,$this->language);
+                $this->jsonRender([],$this->language,$user_alrVerified);
             }
 
         }else
         {
 
-            $this->jsonRender($user_notExists,$this->language);
+            $this->jsonRender([],$this->language,$user_notExists);
 
         }
     }
@@ -101,21 +101,21 @@ class VerificationController extends AbstractController
                     $verification = '<h4>Your VerificationController Code is </h4><h1>'.$ver->verification.'</h1>';
                         $this->mail($email,$verification,'Verify Your Account');
 
-                        $this->jsonRender(['message' => 'Code Sent To Your Email'],$this->language);
+                        $this->jsonRender([],$this->language,'Code Sent To Your Email');
 
                 }else{
-                    $this->jsonRender($user_verErr,$this->language);
+                    $this->jsonRender([],$this->language,$user_verErr);
                 }
 
             }else
             {
-                $this->jsonRender($user_alrVerified,$this->language);
+                $this->jsonRender([],$this->language,$user_alrVerified);
             }
 
         }else
         {
 
-            $this->jsonRender($user_notExists,$this->language);
+            $this->jsonRender([],$this->language,$user_notExists);
 
         }
     }

@@ -14,7 +14,7 @@ class ViewController extends AbstractController
 
     public function defaultAction()
     {
-        $this->jsonRender('No Action Selected',$this->language);
+        $this->jsonRender([],$this->language,'No Action Selected');
     }
 
     public function channelAction()
@@ -33,7 +33,7 @@ class ViewController extends AbstractController
             $videos[] = [$playlist->name => $this->getVideos($playlist->id,$userID,Null,false)];
         }
 
-        $this->jsonRender(['data'=>$videos],$this->language);
+        $this->jsonRender(['video'=>$videos],$this->language);
     }
 
     public function videoAction()

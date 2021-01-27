@@ -29,16 +29,16 @@ class StatusController extends \MUSICAA\controllers\AbstractController
 
             if ($status->save() !== false)
             {
-                $this->jsonRender($user_statusCloseSuc,$this->language,true);
+                $this->jsonRender([],$this->language,$user_statusCloseSuc,true);
 
             }else
             {
-                $this->jsonRender($user_statusSaveErr,$this->language);
+                $this->jsonRender([],$this->language,$user_statusSaveErr);
             }
 
         }else
         {
-            $this->jsonRender($user_noStatusErr,$this->language);
+            $this->jsonRender([],$this->language,$user_noStatusErr);
         }
 
 
@@ -62,7 +62,7 @@ class StatusController extends \MUSICAA\controllers\AbstractController
             if ($status->status === $stat)
             {
                 unset($status->from_time, $status->to_time, $status->loginId);
-                $this->jsonRender(['message' => $user_sameStatusErr, 'data' => ['active_status' => $status]],$this->language, false);
+                $this->jsonRender(['active_status' => $status],$this->language,$user_sameStatusErr, false);
             }
 
             $status->to_time = date('Y-m-d H:i:s');
@@ -77,20 +77,20 @@ class StatusController extends \MUSICAA\controllers\AbstractController
                 if ($status->save() !== false)
                 {
                     unset($status->from_time, $status->to_time, $status->loginId);
-                    $this->jsonRender(['message' => $user_changeStatusSuc.$stat,'data' => ['active_status' => $status]],$this->language);
+                    $this->jsonRender(['active_status' => $status],$this->language,$user_changeStatusSuc.$stat);
                 }else
                 {
-                    $this->jsonRender($user_statusSaveErr,$this->language);
+                    $this->jsonRender([],$this->language,$user_statusSaveErr);
                 }
 
             }else
             {
-                $this->jsonRender($user_statusSaveErr,$this->language);
+                $this->jsonRender([],$this->language,$user_statusSaveErr);
             }
 
         }else
         {
-            $this->jsonRender($user_noStatusErr,$this->language);
+            $this->jsonRender([],$this->language,$user_noStatusErr);
         }
 
     }
@@ -114,17 +114,17 @@ class StatusController extends \MUSICAA\controllers\AbstractController
                 if ($status->save() !== false)
                 {
                     unset($status->from_time, $status->to_time, $status->loginId);
-                    $this->jsonRender(['data' => $status],$this->language);
+                    $this->jsonRender(['status' => $status],$this->language);
                 }else
                 {
-                    $this->jsonRender($user_statusSaveErr,$this->language);
+                    $this->jsonRender([],$this->language,$user_statusSaveErr);
                 }
 
         }else
         {
             $status = $status[0];
             unset($status->from_time, $status->to_time, $status->loginId);
-            $this->jsonRender(['message' => $user_statusNewErr,'data' => ['active_status' => $status]],$this->language,false);
+            $this->jsonRender(['active_status' => $status],$this->language,$user_statusNewErr,false);
         }
 
     }

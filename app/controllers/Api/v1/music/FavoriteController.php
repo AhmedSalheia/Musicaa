@@ -27,13 +27,13 @@ class FavoriteController extends AbstractController
 
         if ($favorite === false)
         {
-            $this->jsonRender($music_NoFavorite,$this->language);
+            $this->jsonRender([],$this->language,$music_NoFavorite);
         }
 
         $favSongs = FavoriteSong::getByCol('favoriteId',$favorite->id);
         if ($favSongs === false)
         {
-            $this->jsonRender($music_NoFavorite,$this->language);
+            $this->jsonRender([],$this->language,$music_NoFavorite);
         }
 
         $videos = [];
@@ -46,7 +46,7 @@ class FavoriteController extends AbstractController
 
         $this->track($userID,'Favorite.show',count($videos));
 
-        $this->jsonRender(['data' => $videos],$this->language);
+        $this->jsonRender([$videos],$this->language);
     }
 
     public function addAction()
@@ -90,13 +90,13 @@ class FavoriteController extends AbstractController
 
                     if (!is_object($save) && $save !== false)
                     {
-                        $this->jsonRender($music_FavAddSuc,$this->language,true);
+                        $this->jsonRender([],$this->language,$music_FavAddSuc,true);
 
                     }elseif(is_object($save) && $save !== false){
 
                         if($save->delete() === true)
                         {
-                            $this->jsonRender($music_FavRemSuc,$this->language,true);
+                            $this->jsonRender([],$this->language,$music_FavRemSuc,true);
                         }else
                         {
                             $err = $music_FavRemErr;
@@ -107,12 +107,12 @@ class FavoriteController extends AbstractController
                     {
                         $err = $music_FavAddErr;
                         printErr:
-                        $this->jsonRender($err,$this->language);
+                        $this->jsonRender([],$this->language,$err);
                     }
 
                 }else
                 {
-                    $this->jsonRender($music_FavAddErr,$this->language);
+                    $this->jsonRender([],$this->language,$music_FavAddErr);
                 }
 
                 break;
@@ -158,7 +158,7 @@ class FavoriteController extends AbstractController
 		                }
 	                }
 
-	                $this->jsonRender(['message'=>$music_FavAddSuc], $this->language, true);
+	                $this->jsonRender([], $this->language,$music_FavAddSuc, true);
 
                 }else{
                     $err = $music_FavAddErr;

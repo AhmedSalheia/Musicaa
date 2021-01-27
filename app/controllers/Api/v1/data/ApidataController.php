@@ -12,6 +12,6 @@ class ApidataController extends \MUSICAA\controllers\AbstractController
 
 	public function defaultAction()
 	{
-		$this->jsonRender(['data'=>['api_versions'=>API_VER,'latest_version'=>CURRENT_VER]],$this->language);
+		$this->jsonRender(['api_versions'=>API_VER,'latest_version'=>CURRENT_VER],$this->language);
 	}
 }

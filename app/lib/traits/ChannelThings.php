@@ -40,7 +40,7 @@ trait ChannelThings
 
             if ($channel->save() === false)
             {
-                $this->jsonRender('Error Saving Channel Details', $this->language);
+                $this->jsonRender([], $this->language,'Error Saving Channel Details');
             }
 
         }
@@ -82,7 +82,7 @@ trait ChannelThings
 
                 if ($plylst->save('upd') === false)
                 {
-                    $this->jsonRender('Error Saving Playlist '.$playlist->snippet->title.' Details', $this->language);
+                    $this->jsonRender([], $this->language,'Error Saving Playlist '.$playlist->snippet->title.' Details');
                 }
 
                 $playlists[] = $plylst;

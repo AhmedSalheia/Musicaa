@@ -27,12 +27,12 @@ class OnboardingController extends AbstractController
                 $datum->img = $_SERVER['REQUEST_SCHEME']. '://' .$_SERVER['HTTP_HOST'].'/getImage/onboarding/'.$datum->img;
             }
 
-            $this->jsonRender(['data' => $data],$this->language);
+            $this->jsonRender(['onboarding' => $data],$this->language);
 
         }else{
 
             $this->mail('ahmedsalheia.as@gmail.com','We Have Detected Error In Getting Onboaring Data From Database','Error In Musicaa App API');
-            $this->jsonRender($data_oerror,$this->language);
+            $this->jsonRender([],$this->language,$data_oerror);
 
         }
     }

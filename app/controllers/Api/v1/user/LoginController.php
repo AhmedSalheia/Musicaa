@@ -76,7 +76,7 @@ class LoginController extends \MUSICAA\controllers\AbstractController
 
                             if ($device->save() === false)
                             {
-                                $this->jsonRender($user_devSaveErr,$this->language);
+                                $this->jsonRender([],$this->language,$user_devSaveErr);
                             }
                         }
 
@@ -148,35 +148,35 @@ class LoginController extends \MUSICAA\controllers\AbstractController
                             $this->track($user->id,'login',$login->id);
 
                             unset($user->id, $user->verified, $user->password,$set->os,$set->loginId);
-                            $this->jsonRender(['data' => $user,'settings' => $set],$this->language);
+                            $this->jsonRender(['user' => $user,'settings' => $set],$this->language);
 
                         }else{
 
-                            $this->jsonRender($user_loginSaveErr,$this->language);
+                            $this->jsonRender([],$this->language,$user_loginSaveErr);
                         }
 
                     }else
                     {
 
-                        $this->jsonRender($user_osErr,$this->language);
+                        $this->jsonRender([],$this->language,$user_osErr);
                     }
 
                 }else{
 
-                    $this->jsonRender($user_passErr,$this->language);
+                    $this->jsonRender([],$this->language,$user_passErr);
 
                 }
 
             }else{
 
-                $this->jsonRender($user_notVer,$this->language);
+                $this->jsonRender([],$this->language,$user_notVer);
 
             }
 
         }else
         {
 
-            $this->jsonRender($user_notExists,$this->language);
+            $this->jsonRender([],$this->language,$user_notExists);
 
         }
 
@@ -206,19 +206,19 @@ class LoginController extends \MUSICAA\controllers\AbstractController
 
                 if (!$this->mail($email,$verification,'Musicaa Account Password Change'))
                 {
-                    $this->jsonRender($user_emailSendErr,$this->language);
+                    $this->jsonRender([],$this->language,$user_emailSendErr);
                 }
 
-                $this->jsonRender($user_passwordResetSuc,$this->language,true);
+                $this->jsonRender([],$this->language,$user_passwordResetSuc,true);
             }else
             {
-                $this->jsonRender($user_passwordResetErr,$this->language);
+                $this->jsonRender([],$this->language,$user_passwordResetErr);
             }
 
         }else
         {
 
-            $this->jsonRender($user_notExists,$this->language);
+            $this->jsonRender([],$this->language,$user_notExists);
 
         }
     }
@@ -244,20 +244,20 @@ class LoginController extends \MUSICAA\controllers\AbstractController
                 {
                     $this->trackUserData('user.password.ver',$user->id,'n','y');
 
-                    $this->jsonRender($user_passwordResetSuc,$this->language,true);
+                    $this->jsonRender([],$this->language,$user_passwordResetSuc,true);
                 }else
                 {
-                    $this->jsonRender($user_updUserErr,$this->language);
+                    $this->jsonRender([],$this->language,$user_updUserErr);
                 }
             }else
             {
-                $this->jsonRender($user_verCodeErr,$this->language);
+                $this->jsonRender([],$this->language,$user_verCodeErr);
             }
 
         }else
         {
 
-            $this->jsonRender($user_notExists,$this->language);
+            $this->jsonRender([],$this->language,$user_notExists);
 
         }
     }

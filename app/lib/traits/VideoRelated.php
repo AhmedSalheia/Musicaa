@@ -112,7 +112,7 @@ trait VideoRelated
                             $undownloadable->img = $this->getImage($response);
                     $undownloadable->save('upd');
 
-                    $this->jsonRender($music_vidCantSave,$this->language);
+                    $this->jsonRender([],$this->language,$music_vidCantSave);
                 }
             }
         }

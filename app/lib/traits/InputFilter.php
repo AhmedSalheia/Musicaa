@@ -33,9 +33,9 @@ trait InputFilter
 
             }
 
-            $this->jsonRender(['message' => $input.' Not Provided','error_for' => $input],'en',false);
+            $this->jsonRender(['error_for' => $input],'en',$input.' Not Provided',false);
         }else{
-            $this->jsonRender('Please Provide a Valid request, The Request type must be '.strtoupper($method),'en');
+            $this->jsonRender([],'en','Please Provide a Valid request, The Request type must be '.strtoupper($method));
         }
     }
 }

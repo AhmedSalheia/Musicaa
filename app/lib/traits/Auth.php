@@ -28,15 +28,15 @@ trait Auth
 
                     }
 
-                    $this->jsonRender('Bad Token Provided, Please Provide Now Token','en');
+                    $this->jsonRender([],'en','Bad Token Provided, Please Provide Now Token');
 
                 }catch (\Exception $e)
                 {
-                    $this->jsonRender('This Token Is Invalid, Please Verify a valid Token','en');
+                    $this->jsonRender([],'en','This Token Is Invalid, Please Verify a valid Token');
                 }
 
             }else{
-                $this->jsonRender('Please Send A Valid Token with the header of the request','en');
+                $this->jsonRender([],'en','Please Send A Valid Token with the header of the request');
             }
         }elseif($for === 'dashboard')
         {

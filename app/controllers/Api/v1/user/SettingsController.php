@@ -62,7 +62,7 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
         $this->decodeSettings($set);
 
         unset($set->os,$set->loginId);
-        $this->jsonRender(['data' => ['settings' => $set,'default' => $def]],$this->language);
+        $this->jsonRender(['settings' => $set,'default' => $def],$this->language);
     }
 
     public function changeAction()
@@ -85,7 +85,7 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
             $theme = Theme::getByUnique($mood);
             if ($theme === false)
             {
-                $this->jsonRender($user_noTheme,$this->language);
+                $this->jsonRender([],$this->language,$user_noTheme);
             }
         }
 
@@ -102,7 +102,7 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
             $language = Languages::getByUnique($lang);
             if ($language === false)
             {
-                $this->jsonRender($user_noLanguage,$this->language);
+                $this->jsonRender([],$this->language,$user_noLanguage);
             }
         }
         if ($settings !== false && $settings->language !== $language->id){
@@ -115,7 +115,7 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
 
         if ($additional_screen < 0 || $additional_screen > 1 || $auto_update < 0 || $auto_update > 1)
         {
-            $this->jsonRender($user_wrongData,$this->language);
+            $this->jsonRender([],$this->language,$user_wrongData);
         }
 
         $set->additional_screen = $additional_screen;
@@ -135,7 +135,7 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
 
         if ($run < 0 || $run > 1 || $aud < 0 || $aud > 1 || $loc < 0 || $loc > 1)
         {
-            $this->jsonRender($user_wrongData,$this->language);
+            $this->jsonRender([],$this->language,$user_wrongData);
         }
 
         $per = $this->fromBin($run . $aud . $loc);
@@ -150,10 +150,10 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
             $this->decodeSettings($set);
 
             unset($set->loginId);
-            $this->jsonRender(['message' => $user_saveDataSuc,'settings' => $set] , $this->language);
+            $this->jsonRender(['settings' => $set] , $this->language,$user_saveDataSuc);
         }
 
-        $this->jsonRender($user_setSaveErr,$this->language);
+        $this->jsonRender([],$this->language,$user_setSaveErr);
     }
 
     public function decodeSettings(&$set)

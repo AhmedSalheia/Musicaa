@@ -31,7 +31,7 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
         $user->gender = GenderLabels::getByPK($this->language)->$gender;
         $user->country = Data::get('SELECT * FROM iso_3166_1 WHERE iso LIKE "%'.$user->country.'%"')[0]->printable_name;
 
-        $this->jsonRender(['data'=>$user],$this->language);
+        $this->jsonRender([$user],$this->language);
     }
 
     public function updatedataAction()
@@ -118,7 +118,7 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
 
                         }else
                         {
-                            $this->jsonRender($user_uploadErr,$this->language);
+                            $this->jsonRender([],$this->language,$user_uploadErr);
                         }
                     }
                 }
@@ -152,16 +152,16 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
                             $verification = '<h4>Your Verification Code is <b>'.$ver.'</b> </h4>';
                             if (!$this->mail($email,$verification,'Verify Your Account'))
                             {
-                                $this->jsonRender($user_emailSendErr,$this->language);
+                                $this->jsonRender([],$this->language,$user_emailSendErr);
                             }
                         }
                     }else
                     {
-                        $this->jsonRender($user_emailSameErr,$this->language);
+                        $this->jsonRender([],$this->language,$user_emailSameErr);
                     }
                 }else
                 {
-                    $this->jsonRender($user_needAdmin,$this->language);
+                    $this->jsonRender([],$this->language,$user_needAdmin);
                 }
 
                 break;
@@ -179,18 +179,18 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
                             $verification = '<h4>Password For '.$user->email.' Has Changed, Musicaa App</h4>';
                             if (!$this->mail($email,$verification,'Musicaa Account Password Change'))
                             {
-                                $this->jsonRender($user_emailSendErr,$this->language);
+                                $this->jsonRender([],$this->language,$user_emailSendErr);
                             }
 
                             $user->password = $password;
 
                         }else
                         {
-                            $this->jsonRender($user_passSameErr,$this->language);
+                            $this->jsonRender([],$this->language,$user_passSameErr);
                         }
                 }else
                 {
-                    $this->jsonRender($user_needAdmin,$this->language);
+                    $this->jsonRender([],$this->language,$user_needAdmin);
                 }
 
                 break;
@@ -208,11 +208,11 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
             $user->gender = GenderLabels::getByPK($this->language)->$gender;
 
             unset($user->id, $user->verified, $user->password);
-            $this->jsonRender(['message' => $user_saveDataSuc,'data' => $user],$this->language);
+            $this->jsonRender([$user],$this->language,$user_saveDataSuc);
 
         }else{
 
-            $this->jsonRender($user_errSaveData,$this->language);
+            $this->jsonRender([],$this->language,$user_errSaveData);
 
         }
     }
