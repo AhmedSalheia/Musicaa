@@ -31,7 +31,7 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
         $user->gender = GenderLabels::getByPK($this->language)->$gender;
         $user->country = Data::get('SELECT * FROM iso_3166_1 WHERE iso LIKE "%'.$user->country.'%"')[0]->printable_name;
 
-        $this->jsonRender([$user],$this->language);
+        $this->jsonRender(['user'=>$user],$this->language);
     }
 
     public function updatedataAction()
@@ -208,7 +208,7 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
             $user->gender = GenderLabels::getByPK($this->language)->$gender;
 
             unset($user->id, $user->verified, $user->password);
-            $this->jsonRender([$user],$this->language,$user_saveDataSuc);
+            $this->jsonRender(['user'=>$user],$this->language,$user_saveDataSuc);
 
         }else{
 
