@@ -37,5 +37,6 @@ trait InputFilter
         }else{
             $this->jsonRender([],'en','Please Provide a Valid request, The Request type must be '.strtoupper($method));
         }
+        return "";
     }
 }

@@ -101,7 +101,7 @@ class VerificationController extends AbstractController
                     $verification = '<h4>Your VerificationController Code is </h4><h1>'.$ver->verification.'</h1>';
                         $this->mail($email,$verification,'Verify Your Account');
 
-                        $this->jsonRender([],$this->language,'Code Sent To Your Email');
+                        $this->jsonRender([],$this->language,'Code Sent To Your Email',true);
 
                 }else{
                     $this->jsonRender([],$this->language,$user_verErr);
