@@ -1,1 +1,1 @@
-Added second test account 
+escaped unicode encoding for json_encode 

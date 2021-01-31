@@ -113,6 +113,7 @@ class StatusController extends \MUSICAA\controllers\AbstractController
 
                 if ($status->save() !== false)
                 {
+
                     unset($status->from_time, $status->to_time, $status->loginId);
                     $this->jsonRender(['status' => $status],$this->language);
                 }else

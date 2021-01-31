@@ -28,7 +28,7 @@ trait JsonFuncions
             $output['response']['data'] = $data;
         }
 
-        echo json_encode($output,JSON_UNESCAPED_SLASHES);
+        echo json_encode($output,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
         exit();
     }
 
