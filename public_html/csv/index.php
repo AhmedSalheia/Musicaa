@@ -41,6 +41,7 @@ if (isset($_POST['sub']))
         header('Content-Length: ' . filesize($file));
         flush(); // Flush system output buffer
         readfile($file);
+        exit();
     }else
     {
         $err = 'Error Uploading File';
