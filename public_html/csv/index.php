@@ -6,6 +6,7 @@ if (isset($_POST['sub']))
     if (move_uploaded_file($_FILES['file']['tmp_name'],'file.txt'))
     {
 
+        $count = 1;
         $arr = ["Name","Given Name","Additional Name","Family Name","Yomi Name","Given Name Yomi","Additional Name Yomi","Family Name Yomi","Name Prefix","Name Suffix","Initials","Nickname","Short Name","Maiden Name","Birthday","Gender","Location","Billing Information","Directory Server","Mileage","Occupation","Hobby","Sensitivity","Priority","Subject","Notes","Language","Photo","Group Membership","Phone 1 - Type","Phone 1 - Value"];
         $fp1 = fopen($file,'w+');
         fwrite($fp1,implode(',',$arr)."\n");
@@ -17,10 +18,13 @@ if (isset($_POST['sub']))
                 $content = ',';
                 if ($item==="Phone 1 - Value")
                 {
-                    $content = $line;
+                    $content = "+".trim(str_replace('N/A','',$line))."\n";
                 }elseif ($item==="Phone 1 - Type")
                 {
                     $content = "Mobile,";
+                }elseif ($item==="Name")
+                {
+                    $content = $_POST['name'].$count++.",";
                 }
                fwrite($fp1,$content);
             }
@@ -55,6 +59,7 @@ if (isset($_POST['sub']))
 </head>
 <body>
     <form action="#" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="write the name you want for the contacts" />
         <input type="file" name="file" />
         <input type="submit" name="sub" />
     </form>
