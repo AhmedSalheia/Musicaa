@@ -31,6 +31,6 @@ class HomeController extends \MUSICAA\controllers\AbstractController
 
 		$response = $this->getHomeVideos($token->data->user_id,$vpage,$cpage);
 
-        $this->jsonRender([$response],$this->language);
+        $this->jsonRender($response,$this->language);
     }
 }
