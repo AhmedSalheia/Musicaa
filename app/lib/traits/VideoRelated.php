@@ -142,7 +142,17 @@ trait VideoRelated
 		$ids['channels'] = [];
 		$ids['lastPage']['v'] = $vpage;
 		$ids['lastPage']['c'] = $cpage;
-		$id = json_decode(Ids::getByPK($userId)->ids);
+		$id = Ids::getByPK($userId);
+		if ($id === false)
+        {
+            $id = new \stdClass();
+            $id->videos = [];
+            $id->channels = [];
+
+        }else
+        {
+            $id = json_decode(Ids::getByPK($userId)->ids);
+        }
 
 		$climit = 10;
 		$vmax = 24;

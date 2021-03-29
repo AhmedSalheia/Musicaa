@@ -25,7 +25,9 @@ class ViewController extends AbstractController
         $id = $this->checkInput('post','channelId');
 
         $this->track($userID,'view.channel',$id);
-        $playlists = $this->getPlaylists($id);
+        $channel = $this->getChannel($id);
+
+        $playlists = $this->getPlaylists($channel->id);
         $videos = [];
 
         foreach ($playlists as $playlist)

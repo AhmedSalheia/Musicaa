@@ -101,7 +101,7 @@ trait ChannelThings
 
     public function getVideos($playlistId,$userId,$pageToken=Null,$showLinks=true)
     {
-        $videos = Video::getByUnique($playlistId);
+        $videos = Video::getByUnique($playlistId)?:[];
 
         $undownload = Undownloadable::getByUnique($playlistId);
         $undownload = ($undownload === false)? []:$undownload;
@@ -158,11 +158,13 @@ trait ChannelThings
         if ($showLinks === false)
         {
             $videos = (is_object($videos))? [$videos]:$videos;
-
-            foreach ($videos as $vid)
+            if ($videos !== false)
             {
-                $vid->is_favorite = $this->is_favorite($userId,$vid->id);
-                unset($vid->link,$vid->playlistId);
+                foreach ($videos as $vid)
+                {
+                    $vid->is_favorite = $this->is_favorite($userId,$vid->id);
+                    unset($vid->link,$vid->playlistId);
+                }
             }
         }
 

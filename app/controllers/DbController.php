@@ -4,6 +4,7 @@
 namespace MUSICAA\controllers;
 
 
+use MUSICAA\lib\database\DatabaseHandler;
 use MUSICAA\models\DefaultSettings;
 use MUSICAA\models\Devices;
 use MUSICAA\models\Languages;
@@ -30,11 +31,13 @@ use MUSICAA\models\youtube\TokenThings\Tokens;
 use MUSICAA\models\youtube\Undownloadable;
 use MUSICAA\models\youtube\UserPlaylists;
 use MUSICAA\models\youtube\UserPlaylistSongs;
+use MUSICAA\models\youtube\Video;
 
 class DbController extends AbstractController
 {
     public function defaultAction()
     {
+        echo '<span style="color: red; font-size: 40px;">DON\'T FORGET TO ADD THE ISO_3166 FILE</span><br><br>';
         $data = new Data();
         $data->createTable();
         $data->addToTable([
@@ -125,8 +128,11 @@ class DbController extends AbstractController
         $playlists = new Playlists();
         $playlists->createTable();
 
-        $video = new Undownloadable();
+        $video = new Video();
         $video->createTable();
+
+        $undownloadable = new Undownloadable();
+        $undownloadable->createTable();
 
         $favorite = new Favorite();
         $favorite->createTable();
