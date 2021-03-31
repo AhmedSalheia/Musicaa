@@ -29,14 +29,17 @@ class ViewController extends AbstractController
 
         $playlists = $this->getPlaylists($channel->id);
         $videos = [];
+        $vcount = 0;
 
         foreach ($playlists as $playlist)
         {
-            $videos[] = [$playlist->name => $this->getVideos($playlist->id,$userID,Null,false)];
+            $vid = $this->getVideos($playlist->id,$userID,Null,false);
+            $vcount += count($vid);
+            $videos[] = [$playlist->name => $vid];
         }
 
         $channel->playlistCount = count($playlists);
-        $channel->videosCount = count($videos);
+        $channel->videosCount = $vcount;
 
         $this->jsonRender(['channel'=>$channel,'videos'=>$videos],$this->language);
     }
