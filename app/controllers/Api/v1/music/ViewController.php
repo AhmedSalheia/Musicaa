@@ -35,7 +35,10 @@ class ViewController extends AbstractController
             $videos[] = [$playlist->name => $this->getVideos($playlist->id,$userID,Null,false)];
         }
 
-        $this->jsonRender(['video'=>$videos],$this->language);
+        $channel->playlistCount = count($playlists);
+        $channel->videosCount = count($videos);
+
+        $this->jsonRender(['channel'=>$channel,'videos'=>$videos],$this->language);
     }
 
     public function videoAction()
