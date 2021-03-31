@@ -25,3 +25,5 @@ $_['plySongNoDelErr'] = 'The Song is Not In That playlist';
 $_['plylstCreateSuc'] = 'Playlist Created Successfully';
 $_['plySongAddSuc'] = 'Song Added Successfully';
 $_['plySongDelSuc'] = 'Song Deleted Successfully';
+
+$_['notSong']   = 'The Thing You Requested Is Not A Song';

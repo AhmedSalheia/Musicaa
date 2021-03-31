@@ -46,6 +46,9 @@ class ViewController extends AbstractController
 
     public function videoAction()
     {
+        $this->_lang->load('api.errors.music');
+        extract($this->_lang->get(),EXTR_PREFIX_ALL,'music');
+
         $token = $this->requireAuth();
         $userID = $token->data->user_id;
 
@@ -53,6 +56,10 @@ class ViewController extends AbstractController
 
         $this->track($userID,'view.video',$id);
         $video = $this->getVideoById($id,$userID);
+        if ($video === false)
+        {
+            $this->jsonRender([],$this->language,$music_notSong);
+        }
 
         $playlist = Playlists::getByPK($video->playlistId);
         $channel = Channels::getByPK($playlist->channelId);

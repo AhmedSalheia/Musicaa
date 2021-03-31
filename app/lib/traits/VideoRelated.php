@@ -82,38 +82,40 @@ trait VideoRelated
             ];
 
             $response = $this->service->videos->listVideos('snippet,contentDetails,statistics', $queryParams)->getItems()[0];
-            var_dump($response->snippet->categoryId);exit();
-            $channel = $this->getChannel($response->snippet->channelId);
-            $playlists = $this->getPlaylists($response->snippet->channelId);
 
-            foreach ($playlists as $playlist) {
-                $this->getVideos($playlist->id, $userId,Null, false);
-            }
+            if ($response->snippet->categoryId === '10'){
+                $channel = $this->getChannel($response->snippet->channelId);
+                $playlists = $this->getPlaylists($response->snippet->channelId);
 
-            $video = Video::getByPK($id);
-
-            if ($video === false)
-            {
-                $playlist = Playlists::getMainPlaylist($channel->id);
-
-                $video = new Video();
-                $video->id = $id;
-                $video->name = $response->snippet->title;
-                $video->playlistId = $playlist->id;
-                $video->img = $this->getImage($response);
-                $video->link = $this->getVideoLink($id);
-
-                if ($video->save('upd') === false)
-                {
-                    $undownloadable = new Undownloadable();
-                            $undownloadable->id = $id;
-                            $undownloadable->name = $response->snippet->title;
-                            $undownloadable->playlistId = $playlist->id;
-                            $undownloadable->img = $this->getImage($response);
-                    $undownloadable->save('upd');
-
-                    $this->jsonRender([],$this->language,$music_vidCantSave);
+                foreach ($playlists as $playlist) {
+                    $this->getVideos($playlist->id, $userId, Null, false);
                 }
+
+                $video = Video::getByPK($id);
+
+                if ($video === false) {
+                    $playlist = Playlists::getMainPlaylist($channel->id);
+
+                    $video = new Video();
+                    $video->id = $id;
+                    $video->name = $response->snippet->title;
+                    $video->playlistId = $playlist->id;
+                    $video->img = $this->getImage($response);
+                    $video->link = $this->getVideoLink($id);
+
+                    if ($video->save('upd') === false) {
+                        $undownloadable = new Undownloadable();
+                        $undownloadable->id = $id;
+                        $undownloadable->name = $response->snippet->title;
+                        $undownloadable->playlistId = $playlist->id;
+                        $undownloadable->img = $this->getImage($response);
+                        $undownloadable->save('upd');
+
+                        $this->jsonRender([], $this->language, $music_vidCantSave);
+                    }
+                }
+            }else{
+                return false;
             }
         }
         $video->is_favorite = $this->is_favorite($userId,$video->id);
