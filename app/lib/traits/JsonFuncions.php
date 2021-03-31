@@ -4,6 +4,8 @@
 namespace MUSICAA\lib\traits;
 
 
+use stdClass;
+
 trait JsonFuncions
 {
 
@@ -17,7 +19,8 @@ trait JsonFuncions
 
         $output = [
             'response' => [
-                'message'   =>  $message
+                'message'   =>  $message,
+                'data'      =>  (new stdClass())
             ],
             'status' => $status,
             'Content-Language' => $language
