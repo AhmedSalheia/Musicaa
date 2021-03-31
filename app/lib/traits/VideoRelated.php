@@ -82,7 +82,7 @@ trait VideoRelated
             ];
 
             $response = $this->service->videos->listVideos('snippet,contentDetails,statistics', $queryParams)->getItems()[0];
-            var_dump($response->kind === YOUTUBE_VIDEO);exit();
+            var_dump($response);exit();
             $channel = $this->getChannel($response->snippet->channelId);
             $playlists = $this->getPlaylists($response->snippet->channelId);
 
