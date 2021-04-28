@@ -6,6 +6,7 @@ namespace MUSICAA\lib\traits;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 trait Mailing
 {
@@ -21,9 +22,11 @@ trait Mailing
             $mail->SMTPSecure = 'ssl';
             $mail->SMTPAuth   = true;
 
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+
             $username = 'noreply@musicaa.app';
             $mail->Username = $username;
-            $mail->Password = '6jS0U#YG^!jJ';
+            $mail->Password = 'd-nwc.vvmPuC';
             $mail->SetFrom($username, 'Musicaa App');
             $mail->addAddress($to);
 

@@ -49,8 +49,13 @@ class RegisterController extends AbstractController
 
         $save = $user->save();
 
-        if (!is_object($save))
+        if (!is_object($save) || $save->verified === 'n')
         {
+            if ($save->verified === 'n')
+            {
+                $user->id = $save->id;
+                $save = $user->save('upd');
+            }
 
             if ($save === true)
             {
@@ -62,16 +67,22 @@ class RegisterController extends AbstractController
                 $verify->verification = $ver;
 
                 /////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
-                if ($email === 'test@test.com' || $email === 'test2@test.com')                                                                                 //////
+                if ($email === 'test@test.com' || $email === 'test2@test.com')                                                  //////
                 {                                                                                                               //////
                     $verify->verification = "111111";                                                                           //////
                 }                                                                                                               //////
                 /////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
                 $save = $verify->save();
-                if ($save === true)
+
+                if ($save === true || is_object($save))
                 {
+                    if (is_object($save))
+                    {
+                        $ver = $save->verification;
+                    }
                     $verification = '<h4>Your VerificationController Code is </h4><h1>'.$ver.'</h1>';
                     $mail = $this->mail($email,$verification,'Verify Your Account');
+                    var_dump($mail);
 
                     if (!$mail)
                     {

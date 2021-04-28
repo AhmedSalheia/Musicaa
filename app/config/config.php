@@ -12,8 +12,8 @@ if (!defined('DS')){
 
 defined('DATABASE_HOST_NAME')? null : define('DATABASE_HOST_NAME','business29.web-hosting.com'); //business29.web-hosting.com
 defined('DATABASE_DB_NAME')? null : define('DATABASE_DB_NAME','progwlfo_musicaabase');
-defined('DATABASE_USER_NAME')? null : define('DATABASE_USER_NAME','progwlfo_musicaabase'); //progwlfo_musicaabase
-defined('DATABASE_PASSWORD')? null : define('DATABASE_PASSWORD','musicaabase123'); //musicaabase123
+defined('DATABASE_USER_NAME')? null : define('DATABASE_USER_NAME','root'); //progwlfo_musicaabase
+defined('DATABASE_PASSWORD')? null : define('DATABASE_PASSWORD',''); //musicaabase123
 defined('DATABASE_PORT_NUMBER')? null : define('DATABASE_PORT_NUMBER',3306);
 defined('DATABASE_CONN_DRIVER')? null : define('DATABASE_CONN_DRIVER',1);
 

@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/languages/en/api/errors/music.lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/languages/en/api/errors/music.lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/Mailing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/Mailing.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +260,11 @@
       <workItem from="1612307441887" duration="24000" />
       <workItem from="1616324566738" duration="3341000" />
       <workItem from="1617025523534" duration="6068000" />
-      <workItem from="1617193190013" duration="3315000" />
+      <workItem from="1617193190013" duration="3940000" />
+      <workItem from="1617205615764" duration="6000" />
+      <workItem from="1617576751140" duration="2000" />
+      <workItem from="1619530835174" duration="475000" />
+      <workItem from="1619645007372" duration="2936000" />
     </task>
     <servers />
   </component>
