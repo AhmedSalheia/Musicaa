@@ -22,7 +22,7 @@ trait Mailing
             $mail->SMTPSecure = 'ssl';
             $mail->SMTPAuth   = true;
 
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+//            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
             $username = 'noreply@musicaa.app';
             $mail->Username = $username;
