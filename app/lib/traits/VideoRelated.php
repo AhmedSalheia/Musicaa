@@ -240,17 +240,17 @@ trait VideoRelated
 			$videos['channels'] = Channels::get('SELECT * FROM channels ORDER BY RAND() LIMIT 0,10');
 		}
 
-		foreach ($videos['videos'] as $video)
-		{
-			if (isset($video->link))
-			{
-				unset($video->link);
-			}
-			if (isset($video->playlistId))
-			{
-				unset($video->playlistId);
-			}
-		}
+//		foreach ($videos['videos'] as $video)
+//		{
+//			if (isset($video->link))
+//			{
+//				unset($video->link);
+//			}
+//			if (isset($video->playlistId))
+//			{
+//				unset($video->playlistId);
+//			}
+//		}
 
 		$id = new Ids();
 		$id->userId = $userId;
