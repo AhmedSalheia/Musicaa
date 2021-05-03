@@ -163,7 +163,7 @@ trait ChannelThings
                 foreach ($videos as $vid)
                 {
                     $vid->is_favorite = $this->is_favorite($userId,$vid->id);
-                    unset($vid->link,$vid->playlistId);
+                    unset($vid->playlistId);
                 }
             }
         }

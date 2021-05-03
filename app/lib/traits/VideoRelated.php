@@ -62,7 +62,7 @@ trait VideoRelated
 
         foreach ($videos as $video)
         {
-            unset($video->link,$video->playlistId);
+            unset($video->playlistId);
         }
 
         return $videos;
