@@ -127,30 +127,59 @@ class PlaylistController extends \MUSICAA\controllers\AbstractController
         $token = $this->requireAuth();
         $user = $token->data->user_id;
 
-        $songId = $this->filterStr($this->checkInput('post','songId'));
-        if (Video::getByPK($songId) === false)
-        {
-            $this->jsonRender([],$this->language,$music_songDoesNotExistErr);
-        }
-
         $plylstID = $this->filterStr($this->checkInput('post','playlistId'));
         if (UserPlaylists::getByPK($plylstID) === false)
         {
             $this->jsonRender([],$this->language,$music_plylstDontErr);
         }
 
-        $playSong = UserPlaylistSongs::get('SELECT * FROM userplaylistsongs where playlistId="'.$plylstID.'" AND songId="'.$songId.'"');
-
-        if ($playSong !== false)
+        $type = $this->_params[0]??'';
+        switch (strtolower($type))
         {
-            $playSong = $playSong[0];
-            if($playSong->delete() !== false)
-            {
-                $this->jsonRender([], $this->language,$music_plySongDelSuc,true);
-            }
+            case 'playlist':
+                $playSongs = UserPlaylistSongs::get('SELECT * FROM userplaylistsongs where playlistId="'.$plylstID.'"');
 
-            $this->jsonRender([], $this->language,$music_plySongDelErr);
+                if ($playSongs !== false)
+                {
+                    foreach ($playSongs as $playSong)
+                    {
+                        if($playSong->delete() === false)
+                        {
+                            $this->jsonRender([], $this->language,$music_plySongDelErr);
+                        }
+                    }
+                }
+
+                $playlist = UserPlaylists::getByPK($plylstID);
+                $playlist->delete();
+
+                $this->jsonRender([], $this->language,$music_plyDelSuc,true);
+                break;
+            case 'song':
+                $songId = $this->filterStr($this->checkInput('post','songId'));
+                if (Video::getByPK($songId) === false)
+                {
+                    $this->jsonRender([],$this->language,$music_songDoesNotExistErr);
+                }
+
+                $playSong = UserPlaylistSongs::get('SELECT * FROM userplaylistsongs where playlistId="'.$plylstID.'" AND songId="'.$songId.'"');
+
+                if ($playSong !== false)
+                {
+                    $playSong = $playSong[0];
+                    if($playSong->delete() !== false)
+                    {
+                        $this->jsonRender([], $this->language,$music_plySongDelSuc,true);
+                    }
+
+                    $this->jsonRender([], $this->language,$music_plySongDelErr);
+                }
+                $this->jsonRender([], $this->language,$music_plySongNoDelErr);
+                break;
+
+            default:
+                $this->jsonRender([], $this->language,$music_noCatSelected);
+                break;
         }
-        $this->jsonRender([], $this->language,$music_plySongNoDelErr);
     }
 }

@@ -46,7 +46,7 @@ class FavoriteController extends AbstractController
 
         $this->track($userID,'Favorite.show',count($videos));
 
-        $this->jsonRender([$videos],$this->language);
+        $this->jsonRender(['songs'=>$videos],$this->language);
     }
 
     public function addAction()

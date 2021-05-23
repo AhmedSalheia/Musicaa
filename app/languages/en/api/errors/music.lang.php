@@ -21,9 +21,13 @@ $_['plySongAddErr'] = 'Error Adding The Song To The Wanted Playlist';
 $_['plySongAddAlrErr'] = 'The Song Already In The Playlist';
 $_['plySongDelErr'] = 'Error Delete The Song From The Playlist';
 $_['plySongNoDelErr'] = 'The Song is Not In That playlist';
+$_['plyEmpErr'] = 'The Playlist Have No Songs';
+
+$_['noCatSelected'] = 'Sorry, No Category Selected';
 
 $_['plylstCreateSuc'] = 'Playlist Created Successfully';
 $_['plySongAddSuc'] = 'Song Added Successfully';
 $_['plySongDelSuc'] = 'Song Deleted Successfully';
+$_['plyDelSuc'] = 'Playlist Deleted Successfully';
 
 $_['notSong']   = 'The Thing You Requested Is Not A Song';
