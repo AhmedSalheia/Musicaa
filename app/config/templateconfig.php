@@ -22,12 +22,12 @@ return [
     'header'=>[
         'public' => [
             'css' => [
-                'plugins' => CSS.'plugins.css',
-                'style' => CSS.'style.css',
+                'plugins' => CSS.'website/plugins.css',
+                'style' => CSS.'website/style.css',
                 'fontawsom' => 'https://use.fontawesome.com/releases/v5.11.2/css/all.css',
                 'google' => 'https://fonts.googleapis.com/css?family=Raleway&display=swap',
-                'swiper' => CSS.'swiper.min.css',
-                'animate' => CSS.'animate.css'
+                'swiper' => CSS.'website/swiper.min.css',
+                'animate' => CSS.'website/animate.css'
             ],
             'js'  => [
 
@@ -48,10 +48,10 @@ return [
     'footer'=>[
         'public' => [
             'js' => [
-                'JQuery' => JS.'jQuery3.4.1.js',
-                'bootstrap' => JS.'bootstrap.bundle.min.js',
-                'swiper' => JS.'swiper.min.js',
-                'script' => JS.'script.js'
+                'JQuery' => JS.'website/jQuery3.4.1.js',
+                'swiper' => JS.'website/swiper.min.js',
+                'wow'    => JS.'website/wow.js',
+                'script' => JS.'website/script.js'
             ]
         ],
         'dashboard' => [

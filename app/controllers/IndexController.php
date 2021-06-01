@@ -8,6 +8,6 @@ class IndexController extends AbstractController
 {
     use Helper;
     public function defaultAction(){
-        echo 'home';
+        $this->_view();
     }
 }
