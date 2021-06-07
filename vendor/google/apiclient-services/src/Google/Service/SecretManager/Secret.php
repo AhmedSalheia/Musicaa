@@ -15,13 +15,21 @@
  * the License.
  */
 
-class Google_Service_SecretManager_Secret extends Google_Model
+class Google_Service_SecretManager_Secret extends Google_Collection
 {
+  protected $collection_key = 'topics';
   public $createTime;
+  public $etag;
+  public $expireTime;
   public $labels;
   public $name;
   protected $replicationType = 'Google_Service_SecretManager_Replication';
   protected $replicationDataType = '';
+  protected $rotationType = 'Google_Service_SecretManager_Rotation';
+  protected $rotationDataType = '';
+  protected $topicsType = 'Google_Service_SecretManager_Topic';
+  protected $topicsDataType = 'array';
+  public $ttl;
 
   public function setCreateTime($createTime)
   {
@@ -30,6 +38,22 @@ class Google_Service_SecretManager_Secret extends Google_Model
   public function getCreateTime()
   {
     return $this->createTime;
+  }
+  public function setEtag($etag)
+  {
+    $this->etag = $etag;
+  }
+  public function getEtag()
+  {
+    return $this->etag;
+  }
+  public function setExpireTime($expireTime)
+  {
+    $this->expireTime = $expireTime;
+  }
+  public function getExpireTime()
+  {
+    return $this->expireTime;
   }
   public function setLabels($labels)
   {
@@ -60,5 +84,41 @@ class Google_Service_SecretManager_Secret extends Google_Model
   public function getReplication()
   {
     return $this->replication;
+  }
+  /**
+   * @param Google_Service_SecretManager_Rotation
+   */
+  public function setRotation(Google_Service_SecretManager_Rotation $rotation)
+  {
+    $this->rotation = $rotation;
+  }
+  /**
+   * @return Google_Service_SecretManager_Rotation
+   */
+  public function getRotation()
+  {
+    return $this->rotation;
+  }
+  /**
+   * @param Google_Service_SecretManager_Topic[]
+   */
+  public function setTopics($topics)
+  {
+    $this->topics = $topics;
+  }
+  /**
+   * @return Google_Service_SecretManager_Topic[]
+   */
+  public function getTopics()
+  {
+    return $this->topics;
+  }
+  public function setTtl($ttl)
+  {
+    $this->ttl = $ttl;
+  }
+  public function getTtl()
+  {
+    return $this->ttl;
   }
 }

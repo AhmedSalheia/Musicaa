@@ -36,6 +36,7 @@ class Google_Service_Transcoder_Job extends Google_Collection
   public $startTime;
   public $state;
   public $templateId;
+  public $ttlAfterCompletionDays;
 
   /**
    * @param Google_Service_Transcoder_JobConfig
@@ -68,14 +69,14 @@ class Google_Service_Transcoder_Job extends Google_Collection
     return $this->endTime;
   }
   /**
-   * @param Google_Service_Transcoder_FailureDetail
+   * @param Google_Service_Transcoder_FailureDetail[]
    */
   public function setFailureDetails($failureDetails)
   {
     $this->failureDetails = $failureDetails;
   }
   /**
-   * @return Google_Service_Transcoder_FailureDetail
+   * @return Google_Service_Transcoder_FailureDetail[]
    */
   public function getFailureDetails()
   {
@@ -172,5 +173,13 @@ class Google_Service_Transcoder_Job extends Google_Collection
   public function getTemplateId()
   {
     return $this->templateId;
+  }
+  public function setTtlAfterCompletionDays($ttlAfterCompletionDays)
+  {
+    $this->ttlAfterCompletionDays = $ttlAfterCompletionDays;
+  }
+  public function getTtlAfterCompletionDays()
+  {
+    return $this->ttlAfterCompletionDays;
   }
 }

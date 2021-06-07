@@ -18,18 +18,27 @@
 class Google_Service_AnalyticsData_BatchRunReportsResponse extends Google_Collection
 {
   protected $collection_key = 'reports';
+  public $kind;
   protected $reportsType = 'Google_Service_AnalyticsData_RunReportResponse';
   protected $reportsDataType = 'array';
 
+  public function setKind($kind)
+  {
+    $this->kind = $kind;
+  }
+  public function getKind()
+  {
+    return $this->kind;
+  }
   /**
-   * @param Google_Service_AnalyticsData_RunReportResponse
+   * @param Google_Service_AnalyticsData_RunReportResponse[]
    */
   public function setReports($reports)
   {
     $this->reports = $reports;
   }
   /**
-   * @return Google_Service_AnalyticsData_RunReportResponse
+   * @return Google_Service_AnalyticsData_RunReportResponse[]
    */
   public function getReports()
   {

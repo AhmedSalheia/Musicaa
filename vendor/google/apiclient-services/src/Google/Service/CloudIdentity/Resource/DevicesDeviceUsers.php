@@ -92,7 +92,7 @@ class Google_Service_CloudIdentity_Resource_DevicesDeviceUsers extends Google_Se
    * assigned to the User.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string customer Required. [Resource
+   * @opt_param string customer Optional. [Resource
    * name](https://cloud.google.com/apis/design/resource_names) of the customer.
    * If you're using this API for your own organization, use
    * `customers/my_customer` If you're using this API to manage another
@@ -116,7 +116,7 @@ class Google_Service_CloudIdentity_Resource_DevicesDeviceUsers extends Google_Se
    * assigned to the User.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string customer Required. [Resource
+   * @opt_param string customer Optional. [Resource
    * name](https://cloud.google.com/apis/design/resource_names) of the customer.
    * If you're using this API for your own organization, use
    * `customers/my_customer` If you're using this API to manage another
@@ -138,14 +138,16 @@ class Google_Service_CloudIdentity_Resource_DevicesDeviceUsers extends Google_Se
    * resource name of the device. Format: devices/{device}
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string customer Required. [Resource
+   * @opt_param string customer Optional. [Resource
    * name](https://cloud.google.com/apis/design/resource_names) of the customer.
    * If you're using this API for your own organization, use
    * `customers/my_customer` If you're using this API to manage another
    * organization, use `customers/{customer_id}`, where customer_id is the
    * customer to whom the device belongs.
    * @opt_param string filter Optional. Additional restrictions when fetching list
-   * of devices. [HC article](https://support.google.com/a/answer/7549103)
+   * of devices. For a list of search fields, refer to [Mobile device search
+   * fields](https://developers.google.com/admin-sdk/directory/v1/search-
+   * operators). Multiple search fields are separated by the space character.
    * @opt_param string orderBy Optional. Order specification for devices in the
    * response.
    * @opt_param int pageSize Optional. The maximum number of DeviceUsers to

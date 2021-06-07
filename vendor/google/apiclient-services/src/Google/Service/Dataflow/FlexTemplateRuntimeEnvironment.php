@@ -21,13 +21,16 @@ class Google_Service_Dataflow_FlexTemplateRuntimeEnvironment extends Google_Coll
   public $additionalExperiments;
   public $additionalUserLabels;
   public $enableStreamingEngine;
+  public $flexrsGoal;
   public $ipConfiguration;
   public $kmsKeyName;
   public $machineType;
   public $maxWorkers;
   public $network;
   public $numWorkers;
+  public $sdkContainerImage;
   public $serviceAccountEmail;
+  public $stagingLocation;
   public $subnetwork;
   public $tempLocation;
   public $workerRegion;
@@ -57,6 +60,14 @@ class Google_Service_Dataflow_FlexTemplateRuntimeEnvironment extends Google_Coll
   public function getEnableStreamingEngine()
   {
     return $this->enableStreamingEngine;
+  }
+  public function setFlexrsGoal($flexrsGoal)
+  {
+    $this->flexrsGoal = $flexrsGoal;
+  }
+  public function getFlexrsGoal()
+  {
+    return $this->flexrsGoal;
   }
   public function setIpConfiguration($ipConfiguration)
   {
@@ -106,6 +117,14 @@ class Google_Service_Dataflow_FlexTemplateRuntimeEnvironment extends Google_Coll
   {
     return $this->numWorkers;
   }
+  public function setSdkContainerImage($sdkContainerImage)
+  {
+    $this->sdkContainerImage = $sdkContainerImage;
+  }
+  public function getSdkContainerImage()
+  {
+    return $this->sdkContainerImage;
+  }
   public function setServiceAccountEmail($serviceAccountEmail)
   {
     $this->serviceAccountEmail = $serviceAccountEmail;
@@ -113,6 +132,14 @@ class Google_Service_Dataflow_FlexTemplateRuntimeEnvironment extends Google_Coll
   public function getServiceAccountEmail()
   {
     return $this->serviceAccountEmail;
+  }
+  public function setStagingLocation($stagingLocation)
+  {
+    $this->stagingLocation = $stagingLocation;
+  }
+  public function getStagingLocation()
+  {
+    return $this->stagingLocation;
   }
   public function setSubnetwork($subnetwork)
   {

@@ -24,6 +24,7 @@ class Google_Service_Area120Tables_ColumnDescription extends Google_Collection
   protected $labelsDataType = 'array';
   protected $lookupDetailsType = 'Google_Service_Area120Tables_LookupDetails';
   protected $lookupDetailsDataType = '';
+  public $multipleValuesDisallowed;
   public $name;
   protected $relationshipDetailsType = 'Google_Service_Area120Tables_RelationshipDetails';
   protected $relationshipDetailsDataType = '';
@@ -45,14 +46,14 @@ class Google_Service_Area120Tables_ColumnDescription extends Google_Collection
     return $this->id;
   }
   /**
-   * @param Google_Service_Area120Tables_LabeledItem
+   * @param Google_Service_Area120Tables_LabeledItem[]
    */
   public function setLabels($labels)
   {
     $this->labels = $labels;
   }
   /**
-   * @return Google_Service_Area120Tables_LabeledItem
+   * @return Google_Service_Area120Tables_LabeledItem[]
    */
   public function getLabels()
   {
@@ -71,6 +72,14 @@ class Google_Service_Area120Tables_ColumnDescription extends Google_Collection
   public function getLookupDetails()
   {
     return $this->lookupDetails;
+  }
+  public function setMultipleValuesDisallowed($multipleValuesDisallowed)
+  {
+    $this->multipleValuesDisallowed = $multipleValuesDisallowed;
+  }
+  public function getMultipleValuesDisallowed()
+  {
+    return $this->multipleValuesDisallowed;
   }
   public function setName($name)
   {

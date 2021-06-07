@@ -17,42 +17,47 @@
 
 class Google_Service_Compute_NetworkInterface extends Google_Collection
 {
-  protected $collection_key = 'aliasIpRanges';
+  protected $collection_key = 'ipv6AccessConfigs';
   protected $accessConfigsType = 'Google_Service_Compute_AccessConfig';
   protected $accessConfigsDataType = 'array';
   protected $aliasIpRangesType = 'Google_Service_Compute_AliasIpRange';
   protected $aliasIpRangesDataType = 'array';
   public $fingerprint;
+  protected $ipv6AccessConfigsType = 'Google_Service_Compute_AccessConfig';
+  protected $ipv6AccessConfigsDataType = 'array';
+  public $ipv6AccessType;
   public $ipv6Address;
   public $kind;
   public $name;
   public $network;
   public $networkIP;
+  public $nicType;
+  public $stackType;
   public $subnetwork;
 
   /**
-   * @param Google_Service_Compute_AccessConfig
+   * @param Google_Service_Compute_AccessConfig[]
    */
   public function setAccessConfigs($accessConfigs)
   {
     $this->accessConfigs = $accessConfigs;
   }
   /**
-   * @return Google_Service_Compute_AccessConfig
+   * @return Google_Service_Compute_AccessConfig[]
    */
   public function getAccessConfigs()
   {
     return $this->accessConfigs;
   }
   /**
-   * @param Google_Service_Compute_AliasIpRange
+   * @param Google_Service_Compute_AliasIpRange[]
    */
   public function setAliasIpRanges($aliasIpRanges)
   {
     $this->aliasIpRanges = $aliasIpRanges;
   }
   /**
-   * @return Google_Service_Compute_AliasIpRange
+   * @return Google_Service_Compute_AliasIpRange[]
    */
   public function getAliasIpRanges()
   {
@@ -65,6 +70,28 @@ class Google_Service_Compute_NetworkInterface extends Google_Collection
   public function getFingerprint()
   {
     return $this->fingerprint;
+  }
+  /**
+   * @param Google_Service_Compute_AccessConfig[]
+   */
+  public function setIpv6AccessConfigs($ipv6AccessConfigs)
+  {
+    $this->ipv6AccessConfigs = $ipv6AccessConfigs;
+  }
+  /**
+   * @return Google_Service_Compute_AccessConfig[]
+   */
+  public function getIpv6AccessConfigs()
+  {
+    return $this->ipv6AccessConfigs;
+  }
+  public function setIpv6AccessType($ipv6AccessType)
+  {
+    $this->ipv6AccessType = $ipv6AccessType;
+  }
+  public function getIpv6AccessType()
+  {
+    return $this->ipv6AccessType;
   }
   public function setIpv6Address($ipv6Address)
   {
@@ -105,6 +132,22 @@ class Google_Service_Compute_NetworkInterface extends Google_Collection
   public function getNetworkIP()
   {
     return $this->networkIP;
+  }
+  public function setNicType($nicType)
+  {
+    $this->nicType = $nicType;
+  }
+  public function getNicType()
+  {
+    return $this->nicType;
+  }
+  public function setStackType($stackType)
+  {
+    $this->stackType = $stackType;
+  }
+  public function getStackType()
+  {
+    return $this->stackType;
   }
   public function setSubnetwork($subnetwork)
   {

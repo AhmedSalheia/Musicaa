@@ -20,12 +20,15 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   protected $collection_key = 'desiredLocations';
   protected $desiredAddonsConfigType = 'Google_Service_Container_AddonsConfig';
   protected $desiredAddonsConfigDataType = '';
+  protected $desiredAutopilotType = 'Google_Service_Container_Autopilot';
+  protected $desiredAutopilotDataType = '';
   protected $desiredBinaryAuthorizationType = 'Google_Service_Container_BinaryAuthorization';
   protected $desiredBinaryAuthorizationDataType = '';
   protected $desiredClusterAutoscalingType = 'Google_Service_Container_ClusterAutoscaling';
   protected $desiredClusterAutoscalingDataType = '';
   protected $desiredDatabaseEncryptionType = 'Google_Service_Container_DatabaseEncryption';
   protected $desiredDatabaseEncryptionDataType = '';
+  public $desiredDatapathProvider;
   protected $desiredDefaultSnatStatusType = 'Google_Service_Container_DefaultSnatStatus';
   protected $desiredDefaultSnatStatusDataType = '';
   public $desiredImageType;
@@ -41,8 +44,11 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   protected $desiredNodePoolAutoscalingDataType = '';
   public $desiredNodePoolId;
   public $desiredNodeVersion;
+  protected $desiredNotificationConfigType = 'Google_Service_Container_NotificationConfig';
+  protected $desiredNotificationConfigDataType = '';
   protected $desiredPrivateClusterConfigType = 'Google_Service_Container_PrivateClusterConfig';
   protected $desiredPrivateClusterConfigDataType = '';
+  public $desiredPrivateIpv6GoogleAccess;
   protected $desiredReleaseChannelType = 'Google_Service_Container_ReleaseChannel';
   protected $desiredReleaseChannelDataType = '';
   protected $desiredResourceUsageExportConfigType = 'Google_Service_Container_ResourceUsageExportConfig';
@@ -67,6 +73,20 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   public function getDesiredAddonsConfig()
   {
     return $this->desiredAddonsConfig;
+  }
+  /**
+   * @param Google_Service_Container_Autopilot
+   */
+  public function setDesiredAutopilot(Google_Service_Container_Autopilot $desiredAutopilot)
+  {
+    $this->desiredAutopilot = $desiredAutopilot;
+  }
+  /**
+   * @return Google_Service_Container_Autopilot
+   */
+  public function getDesiredAutopilot()
+  {
+    return $this->desiredAutopilot;
   }
   /**
    * @param Google_Service_Container_BinaryAuthorization
@@ -109,6 +129,14 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   public function getDesiredDatabaseEncryption()
   {
     return $this->desiredDatabaseEncryption;
+  }
+  public function setDesiredDatapathProvider($desiredDatapathProvider)
+  {
+    $this->desiredDatapathProvider = $desiredDatapathProvider;
+  }
+  public function getDesiredDatapathProvider()
+  {
+    return $this->desiredDatapathProvider;
   }
   /**
    * @param Google_Service_Container_DefaultSnatStatus
@@ -223,6 +251,20 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
     return $this->desiredNodeVersion;
   }
   /**
+   * @param Google_Service_Container_NotificationConfig
+   */
+  public function setDesiredNotificationConfig(Google_Service_Container_NotificationConfig $desiredNotificationConfig)
+  {
+    $this->desiredNotificationConfig = $desiredNotificationConfig;
+  }
+  /**
+   * @return Google_Service_Container_NotificationConfig
+   */
+  public function getDesiredNotificationConfig()
+  {
+    return $this->desiredNotificationConfig;
+  }
+  /**
    * @param Google_Service_Container_PrivateClusterConfig
    */
   public function setDesiredPrivateClusterConfig(Google_Service_Container_PrivateClusterConfig $desiredPrivateClusterConfig)
@@ -235,6 +277,14 @@ class Google_Service_Container_ClusterUpdate extends Google_Collection
   public function getDesiredPrivateClusterConfig()
   {
     return $this->desiredPrivateClusterConfig;
+  }
+  public function setDesiredPrivateIpv6GoogleAccess($desiredPrivateIpv6GoogleAccess)
+  {
+    $this->desiredPrivateIpv6GoogleAccess = $desiredPrivateIpv6GoogleAccess;
+  }
+  public function getDesiredPrivateIpv6GoogleAccess()
+  {
+    return $this->desiredPrivateIpv6GoogleAccess;
   }
   /**
    * @param Google_Service_Container_ReleaseChannel

@@ -18,11 +18,21 @@
 class Google_Service_Area120Tables_Workspace extends Google_Collection
 {
   protected $collection_key = 'tables';
+  public $createTime;
   public $displayName;
   public $name;
   protected $tablesType = 'Google_Service_Area120Tables_Table';
   protected $tablesDataType = 'array';
+  public $updateTime;
 
+  public function setCreateTime($createTime)
+  {
+    $this->createTime = $createTime;
+  }
+  public function getCreateTime()
+  {
+    return $this->createTime;
+  }
   public function setDisplayName($displayName)
   {
     $this->displayName = $displayName;
@@ -40,17 +50,25 @@ class Google_Service_Area120Tables_Workspace extends Google_Collection
     return $this->name;
   }
   /**
-   * @param Google_Service_Area120Tables_Table
+   * @param Google_Service_Area120Tables_Table[]
    */
   public function setTables($tables)
   {
     $this->tables = $tables;
   }
   /**
-   * @return Google_Service_Area120Tables_Table
+   * @return Google_Service_Area120Tables_Table[]
    */
   public function getTables()
   {
     return $this->tables;
+  }
+  public function setUpdateTime($updateTime)
+  {
+    $this->updateTime = $updateTime;
+  }
+  public function getUpdateTime()
+  {
+    return $this->updateTime;
   }
 }

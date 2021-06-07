@@ -110,7 +110,7 @@ class PlaylistController extends \MUSICAA\controllers\AbstractController
             {
                 $song = Video::getByPK($playSong->songId);
                 unset($song->link,$song->playlistId);
-                $output[] = $song;
+                array_push($output,$song);
             }
 
             $this->jsonRender([$output],$this->language);

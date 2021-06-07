@@ -2,38 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/index/default.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/css/website/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/css/website/plugins.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/css/website/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/css/website/swiper.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/Scene.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/Scene2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/Scene3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/error.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/features.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/icon-musicaa.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/logo-footer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/logo-gray.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/logo-loder.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/music-home.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/images/website/musicaa-about.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/js/website/jQuery3.4.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/js/website/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/js/website/swiper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/assets/js/website/wow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/languages/ar/api/errors/data.lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/languages/ar/api/errors/music.lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/languages/ar/api/errors/user.lang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/templateconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/templateconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/DbController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/DbController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/template/loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/loader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/template/templatefooter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/templatefooter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/template/templateheaderend.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/templateheaderend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/template/templateheaderstart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/template/templateheaderstart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/FavoriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/FavoriteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/PlaylistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/PlaylistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/Language.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/youtube/Playlists.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/youtube/Playlists.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +106,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public_html/assets/js/website" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UnivWork" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -143,11 +123,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\musicaa\app\languages" />
       <recent name="D:\xampp\musicaa\public_html\assets\js\website" />
       <recent name="D:\xampp\musicaa\public_html\assets\images\website" />
       <recent name="D:\xampp\musicaa\public_html\assets\css\website" />
       <recent name="D:\xampp\musicaa\app\models\youtube" />
-      <recent name="D:\xampp\musicaa\app\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\musicaa\public_html\assets\js\website" />
@@ -302,7 +282,12 @@
       <workItem from="1621768748672" duration="2129000" />
       <workItem from="1622031181156" duration="2810000" />
       <workItem from="1622159413027" duration="79000" />
-      <workItem from="1622585043615" duration="755000" />
+      <workItem from="1622585043615" duration="861000" />
+      <workItem from="1622694201859" duration="5000" />
+      <workItem from="1622905694838" duration="1954000" />
+      <workItem from="1622922597642" duration="4699000" />
+      <workItem from="1622967859505" duration="65000" />
+      <workItem from="1623067141659" duration="367000" />
     </task>
     <servers />
   </component>

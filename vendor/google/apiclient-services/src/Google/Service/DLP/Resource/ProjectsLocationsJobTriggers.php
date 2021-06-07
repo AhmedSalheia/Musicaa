@@ -99,10 +99,7 @@ class Google_Service_DLP_Resource_ProjectsLocationsJobTriggers extends Google_Se
   /**
    * Inspect hybrid content and store findings to a trigger. The inspection will
    * be processed asynchronously. To review the findings monitor the jobs within
-   * the trigger. Early access feature is in a pre-release state and might change
-   * or have limited support. For more information, see
-   * https://cloud.google.com/products#product-launch-stages.
-   * (jobTriggers.hybridInspect)
+   * the trigger. (jobTriggers.hybridInspect)
    *
    * @param string $name Required. Resource name of the trigger to execute a
    * hybrid inspect on, for example `projects/dlp-test-
@@ -136,7 +133,7 @@ class Google_Service_DLP_Resource_ProjectsLocationsJobTriggers extends Google_Se
    * expressions are made up of one or more restrictions. * Restrictions can be
    * combined by `AND` or `OR` logical operators. A sequence of restrictions
    * implicitly uses `AND`. * A restriction has the form of `{field} {operator}
-   * {value}`. * Supported fields/values for inspect jobs: - `status` -
+   * {value}`. * Supported fields/values for inspect triggers: - `status` -
    * HEALTHY|PAUSED|CANCELLED - `inspected_storage` -
    * DATASTORE|CLOUD_STORAGE|BIGQUERY - 'last_run_time` - RFC 3339 formatted
    * timestamp, surrounded by quotation marks. Nanoseconds are ignored. -
@@ -161,6 +158,8 @@ class Google_Service_DLP_Resource_ProjectsLocationsJobTriggers extends Google_Se
    * @opt_param string pageToken Page token to continue retrieval. Comes from
    * previous call to ListJobTriggers. `order_by` field must not change for
    * subsequent calls.
+   * @opt_param string type The type of jobs. Will use `DlpJobType.INSPECT` if not
+   * set.
    * @return Google_Service_DLP_GooglePrivacyDlpV2ListJobTriggersResponse
    */
   public function listProjectsLocationsJobTriggers($parent, $optParams = array())

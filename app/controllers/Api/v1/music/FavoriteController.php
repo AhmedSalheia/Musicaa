@@ -5,6 +5,7 @@ namespace MUSICAA\controllers\Api\v1\music;
 
 
 use MUSICAA\controllers\AbstractController;
+use MUSICAA\lib\Language;
 use MUSICAA\lib\traits\Helper;
 use MUSICAA\models\youtube\Channels;
 use MUSICAA\models\youtube\Favorite;
@@ -15,6 +16,7 @@ use MUSICAA\models\youtube\Video;
 class FavoriteController extends AbstractController
 {
     use Helper;
+
     public function defaultAction()
     {
         $this->_lang->load('api.errors.music');
@@ -66,7 +68,7 @@ class FavoriteController extends AbstractController
                 $id = $this->filterStr($this->checkInput('post','videoId'));
 
                 $this->track($userID,'Favorite.add.vid',$id);
-                if (Video::getByPK($id) !== false)
+                if ($this->getVideoById($id,$userID,true) !== false)
                 {
                     $favorite = Favorite::getByUnique($userID);
 

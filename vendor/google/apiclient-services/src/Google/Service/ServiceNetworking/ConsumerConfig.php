@@ -29,6 +29,7 @@ class Google_Service_ServiceNetworking_ConsumerConfig extends Google_Collection
   public $producerNetwork;
   protected $reservedRangesType = 'Google_Service_ServiceNetworking_GoogleCloudServicenetworkingV1ConsumerConfigReservedRange';
   protected $reservedRangesDataType = 'array';
+  public $vpcScReferenceArchitectureEnabled;
 
   public function setConsumerExportCustomRoutes($consumerExportCustomRoutes)
   {
@@ -103,17 +104,25 @@ class Google_Service_ServiceNetworking_ConsumerConfig extends Google_Collection
     return $this->producerNetwork;
   }
   /**
-   * @param Google_Service_ServiceNetworking_GoogleCloudServicenetworkingV1ConsumerConfigReservedRange
+   * @param Google_Service_ServiceNetworking_GoogleCloudServicenetworkingV1ConsumerConfigReservedRange[]
    */
   public function setReservedRanges($reservedRanges)
   {
     $this->reservedRanges = $reservedRanges;
   }
   /**
-   * @return Google_Service_ServiceNetworking_GoogleCloudServicenetworkingV1ConsumerConfigReservedRange
+   * @return Google_Service_ServiceNetworking_GoogleCloudServicenetworkingV1ConsumerConfigReservedRange[]
    */
   public function getReservedRanges()
   {
     return $this->reservedRanges;
+  }
+  public function setVpcScReferenceArchitectureEnabled($vpcScReferenceArchitectureEnabled)
+  {
+    $this->vpcScReferenceArchitectureEnabled = $vpcScReferenceArchitectureEnabled;
+  }
+  public function getVpcScReferenceArchitectureEnabled()
+  {
+    return $this->vpcScReferenceArchitectureEnabled;
   }
 }

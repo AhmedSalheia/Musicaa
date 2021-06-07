@@ -18,18 +18,27 @@
 class Google_Service_AnalyticsData_BatchRunPivotReportsResponse extends Google_Collection
 {
   protected $collection_key = 'pivotReports';
+  public $kind;
   protected $pivotReportsType = 'Google_Service_AnalyticsData_RunPivotReportResponse';
   protected $pivotReportsDataType = 'array';
 
+  public function setKind($kind)
+  {
+    $this->kind = $kind;
+  }
+  public function getKind()
+  {
+    return $this->kind;
+  }
   /**
-   * @param Google_Service_AnalyticsData_RunPivotReportResponse
+   * @param Google_Service_AnalyticsData_RunPivotReportResponse[]
    */
   public function setPivotReports($pivotReports)
   {
     $this->pivotReports = $pivotReports;
   }
   /**
-   * @return Google_Service_AnalyticsData_RunPivotReportResponse
+   * @return Google_Service_AnalyticsData_RunPivotReportResponse[]
    */
   public function getPivotReports()
   {

@@ -51,18 +51,16 @@ class Google_Service_GoogleAnalyticsAdmin_Resource_Properties extends Google_Ser
    * @param string $name Required. The name of the Property to soft-delete.
    * Format: properties/{property_id} Example: "properties/1000"
    * @param array $optParams Optional parameters.
-   * @return Google_Service_GoogleAnalyticsAdmin_GoogleProtobufEmpty
+   * @return Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaProperty
    */
   public function delete($name, $optParams = array())
   {
     $params = array('name' => $name);
     $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params), "Google_Service_GoogleAnalyticsAdmin_GoogleProtobufEmpty");
+    return $this->call('delete', array($params), "Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaProperty");
   }
   /**
-   * Lookup for a single "GA4" Property. Throws "Target not found" if no such
-   * property found, if property is not of the type "GA4", or if caller does not
-   * have permissions to access it. (properties.get)
+   * Lookup for a single "GA4" Property. (properties.get)
    *
    * @param string $name Required. The name of the property to lookup. Format:
    * properties/{property_id} Example: "properties/1000"
@@ -76,6 +74,21 @@ class Google_Service_GoogleAnalyticsAdmin_Resource_Properties extends Google_Ser
     return $this->call('get', array($params), "Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaProperty");
   }
   /**
+   * Lookup for Google Signals settings for a property.
+   * (properties.getGoogleSignalsSettings)
+   *
+   * @param string $name Required. The name of the google signals settings to
+   * retrieve. Format: properties/{property}/googleSignalsSettings
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaGoogleSignalsSettings
+   */
+  public function getGoogleSignalsSettings($name, $optParams = array())
+  {
+    $params = array('name' => $name);
+    $params = array_merge($params, $optParams);
+    return $this->call('getGoogleSignalsSettings', array($params), "Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaGoogleSignalsSettings");
+  }
+  /**
    * Returns child Properties under the specified parent Account. Only "GA4"
    * properties will be returned. Properties will be excluded if the caller does
    * not have access. Soft-deleted (ie: "trashed") properties are excluded by
@@ -87,11 +100,11 @@ class Google_Service_GoogleAnalyticsAdmin_Resource_Properties extends Google_Ser
    * @opt_param string filter Required. An expression for filtering the results of
    * the request. Fields eligible for filtering are: `parent:`(The resource name
    * of the parent account) or `firebase_project:`(The id or number of the linked
-   * firebase project). Some examples of filters: | Filter | Description |
+   * firebase project). Some examples of filters: ``` | Filter | Description |
    * |-----------------------------|-------------------------------------------| |
    * parent:accounts/123 | The account with account id: 123. | | firebase_project
    * :project-id | The firebase project with id: project-id. | |
-   * firebase_project:123 | The firebase project with number: 123. |
+   * firebase_project:123 | The firebase project with number: 123. | ```
    * @opt_param int pageSize The maximum number of resources to return. The
    * service may return fewer than this value, even if there are additional pages.
    * If unspecified, at most 50 resources will be returned. The maximum value is
@@ -119,8 +132,10 @@ class Google_Service_GoogleAnalyticsAdmin_Resource_Properties extends Google_Ser
    * @param Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaProperty $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask The list of fields to be updated. Omitted fields
-   * will not be updated.
+   * @opt_param string updateMask Required. The list of fields to be updated.
+   * Field names must be in snake case (e.g., "field_to_update"). Omitted fields
+   * will not be updated. To replace the entire entity, use one path with the
+   * string "*" to match all fields.
    * @return Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaProperty
    */
   public function patch($name, Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaProperty $postBody, $optParams = array())
@@ -128,5 +143,27 @@ class Google_Service_GoogleAnalyticsAdmin_Resource_Properties extends Google_Ser
     $params = array('name' => $name, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaProperty");
+  }
+  /**
+   * Updates Google Signals settings for a property.
+   * (properties.updateGoogleSignalsSettings)
+   *
+   * @param string $name Output only. Resource name of this setting. Format:
+   * properties/{property_id}/googleSignalsSettings Example:
+   * "properties/1000/googleSignalsSettings"
+   * @param Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaGoogleSignalsSettings $postBody
+   * @param array $optParams Optional parameters.
+   *
+   * @opt_param string updateMask Required. The list of fields to be updated.
+   * Field names must be in snake case (e.g., "field_to_update"). Omitted fields
+   * will not be updated. To replace the entire entity, use one path with the
+   * string "*" to match all fields.
+   * @return Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaGoogleSignalsSettings
+   */
+  public function updateGoogleSignalsSettings($name, Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaGoogleSignalsSettings $postBody, $optParams = array())
+  {
+    $params = array('name' => $name, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('updateGoogleSignalsSettings', array($params), "Google_Service_GoogleAnalyticsAdmin_GoogleAnalyticsAdminV1alphaGoogleSignalsSettings");
   }
 }

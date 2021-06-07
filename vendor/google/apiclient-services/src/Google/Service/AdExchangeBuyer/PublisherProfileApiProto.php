@@ -22,6 +22,7 @@ class Google_Service_AdExchangeBuyer_PublisherProfileApiProto extends Google_Col
   public $buyerPitchStatement;
   public $directContact;
   public $exchange;
+  public $forecastInventory;
   public $googlePlusLink;
   public $isParent;
   public $isPublished;
@@ -77,6 +78,14 @@ class Google_Service_AdExchangeBuyer_PublisherProfileApiProto extends Google_Col
   public function getExchange()
   {
     return $this->exchange;
+  }
+  public function setForecastInventory($forecastInventory)
+  {
+    $this->forecastInventory = $forecastInventory;
+  }
+  public function getForecastInventory()
+  {
+    return $this->forecastInventory;
   }
   public function setGooglePlusLink($googlePlusLink)
   {
@@ -167,14 +176,14 @@ class Google_Service_AdExchangeBuyer_PublisherProfileApiProto extends Google_Col
     return $this->publisherAppIds;
   }
   /**
-   * @param Google_Service_AdExchangeBuyer_MobileApplication
+   * @param Google_Service_AdExchangeBuyer_MobileApplication[]
    */
   public function setPublisherApps($publisherApps)
   {
     $this->publisherApps = $publisherApps;
   }
   /**
-   * @return Google_Service_AdExchangeBuyer_MobileApplication
+   * @return Google_Service_AdExchangeBuyer_MobileApplication[]
    */
   public function getPublisherApps()
   {

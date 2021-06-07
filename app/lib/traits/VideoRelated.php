@@ -68,7 +68,7 @@ trait VideoRelated
         return $videos;
     }
 
-    public function getVideoById($id,$userId)
+    public function getVideoById($id,$userId,$onlySong=false)
     {
         $this->_lang->load('api.errors.music');
         extract($this->_lang->get(),EXTR_PREFIX_ALL,'music');
@@ -87,8 +87,10 @@ trait VideoRelated
                 $channel = $this->getChannel($response->snippet->channelId);
                 $playlists = $this->getPlaylists($response->snippet->channelId);
 
-                foreach ($playlists as $playlist) {
-                    $this->getVideos($playlist->id, $userId, Null, false);
+                if (!$onlySong){
+                    foreach ($playlists as $playlist) {
+                        $this->getVideos($playlist->id, $userId, Null, false);
+                    }
                 }
 
                 $video = Video::getByPK($id);
@@ -234,23 +236,58 @@ trait VideoRelated
 						}
 					}
 				}
-			}
-		}else{
-			$videos['videos'] = Video::get('SELECT * FROM video ORDER BY RAND() LIMIT 0,24');
-			$videos['channels'] = Channels::get('SELECT * FROM channels ORDER BY RAND() LIMIT 0,10');
-		}
+			}else{
+                $video = Video::get('SELECT * FROM video ORDER BY RAND() LIMIT 0,50');
+                $channel = Channels::get('SELECT * FROM channels ORDER BY RAND() LIMIT 0,50');
 
-//		foreach ($videos['videos'] as $video)
-//		{
-//			if (isset($video->link))
-//			{
-//				unset($video->link);
-//			}
-//			if (isset($video->playlistId))
-//			{
-//				unset($video->playlistId);
-//			}
-//		}
+                foreach ($channel as $ch)
+                {
+                    if (count($videos['channels']) > $climit) break;
+
+                    if (in_array($ch->id, $ids['channels'], false) === false){
+                        $ids['channels'][] = $ch->id;
+                        $videos['channels'][] = $ch;
+                    }
+                }
+
+                if (count($videos['channels']) < $climit)
+                {
+                    foreach (Channels::get('SELECT * FROM channels ORDER BY RAND()') as $channel){
+                        if (count($videos['channels']) > $climit) break;
+
+                        if (in_array($channel->id, $ids['channels'], false) === false){
+                            $ids['channels'][] = $channel->id;
+                            $videos['channels'][] = $channel;
+                        }
+                    }
+                }
+
+                foreach ($video as $v)
+                {
+                    if (count($videos['videos']) > $vmax) break;
+
+                    if (in_array($v->id, $ids['videos'], false) === false){
+                        $ids['videos'][] = $v->id;
+                        $videos['videos'][] = $v;
+                    }
+                }
+
+                if (count($videos['videos']) < $vmax)
+                {
+                    foreach (Video::get('SELECT * FROM video ORDER BY RAND()') as $video){
+                        if (count($videos['videos']) > $vmax) break;
+
+                        if (in_array($video->id, $ids['videos'], false) === false){
+                            $ids['videos'][] = $video->id;
+                            $videos['videos'][] = $video;
+                        }
+                    }
+                }
+            }
+		}else{
+			$videos['videos'] = Video::get('SELECT * FROM video ORDER BY RAND() LIMIT 0,'.$vmax);
+			$videos['channels'] = Channels::get('SELECT * FROM channels ORDER BY RAND() LIMIT 0,'.$climit);
+		}
 
 		$id = new Ids();
 		$id->userId = $userId;

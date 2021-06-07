@@ -30,6 +30,8 @@ class Google_Service_Compute_AutoscalingPolicy extends Google_Collection
   public $mode;
   protected $scaleInControlType = 'Google_Service_Compute_AutoscalingPolicyScaleInControl';
   protected $scaleInControlDataType = '';
+  protected $scalingSchedulesType = 'Google_Service_Compute_AutoscalingPolicyScalingSchedule';
+  protected $scalingSchedulesDataType = 'map';
 
   public function setCoolDownPeriodSec($coolDownPeriodSec)
   {
@@ -54,14 +56,14 @@ class Google_Service_Compute_AutoscalingPolicy extends Google_Collection
     return $this->cpuUtilization;
   }
   /**
-   * @param Google_Service_Compute_AutoscalingPolicyCustomMetricUtilization
+   * @param Google_Service_Compute_AutoscalingPolicyCustomMetricUtilization[]
    */
   public function setCustomMetricUtilizations($customMetricUtilizations)
   {
     $this->customMetricUtilizations = $customMetricUtilizations;
   }
   /**
-   * @return Google_Service_Compute_AutoscalingPolicyCustomMetricUtilization
+   * @return Google_Service_Compute_AutoscalingPolicyCustomMetricUtilization[]
    */
   public function getCustomMetricUtilizations()
   {
@@ -118,5 +120,19 @@ class Google_Service_Compute_AutoscalingPolicy extends Google_Collection
   public function getScaleInControl()
   {
     return $this->scaleInControl;
+  }
+  /**
+   * @param Google_Service_Compute_AutoscalingPolicyScalingSchedule[]
+   */
+  public function setScalingSchedules($scalingSchedules)
+  {
+    $this->scalingSchedules = $scalingSchedules;
+  }
+  /**
+   * @return Google_Service_Compute_AutoscalingPolicyScalingSchedule[]
+   */
+  public function getScalingSchedules()
+  {
+    return $this->scalingSchedules;
   }
 }

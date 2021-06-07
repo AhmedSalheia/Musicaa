@@ -40,7 +40,7 @@ class Playlists extends \MUSICAA\models\AbstractModel
 
     public static function getMainPlaylist($channelId)
     {
-        $playlist = self::get('SELECT * FROM playlists WHERE channelId="'.$channelId.'" AND name="Main Playlist"')[0];
+        $playlist = self::get('SELECT * FROM playlists WHERE channelId="'.$channelId.'" AND name="Main Playlist"');
         if ($playlist === false)
         {
             $channel = Channels::getByPK($channelId);
@@ -55,6 +55,9 @@ class Playlists extends \MUSICAA\models\AbstractModel
             {
                 return false;
             }
+        }else
+        {
+            $playlist = $playlist[0];
         }
 
         return $playlist;

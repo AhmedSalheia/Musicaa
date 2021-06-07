@@ -28,6 +28,8 @@ class Google_Service_Bigquery_Routine extends Google_Collection
   public $importedLibraries;
   public $language;
   public $lastModifiedTime;
+  protected $returnTableTypeType = 'Google_Service_Bigquery_StandardSqlTableType';
+  protected $returnTableTypeDataType = '';
   protected $returnTypeType = 'Google_Service_Bigquery_StandardSqlDataType';
   protected $returnTypeDataType = '';
   protected $routineReferenceType = 'Google_Service_Bigquery_RoutineReference';
@@ -35,14 +37,14 @@ class Google_Service_Bigquery_Routine extends Google_Collection
   public $routineType;
 
   /**
-   * @param Google_Service_Bigquery_Argument
+   * @param Google_Service_Bigquery_Argument[]
    */
   public function setArguments($arguments)
   {
     $this->arguments = $arguments;
   }
   /**
-   * @return Google_Service_Bigquery_Argument
+   * @return Google_Service_Bigquery_Argument[]
    */
   public function getArguments()
   {
@@ -111,6 +113,20 @@ class Google_Service_Bigquery_Routine extends Google_Collection
   public function getLastModifiedTime()
   {
     return $this->lastModifiedTime;
+  }
+  /**
+   * @param Google_Service_Bigquery_StandardSqlTableType
+   */
+  public function setReturnTableType(Google_Service_Bigquery_StandardSqlTableType $returnTableType)
+  {
+    $this->returnTableType = $returnTableType;
+  }
+  /**
+   * @return Google_Service_Bigquery_StandardSqlTableType
+   */
+  public function getReturnTableType()
+  {
+    return $this->returnTableType;
   }
   /**
    * @param Google_Service_Bigquery_StandardSqlDataType

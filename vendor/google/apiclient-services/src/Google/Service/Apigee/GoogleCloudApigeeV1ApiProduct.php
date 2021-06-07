@@ -26,6 +26,8 @@ class Google_Service_Apigee_GoogleCloudApigeeV1ApiProduct extends Google_Collect
   public $description;
   public $displayName;
   public $environments;
+  protected $graphqlOperationGroupType = 'Google_Service_Apigee_GoogleCloudApigeeV1GraphQLOperationGroup';
+  protected $graphqlOperationGroupDataType = '';
   public $lastModifiedAt;
   public $name;
   protected $operationGroupType = 'Google_Service_Apigee_GoogleCloudApigeeV1OperationGroup';
@@ -53,14 +55,14 @@ class Google_Service_Apigee_GoogleCloudApigeeV1ApiProduct extends Google_Collect
     return $this->approvalType;
   }
   /**
-   * @param Google_Service_Apigee_GoogleCloudApigeeV1Attribute
+   * @param Google_Service_Apigee_GoogleCloudApigeeV1Attribute[]
    */
   public function setAttributes($attributes)
   {
     $this->attributes = $attributes;
   }
   /**
-   * @return Google_Service_Apigee_GoogleCloudApigeeV1Attribute
+   * @return Google_Service_Apigee_GoogleCloudApigeeV1Attribute[]
    */
   public function getAttributes()
   {
@@ -97,6 +99,20 @@ class Google_Service_Apigee_GoogleCloudApigeeV1ApiProduct extends Google_Collect
   public function getEnvironments()
   {
     return $this->environments;
+  }
+  /**
+   * @param Google_Service_Apigee_GoogleCloudApigeeV1GraphQLOperationGroup
+   */
+  public function setGraphqlOperationGroup(Google_Service_Apigee_GoogleCloudApigeeV1GraphQLOperationGroup $graphqlOperationGroup)
+  {
+    $this->graphqlOperationGroup = $graphqlOperationGroup;
+  }
+  /**
+   * @return Google_Service_Apigee_GoogleCloudApigeeV1GraphQLOperationGroup
+   */
+  public function getGraphqlOperationGroup()
+  {
+    return $this->graphqlOperationGroup;
   }
   public function setLastModifiedAt($lastModifiedAt)
   {

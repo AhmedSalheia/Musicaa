@@ -28,19 +28,20 @@ class Google_Service_Recommender_GoogleCloudRecommenderV1Insight extends Google_
   public $lastRefreshTime;
   public $name;
   public $observationPeriod;
+  public $severity;
   protected $stateInfoType = 'Google_Service_Recommender_GoogleCloudRecommenderV1InsightStateInfo';
   protected $stateInfoDataType = '';
   public $targetResources;
 
   /**
-   * @param Google_Service_Recommender_GoogleCloudRecommenderV1InsightRecommendationReference
+   * @param Google_Service_Recommender_GoogleCloudRecommenderV1InsightRecommendationReference[]
    */
   public function setAssociatedRecommendations($associatedRecommendations)
   {
     $this->associatedRecommendations = $associatedRecommendations;
   }
   /**
-   * @return Google_Service_Recommender_GoogleCloudRecommenderV1InsightRecommendationReference
+   * @return Google_Service_Recommender_GoogleCloudRecommenderV1InsightRecommendationReference[]
    */
   public function getAssociatedRecommendations()
   {
@@ -109,6 +110,14 @@ class Google_Service_Recommender_GoogleCloudRecommenderV1Insight extends Google_
   public function getObservationPeriod()
   {
     return $this->observationPeriod;
+  }
+  public function setSeverity($severity)
+  {
+    $this->severity = $severity;
+  }
+  public function getSeverity()
+  {
+    return $this->severity;
   }
   /**
    * @param Google_Service_Recommender_GoogleCloudRecommenderV1InsightStateInfo

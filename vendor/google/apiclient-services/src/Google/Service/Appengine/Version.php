@@ -65,6 +65,7 @@ class Google_Service_Appengine_Version extends Google_Collection
   public $runtimeApiVersion;
   public $runtimeChannel;
   public $runtimeMainExecutablePath;
+  public $serviceAccount;
   public $servingStatus;
   public $threadsafe;
   public $versionUrl;
@@ -222,28 +223,28 @@ class Google_Service_Appengine_Version extends Google_Collection
     return $this->envVariables;
   }
   /**
-   * @param Google_Service_Appengine_ErrorHandler
+   * @param Google_Service_Appengine_ErrorHandler[]
    */
   public function setErrorHandlers($errorHandlers)
   {
     $this->errorHandlers = $errorHandlers;
   }
   /**
-   * @return Google_Service_Appengine_ErrorHandler
+   * @return Google_Service_Appengine_ErrorHandler[]
    */
   public function getErrorHandlers()
   {
     return $this->errorHandlers;
   }
   /**
-   * @param Google_Service_Appengine_UrlMap
+   * @param Google_Service_Appengine_UrlMap[]
    */
   public function setHandlers($handlers)
   {
     $this->handlers = $handlers;
   }
   /**
-   * @return Google_Service_Appengine_UrlMap
+   * @return Google_Service_Appengine_UrlMap[]
    */
   public function getHandlers()
   {
@@ -288,14 +289,14 @@ class Google_Service_Appengine_Version extends Google_Collection
     return $this->instanceClass;
   }
   /**
-   * @param Google_Service_Appengine_Library
+   * @param Google_Service_Appengine_Library[]
    */
   public function setLibraries($libraries)
   {
     $this->libraries = $libraries;
   }
   /**
-   * @return Google_Service_Appengine_Library
+   * @return Google_Service_Appengine_Library[]
    */
   public function getLibraries()
   {
@@ -418,6 +419,14 @@ class Google_Service_Appengine_Version extends Google_Collection
   public function getRuntimeMainExecutablePath()
   {
     return $this->runtimeMainExecutablePath;
+  }
+  public function setServiceAccount($serviceAccount)
+  {
+    $this->serviceAccount = $serviceAccount;
+  }
+  public function getServiceAccount()
+  {
+    return $this->serviceAccount;
   }
   public function setServingStatus($servingStatus)
   {

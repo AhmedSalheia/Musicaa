@@ -18,6 +18,8 @@
 class Google_Service_Compute_SecurityPolicy extends Google_Collection
 {
   protected $collection_key = 'rules';
+  protected $advancedOptionsConfigType = 'Google_Service_Compute_SecurityPolicyAdvancedOptionsConfig';
+  protected $advancedOptionsConfigDataType = '';
   public $creationTimestamp;
   public $description;
   public $fingerprint;
@@ -28,6 +30,20 @@ class Google_Service_Compute_SecurityPolicy extends Google_Collection
   protected $rulesDataType = 'array';
   public $selfLink;
 
+  /**
+   * @param Google_Service_Compute_SecurityPolicyAdvancedOptionsConfig
+   */
+  public function setAdvancedOptionsConfig(Google_Service_Compute_SecurityPolicyAdvancedOptionsConfig $advancedOptionsConfig)
+  {
+    $this->advancedOptionsConfig = $advancedOptionsConfig;
+  }
+  /**
+   * @return Google_Service_Compute_SecurityPolicyAdvancedOptionsConfig
+   */
+  public function getAdvancedOptionsConfig()
+  {
+    return $this->advancedOptionsConfig;
+  }
   public function setCreationTimestamp($creationTimestamp)
   {
     $this->creationTimestamp = $creationTimestamp;
@@ -77,14 +93,14 @@ class Google_Service_Compute_SecurityPolicy extends Google_Collection
     return $this->name;
   }
   /**
-   * @param Google_Service_Compute_SecurityPolicyRule
+   * @param Google_Service_Compute_SecurityPolicyRule[]
    */
   public function setRules($rules)
   {
     $this->rules = $rules;
   }
   /**
-   * @return Google_Service_Compute_SecurityPolicyRule
+   * @return Google_Service_Compute_SecurityPolicyRule[]
    */
   public function getRules()
   {

@@ -21,13 +21,18 @@ class Google_Service_Bigquery_JobStatistics2 extends Google_Collection
   public $billingTier;
   public $cacheHit;
   public $ddlAffectedRowAccessPolicyCount;
+  protected $ddlDestinationTableType = 'Google_Service_Bigquery_TableReference';
+  protected $ddlDestinationTableDataType = '';
   public $ddlOperationPerformed;
+  protected $ddlTargetDatasetType = 'Google_Service_Bigquery_DatasetReference';
+  protected $ddlTargetDatasetDataType = '';
   protected $ddlTargetRoutineType = 'Google_Service_Bigquery_RoutineReference';
   protected $ddlTargetRoutineDataType = '';
   protected $ddlTargetRowAccessPolicyType = 'Google_Service_Bigquery_RowAccessPolicyReference';
   protected $ddlTargetRowAccessPolicyDataType = '';
   protected $ddlTargetTableType = 'Google_Service_Bigquery_TableReference';
   protected $ddlTargetTableDataType = '';
+  public $dmlStats;
   public $estimatedBytesProcessed;
   protected $modelTrainingType = 'Google_Service_Bigquery_BigQueryModelTraining';
   protected $modelTrainingDataType = '';
@@ -79,6 +84,20 @@ class Google_Service_Bigquery_JobStatistics2 extends Google_Collection
   {
     return $this->ddlAffectedRowAccessPolicyCount;
   }
+  /**
+   * @param Google_Service_Bigquery_TableReference
+   */
+  public function setDdlDestinationTable(Google_Service_Bigquery_TableReference $ddlDestinationTable)
+  {
+    $this->ddlDestinationTable = $ddlDestinationTable;
+  }
+  /**
+   * @return Google_Service_Bigquery_TableReference
+   */
+  public function getDdlDestinationTable()
+  {
+    return $this->ddlDestinationTable;
+  }
   public function setDdlOperationPerformed($ddlOperationPerformed)
   {
     $this->ddlOperationPerformed = $ddlOperationPerformed;
@@ -86,6 +105,20 @@ class Google_Service_Bigquery_JobStatistics2 extends Google_Collection
   public function getDdlOperationPerformed()
   {
     return $this->ddlOperationPerformed;
+  }
+  /**
+   * @param Google_Service_Bigquery_DatasetReference
+   */
+  public function setDdlTargetDataset(Google_Service_Bigquery_DatasetReference $ddlTargetDataset)
+  {
+    $this->ddlTargetDataset = $ddlTargetDataset;
+  }
+  /**
+   * @return Google_Service_Bigquery_DatasetReference
+   */
+  public function getDdlTargetDataset()
+  {
+    return $this->ddlTargetDataset;
   }
   /**
    * @param Google_Service_Bigquery_RoutineReference
@@ -128,6 +161,14 @@ class Google_Service_Bigquery_JobStatistics2 extends Google_Collection
   public function getDdlTargetTable()
   {
     return $this->ddlTargetTable;
+  }
+  public function setDmlStats($dmlStats)
+  {
+    $this->dmlStats = $dmlStats;
+  }
+  public function getDmlStats()
+  {
+    return $this->dmlStats;
   }
   public function setEstimatedBytesProcessed($estimatedBytesProcessed)
   {
@@ -176,56 +217,56 @@ class Google_Service_Bigquery_JobStatistics2 extends Google_Collection
     return $this->numDmlAffectedRows;
   }
   /**
-   * @param Google_Service_Bigquery_ExplainQueryStage
+   * @param Google_Service_Bigquery_ExplainQueryStage[]
    */
   public function setQueryPlan($queryPlan)
   {
     $this->queryPlan = $queryPlan;
   }
   /**
-   * @return Google_Service_Bigquery_ExplainQueryStage
+   * @return Google_Service_Bigquery_ExplainQueryStage[]
    */
   public function getQueryPlan()
   {
     return $this->queryPlan;
   }
   /**
-   * @param Google_Service_Bigquery_RoutineReference
+   * @param Google_Service_Bigquery_RoutineReference[]
    */
   public function setReferencedRoutines($referencedRoutines)
   {
     $this->referencedRoutines = $referencedRoutines;
   }
   /**
-   * @return Google_Service_Bigquery_RoutineReference
+   * @return Google_Service_Bigquery_RoutineReference[]
    */
   public function getReferencedRoutines()
   {
     return $this->referencedRoutines;
   }
   /**
-   * @param Google_Service_Bigquery_TableReference
+   * @param Google_Service_Bigquery_TableReference[]
    */
   public function setReferencedTables($referencedTables)
   {
     $this->referencedTables = $referencedTables;
   }
   /**
-   * @return Google_Service_Bigquery_TableReference
+   * @return Google_Service_Bigquery_TableReference[]
    */
   public function getReferencedTables()
   {
     return $this->referencedTables;
   }
   /**
-   * @param Google_Service_Bigquery_JobStatistics2ReservationUsage
+   * @param Google_Service_Bigquery_JobStatistics2ReservationUsage[]
    */
   public function setReservationUsage($reservationUsage)
   {
     $this->reservationUsage = $reservationUsage;
   }
   /**
-   * @return Google_Service_Bigquery_JobStatistics2ReservationUsage
+   * @return Google_Service_Bigquery_JobStatistics2ReservationUsage[]
    */
   public function getReservationUsage()
   {
@@ -254,14 +295,14 @@ class Google_Service_Bigquery_JobStatistics2 extends Google_Collection
     return $this->statementType;
   }
   /**
-   * @param Google_Service_Bigquery_QueryTimelineSample
+   * @param Google_Service_Bigquery_QueryTimelineSample[]
    */
   public function setTimeline($timeline)
   {
     $this->timeline = $timeline;
   }
   /**
-   * @return Google_Service_Bigquery_QueryTimelineSample
+   * @return Google_Service_Bigquery_QueryTimelineSample[]
    */
   public function getTimeline()
   {
@@ -308,14 +349,14 @@ class Google_Service_Bigquery_JobStatistics2 extends Google_Collection
     return $this->totalSlotMs;
   }
   /**
-   * @param Google_Service_Bigquery_QueryParameter
+   * @param Google_Service_Bigquery_QueryParameter[]
    */
   public function setUndeclaredQueryParameters($undeclaredQueryParameters)
   {
     $this->undeclaredQueryParameters = $undeclaredQueryParameters;
   }
   /**
-   * @return Google_Service_Bigquery_QueryParameter
+   * @return Google_Service_Bigquery_QueryParameter[]
    */
   public function getUndeclaredQueryParameters()
   {

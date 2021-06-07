@@ -27,8 +27,6 @@ class Google_Service_AnalyticsData_RunReportRequest extends Google_Collection
   protected $dimensionFilterDataType = '';
   protected $dimensionsType = 'Google_Service_AnalyticsData_Dimension';
   protected $dimensionsDataType = 'array';
-  protected $entityType = 'Google_Service_AnalyticsData_Entity';
-  protected $entityDataType = '';
   public $keepEmptyRows;
   public $limit;
   public $metricAggregations;
@@ -39,6 +37,7 @@ class Google_Service_AnalyticsData_RunReportRequest extends Google_Collection
   public $offset;
   protected $orderBysType = 'Google_Service_AnalyticsData_OrderBy';
   protected $orderBysDataType = 'array';
+  public $property;
   public $returnPropertyQuota;
 
   /**
@@ -64,14 +63,14 @@ class Google_Service_AnalyticsData_RunReportRequest extends Google_Collection
     return $this->currencyCode;
   }
   /**
-   * @param Google_Service_AnalyticsData_DateRange
+   * @param Google_Service_AnalyticsData_DateRange[]
    */
   public function setDateRanges($dateRanges)
   {
     $this->dateRanges = $dateRanges;
   }
   /**
-   * @return Google_Service_AnalyticsData_DateRange
+   * @return Google_Service_AnalyticsData_DateRange[]
    */
   public function getDateRanges()
   {
@@ -92,32 +91,18 @@ class Google_Service_AnalyticsData_RunReportRequest extends Google_Collection
     return $this->dimensionFilter;
   }
   /**
-   * @param Google_Service_AnalyticsData_Dimension
+   * @param Google_Service_AnalyticsData_Dimension[]
    */
   public function setDimensions($dimensions)
   {
     $this->dimensions = $dimensions;
   }
   /**
-   * @return Google_Service_AnalyticsData_Dimension
+   * @return Google_Service_AnalyticsData_Dimension[]
    */
   public function getDimensions()
   {
     return $this->dimensions;
-  }
-  /**
-   * @param Google_Service_AnalyticsData_Entity
-   */
-  public function setEntity(Google_Service_AnalyticsData_Entity $entity)
-  {
-    $this->entity = $entity;
-  }
-  /**
-   * @return Google_Service_AnalyticsData_Entity
-   */
-  public function getEntity()
-  {
-    return $this->entity;
   }
   public function setKeepEmptyRows($keepEmptyRows)
   {
@@ -158,14 +143,14 @@ class Google_Service_AnalyticsData_RunReportRequest extends Google_Collection
     return $this->metricFilter;
   }
   /**
-   * @param Google_Service_AnalyticsData_Metric
+   * @param Google_Service_AnalyticsData_Metric[]
    */
   public function setMetrics($metrics)
   {
     $this->metrics = $metrics;
   }
   /**
-   * @return Google_Service_AnalyticsData_Metric
+   * @return Google_Service_AnalyticsData_Metric[]
    */
   public function getMetrics()
   {
@@ -180,18 +165,26 @@ class Google_Service_AnalyticsData_RunReportRequest extends Google_Collection
     return $this->offset;
   }
   /**
-   * @param Google_Service_AnalyticsData_OrderBy
+   * @param Google_Service_AnalyticsData_OrderBy[]
    */
   public function setOrderBys($orderBys)
   {
     $this->orderBys = $orderBys;
   }
   /**
-   * @return Google_Service_AnalyticsData_OrderBy
+   * @return Google_Service_AnalyticsData_OrderBy[]
    */
   public function getOrderBys()
   {
     return $this->orderBys;
+  }
+  public function setProperty($property)
+  {
+    $this->property = $property;
+  }
+  public function getProperty()
+  {
+    return $this->property;
   }
   public function setReturnPropertyQuota($returnPropertyQuota)
   {

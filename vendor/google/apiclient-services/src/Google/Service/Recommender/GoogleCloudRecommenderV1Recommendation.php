@@ -30,33 +30,34 @@ class Google_Service_Recommender_GoogleCloudRecommenderV1Recommendation extends 
   public $name;
   protected $primaryImpactType = 'Google_Service_Recommender_GoogleCloudRecommenderV1Impact';
   protected $primaryImpactDataType = '';
+  public $priority;
   public $recommenderSubtype;
   protected $stateInfoType = 'Google_Service_Recommender_GoogleCloudRecommenderV1RecommendationStateInfo';
   protected $stateInfoDataType = '';
 
   /**
-   * @param Google_Service_Recommender_GoogleCloudRecommenderV1Impact
+   * @param Google_Service_Recommender_GoogleCloudRecommenderV1Impact[]
    */
   public function setAdditionalImpact($additionalImpact)
   {
     $this->additionalImpact = $additionalImpact;
   }
   /**
-   * @return Google_Service_Recommender_GoogleCloudRecommenderV1Impact
+   * @return Google_Service_Recommender_GoogleCloudRecommenderV1Impact[]
    */
   public function getAdditionalImpact()
   {
     return $this->additionalImpact;
   }
   /**
-   * @param Google_Service_Recommender_GoogleCloudRecommenderV1RecommendationInsightReference
+   * @param Google_Service_Recommender_GoogleCloudRecommenderV1RecommendationInsightReference[]
    */
   public function setAssociatedInsights($associatedInsights)
   {
     $this->associatedInsights = $associatedInsights;
   }
   /**
-   * @return Google_Service_Recommender_GoogleCloudRecommenderV1RecommendationInsightReference
+   * @return Google_Service_Recommender_GoogleCloudRecommenderV1RecommendationInsightReference[]
    */
   public function getAssociatedInsights()
   {
@@ -121,6 +122,14 @@ class Google_Service_Recommender_GoogleCloudRecommenderV1Recommendation extends 
   public function getPrimaryImpact()
   {
     return $this->primaryImpact;
+  }
+  public function setPriority($priority)
+  {
+    $this->priority = $priority;
+  }
+  public function getPriority()
+  {
+    return $this->priority;
   }
   public function setRecommenderSubtype($recommenderSubtype)
   {

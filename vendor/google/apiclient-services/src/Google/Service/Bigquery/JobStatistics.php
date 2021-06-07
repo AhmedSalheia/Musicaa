@@ -40,11 +40,13 @@ class Google_Service_Bigquery_JobStatistics extends Google_Collection
   protected $rowLevelSecurityStatisticsDataType = '';
   protected $scriptStatisticsType = 'Google_Service_Bigquery_ScriptStatistics';
   protected $scriptStatisticsDataType = '';
+  protected $sessionInfoTemplateType = 'Google_Service_Bigquery_SessionInfo';
+  protected $sessionInfoTemplateDataType = '';
   public $startTime;
   public $totalBytesProcessed;
   public $totalSlotMs;
-  protected $transactionInfoTemplateType = 'Google_Service_Bigquery_TransactionInfo';
-  protected $transactionInfoTemplateDataType = '';
+  protected $transactionInfoType = 'Google_Service_Bigquery_TransactionInfo';
+  protected $transactionInfoDataType = '';
 
   public function setCompletionRatio($completionRatio)
   {
@@ -137,14 +139,14 @@ class Google_Service_Bigquery_JobStatistics extends Google_Collection
     return $this->quotaDeferments;
   }
   /**
-   * @param Google_Service_Bigquery_JobStatisticsReservationUsage
+   * @param Google_Service_Bigquery_JobStatisticsReservationUsage[]
    */
   public function setReservationUsage($reservationUsage)
   {
     $this->reservationUsage = $reservationUsage;
   }
   /**
-   * @return Google_Service_Bigquery_JobStatisticsReservationUsage
+   * @return Google_Service_Bigquery_JobStatisticsReservationUsage[]
    */
   public function getReservationUsage()
   {
@@ -186,6 +188,20 @@ class Google_Service_Bigquery_JobStatistics extends Google_Collection
   {
     return $this->scriptStatistics;
   }
+  /**
+   * @param Google_Service_Bigquery_SessionInfo
+   */
+  public function setSessionInfoTemplate(Google_Service_Bigquery_SessionInfo $sessionInfoTemplate)
+  {
+    $this->sessionInfoTemplate = $sessionInfoTemplate;
+  }
+  /**
+   * @return Google_Service_Bigquery_SessionInfo
+   */
+  public function getSessionInfoTemplate()
+  {
+    return $this->sessionInfoTemplate;
+  }
   public function setStartTime($startTime)
   {
     $this->startTime = $startTime;
@@ -213,15 +229,15 @@ class Google_Service_Bigquery_JobStatistics extends Google_Collection
   /**
    * @param Google_Service_Bigquery_TransactionInfo
    */
-  public function setTransactionInfoTemplate(Google_Service_Bigquery_TransactionInfo $transactionInfoTemplate)
+  public function setTransactionInfo(Google_Service_Bigquery_TransactionInfo $transactionInfo)
   {
-    $this->transactionInfoTemplate = $transactionInfoTemplate;
+    $this->transactionInfo = $transactionInfo;
   }
   /**
    * @return Google_Service_Bigquery_TransactionInfo
    */
-  public function getTransactionInfoTemplate()
+  public function getTransactionInfo()
   {
-    return $this->transactionInfoTemplate;
+    return $this->transactionInfo;
   }
 }

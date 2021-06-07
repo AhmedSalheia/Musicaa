@@ -19,6 +19,7 @@ class Google_Service_Bigquery_QueryResponse extends Google_Collection
 {
   protected $collection_key = 'rows';
   public $cacheHit;
+  public $dmlStats;
   protected $errorsType = 'Google_Service_Bigquery_ErrorProto';
   protected $errorsDataType = 'array';
   public $jobComplete;
@@ -31,6 +32,8 @@ class Google_Service_Bigquery_QueryResponse extends Google_Collection
   protected $rowsDataType = 'array';
   protected $schemaType = 'Google_Service_Bigquery_TableSchema';
   protected $schemaDataType = '';
+  protected $sessionInfoTemplateType = 'Google_Service_Bigquery_SessionInfo';
+  protected $sessionInfoTemplateDataType = '';
   public $totalBytesProcessed;
   public $totalRows;
 
@@ -42,15 +45,23 @@ class Google_Service_Bigquery_QueryResponse extends Google_Collection
   {
     return $this->cacheHit;
   }
+  public function setDmlStats($dmlStats)
+  {
+    $this->dmlStats = $dmlStats;
+  }
+  public function getDmlStats()
+  {
+    return $this->dmlStats;
+  }
   /**
-   * @param Google_Service_Bigquery_ErrorProto
+   * @param Google_Service_Bigquery_ErrorProto[]
    */
   public function setErrors($errors)
   {
     $this->errors = $errors;
   }
   /**
-   * @return Google_Service_Bigquery_ErrorProto
+   * @return Google_Service_Bigquery_ErrorProto[]
    */
   public function getErrors()
   {
@@ -103,14 +114,14 @@ class Google_Service_Bigquery_QueryResponse extends Google_Collection
     return $this->pageToken;
   }
   /**
-   * @param Google_Service_Bigquery_TableRow
+   * @param Google_Service_Bigquery_TableRow[]
    */
   public function setRows($rows)
   {
     $this->rows = $rows;
   }
   /**
-   * @return Google_Service_Bigquery_TableRow
+   * @return Google_Service_Bigquery_TableRow[]
    */
   public function getRows()
   {
@@ -129,6 +140,20 @@ class Google_Service_Bigquery_QueryResponse extends Google_Collection
   public function getSchema()
   {
     return $this->schema;
+  }
+  /**
+   * @param Google_Service_Bigquery_SessionInfo
+   */
+  public function setSessionInfoTemplate(Google_Service_Bigquery_SessionInfo $sessionInfoTemplate)
+  {
+    $this->sessionInfoTemplate = $sessionInfoTemplate;
+  }
+  /**
+   * @return Google_Service_Bigquery_SessionInfo
+   */
+  public function getSessionInfoTemplate()
+  {
+    return $this->sessionInfoTemplate;
   }
   public function setTotalBytesProcessed($totalBytesProcessed)
   {

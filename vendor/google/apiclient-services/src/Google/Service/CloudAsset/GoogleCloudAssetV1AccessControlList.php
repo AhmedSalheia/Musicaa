@@ -20,48 +20,64 @@ class Google_Service_CloudAsset_GoogleCloudAssetV1AccessControlList extends Goog
   protected $collection_key = 'resources';
   protected $accessesType = 'Google_Service_CloudAsset_GoogleCloudAssetV1Access';
   protected $accessesDataType = 'array';
+  protected $conditionEvaluationType = 'Google_Service_CloudAsset_ConditionEvaluation';
+  protected $conditionEvaluationDataType = '';
   protected $resourceEdgesType = 'Google_Service_CloudAsset_GoogleCloudAssetV1Edge';
   protected $resourceEdgesDataType = 'array';
   protected $resourcesType = 'Google_Service_CloudAsset_GoogleCloudAssetV1Resource';
   protected $resourcesDataType = 'array';
 
   /**
-   * @param Google_Service_CloudAsset_GoogleCloudAssetV1Access
+   * @param Google_Service_CloudAsset_GoogleCloudAssetV1Access[]
    */
   public function setAccesses($accesses)
   {
     $this->accesses = $accesses;
   }
   /**
-   * @return Google_Service_CloudAsset_GoogleCloudAssetV1Access
+   * @return Google_Service_CloudAsset_GoogleCloudAssetV1Access[]
    */
   public function getAccesses()
   {
     return $this->accesses;
   }
   /**
-   * @param Google_Service_CloudAsset_GoogleCloudAssetV1Edge
+   * @param Google_Service_CloudAsset_ConditionEvaluation
+   */
+  public function setConditionEvaluation(Google_Service_CloudAsset_ConditionEvaluation $conditionEvaluation)
+  {
+    $this->conditionEvaluation = $conditionEvaluation;
+  }
+  /**
+   * @return Google_Service_CloudAsset_ConditionEvaluation
+   */
+  public function getConditionEvaluation()
+  {
+    return $this->conditionEvaluation;
+  }
+  /**
+   * @param Google_Service_CloudAsset_GoogleCloudAssetV1Edge[]
    */
   public function setResourceEdges($resourceEdges)
   {
     $this->resourceEdges = $resourceEdges;
   }
   /**
-   * @return Google_Service_CloudAsset_GoogleCloudAssetV1Edge
+   * @return Google_Service_CloudAsset_GoogleCloudAssetV1Edge[]
    */
   public function getResourceEdges()
   {
     return $this->resourceEdges;
   }
   /**
-   * @param Google_Service_CloudAsset_GoogleCloudAssetV1Resource
+   * @param Google_Service_CloudAsset_GoogleCloudAssetV1Resource[]
    */
   public function setResources($resources)
   {
     $this->resources = $resources;
   }
   /**
-   * @return Google_Service_CloudAsset_GoogleCloudAssetV1Resource
+   * @return Google_Service_CloudAsset_GoogleCloudAssetV1Resource[]
    */
   public function getResources()
   {

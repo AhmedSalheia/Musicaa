@@ -19,6 +19,7 @@ class Google_Service_Bigquery_ViewDefinition extends Google_Collection
 {
   protected $collection_key = 'userDefinedFunctionResources';
   public $query;
+  public $useExplicitColumnNames;
   public $useLegacySql;
   protected $userDefinedFunctionResourcesType = 'Google_Service_Bigquery_UserDefinedFunctionResource';
   protected $userDefinedFunctionResourcesDataType = 'array';
@@ -31,6 +32,14 @@ class Google_Service_Bigquery_ViewDefinition extends Google_Collection
   {
     return $this->query;
   }
+  public function setUseExplicitColumnNames($useExplicitColumnNames)
+  {
+    $this->useExplicitColumnNames = $useExplicitColumnNames;
+  }
+  public function getUseExplicitColumnNames()
+  {
+    return $this->useExplicitColumnNames;
+  }
   public function setUseLegacySql($useLegacySql)
   {
     $this->useLegacySql = $useLegacySql;
@@ -40,14 +49,14 @@ class Google_Service_Bigquery_ViewDefinition extends Google_Collection
     return $this->useLegacySql;
   }
   /**
-   * @param Google_Service_Bigquery_UserDefinedFunctionResource
+   * @param Google_Service_Bigquery_UserDefinedFunctionResource[]
    */
   public function setUserDefinedFunctionResources($userDefinedFunctionResources)
   {
     $this->userDefinedFunctionResources = $userDefinedFunctionResources;
   }
   /**
-   * @return Google_Service_Bigquery_UserDefinedFunctionResource
+   * @return Google_Service_Bigquery_UserDefinedFunctionResource[]
    */
   public function getUserDefinedFunctionResources()
   {
