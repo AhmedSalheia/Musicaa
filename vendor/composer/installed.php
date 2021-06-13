@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '50d1d58653cd2ef0c804417ee734d4902ac84eee',
+    'reference' => '56451f0a573e11b778581bf70b965c67078f7dd3',
     'name' => 'ahmed/musicaa',
   ),
   'versions' => 
@@ -18,16 +18,34 @@
       'aliases' => 
       array (
       ),
-      'reference' => '50d1d58653cd2ef0c804417ee734d4902ac84eee',
+      'reference' => '56451f0a573e11b778581bf70b965c67078f7dd3',
     ),
-    'athlon1600/youtube-downloader' => 
+    'athlon1600/php-curl-client' => 
     array (
-      'pretty_version' => 'v2.1.2',
-      'version' => '2.1.2.0',
+      'pretty_version' => 'v1.1.3',
+      'version' => '1.1.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '8be29b08896aecb252b7e1dbfd4a3f022702f74e',
+      'reference' => '2c9a7ac0aea487fcdfc57333dfba6cb684fb64fc',
+    ),
+    'athlon1600/php-curl-file-downloader' => 
+    array (
+      'pretty_version' => 'v1.0.2',
+      'version' => '1.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '66391a0b89e2ed8b42ed6341e111f180697e0c5f',
+    ),
+    'athlon1600/youtube-downloader' => 
+    array (
+      'pretty_version' => 'v3.0.1',
+      'version' => '3.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2d7b6eee0a90edccde517dab14c9f6c717695fc1',
     ),
     'firebase/php-jwt' => 
     array (
@@ -40,12 +58,12 @@
     ),
     'google/apiclient' => 
     array (
-      'pretty_version' => 'v2.9.1',
-      'version' => '2.9.1.0',
+      'pretty_version' => 'v2.9.2',
+      'version' => '2.9.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '2fb6e702aca5d68203fa737f89f6f774022494c6',
+      'reference' => 'e9ef4c26a044b8d39a46bcf296be795fe24a1849',
     ),
     'google/apiclient-services' => 
     array (

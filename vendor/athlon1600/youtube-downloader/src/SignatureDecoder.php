@@ -67,8 +67,7 @@ class SignatureDecoder
 
             // extract all relevant statements within that block
             // wm.vY(a,1);
-            // Mx["do"](a,12)
-            if (preg_match_all('/([a-z0-9$]{2})[.\[]([a-z0-9"]+)]?\([^,]+,(\d+)\)/i', $js_code, $matches) != false) {
+            if (preg_match_all('/([a-z0-9$]{2})\.([a-z0-9]{2})\([^,]+,(\d+)\)/i', $js_code, $matches) != false) {
 
                 // wm
                 $obj_list = $matches[1];

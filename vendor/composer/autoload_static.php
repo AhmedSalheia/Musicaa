@@ -10,8 +10,8 @@ class ComposerStaticInitf75f743f68625323408fb978b3de04a7
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         'a8d3953fd9959404dd22d3dfcd0a79f0' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
     );
 
@@ -49,6 +49,11 @@ class ComposerStaticInitf75f743f68625323408fb978b3de04a7
         'F' => 
         array (
             'Firebase\\JWT\\' => 13,
+        ),
+        'C' => 
+        array (
+            'Curl\\' => 5,
+            'CurlDownloader\\' => 15,
         ),
     );
 
@@ -116,6 +121,14 @@ class ComposerStaticInitf75f743f68625323408fb978b3de04a7
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
+        'Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/athlon1600/php-curl-client/src',
+        ),
+        'CurlDownloader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/athlon1600/php-curl-file-downloader/src',
         ),
     );
 
