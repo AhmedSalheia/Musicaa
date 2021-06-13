@@ -51,7 +51,7 @@ class RegisterController extends AbstractController
 
         if (!is_object($save) || $save->verified === 'n')
         {
-            if ($save->verified === 'n')
+            if (is_object($save) && $save->verified === 'n')
             {
                 $user->id = $save->id;
                 $save = $user->save('upd');

@@ -4,12 +4,7 @@
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/FavoriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/music/FavoriteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/AbstractModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/AbstractModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/youtube/Favorite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/youtube/Favorite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +283,7 @@
       <workItem from="1622922597642" duration="4699000" />
       <workItem from="1622967859505" duration="65000" />
       <workItem from="1623067141659" duration="2472000" />
-      <workItem from="1623580381663" duration="4322000" />
+      <workItem from="1623580381663" duration="5283000" />
     </task>
     <servers />
   </component>
