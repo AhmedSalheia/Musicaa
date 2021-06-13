@@ -20,12 +20,12 @@ trait VideoRelated
         $yt = new YouTubeDownloader();
         $links = $yt->getDownloadLinks("https://www.youtube.com/watch?v=" . $id);
 
-        foreach ($links as $link)
+        foreach ($links->getAllFormats() as $link)
         {
-            if ($link['format'] === "m4a, audio")
+            if ($link->getCleanMimeType() === "video/mp4")
             {
                 unset($yt,$links);
-                return $link['url'];
+                return $link->url;
             }
         }
 

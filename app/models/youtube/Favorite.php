@@ -17,7 +17,7 @@ class Favorite extends AbstractModel
     public static $uniqueKey = 'userId';
     public static $timeCol = '';
     public static $tableSchema = [
-        'id'            =>  self::DATA_TYPE_STR,
+        'id'            =>  self::DATA_TYPE_STR|self::DATA_TYPE_NULL,
         'userId'        =>  self::DATA_TYPE_STR
     ];
 

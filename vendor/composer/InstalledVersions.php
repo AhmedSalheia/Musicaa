@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '56451f0a573e11b778581bf70b965c67078f7dd3',
+    'reference' => 'd832e206e4020a0fa407ea03adb0f91a5da47800',
     'name' => 'ahmed/musicaa',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '56451f0a573e11b778581bf70b965c67078f7dd3',
+      'reference' => 'd832e206e4020a0fa407ea03adb0f91a5da47800',
     ),
     'athlon1600/php-curl-client' => 
     array (

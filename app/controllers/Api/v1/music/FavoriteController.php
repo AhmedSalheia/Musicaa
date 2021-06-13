@@ -68,6 +68,7 @@ class FavoriteController extends AbstractController
                 $id = $this->filterStr($this->checkInput('post','videoId'));
 
                 $this->track($userID,'Favorite.add.vid',$id);
+                
                 if ($this->getVideoById($id,$userID,true) !== false)
                 {
                     $favorite = Favorite::getByUnique($userID);
