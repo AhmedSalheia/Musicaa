@@ -55,6 +55,7 @@ trait VideoRelated
                 $video->id = $item->id->videoId;
                 $video->name = $item->snippet->title;
                 $video->img = $this->getImage($item);
+                $video->link = $this->getVideoLink($item->id->videoId);
 
                 $videos[] = $video;
             }
