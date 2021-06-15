@@ -12,8 +12,8 @@ if (!defined('DS')){
 
 defined('DATABASE_HOST_NAME')? null : define('DATABASE_HOST_NAME','localhost'); //business29.web-hosting.com
 defined('DATABASE_DB_NAME')? null : define('DATABASE_DB_NAME','progwlfo_musicaabase');
-defined('DATABASE_USER_NAME')? null : define('DATABASE_USER_NAME','root'); //progwlfo_musicaabase
-defined('DATABASE_PASSWORD')? null : define('DATABASE_PASSWORD',''); //musicaabase123
+defined('DATABASE_USER_NAME')? null : define('DATABASE_USER_NAME','progwlfo_musicaabase'); //progwlfo_musicaabase
+defined('DATABASE_PASSWORD')? null : define('DATABASE_PASSWORD','musicaabase123'); //musicaabase123
 defined('DATABASE_PORT_NUMBER')? null : define('DATABASE_PORT_NUMBER',3306);
 defined('DATABASE_CONN_DRIVER')? null : define('DATABASE_CONN_DRIVER',1);
 
@@ -112,8 +112,9 @@ define("API_Name","Musicaa");
 
 ///////////////////  Youtube Things  ///////////////////
 
-$token = \MUSICAA\models\youtube\TokenThings\Tokens::getByCol('is_prim','y')[0];
-define('YOUTUBE_TOKEN', $token->TOKEN);
+$defaultTokem = [new \stdClass()];$defaultTokem[0]->TOKEN = '';
+$token = \MUSICAA\models\youtube\TokenThings\Tokens::getByCol('is_prim','y')?:$defaultTokem;
+define('YOUTUBE_TOKEN', $token[0]->TOKEN);
 define('YOUTUBE_CHANNEL','youtube#channel');
 define('YOUTUBE_PLAYLIST','youtube#playlist');
 define('YOUTUBE_VIDEO','youtube#video');

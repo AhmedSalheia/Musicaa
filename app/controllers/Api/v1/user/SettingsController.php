@@ -110,40 +110,40 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
         }
         $set->language = $language->id;
 
-        $additional_screen = $this->filterInt($this->checkInput('post','additional_screen'));
-        $auto_update = $this->filterInt($this->checkInput('post','auto_update'));
+//        $additional_screen = $this->filterInt($this->checkInput('post','additional_screen'));
+//        $auto_update = $this->filterInt($this->checkInput('post','auto_update'));
 
-        if ($additional_screen < 0 || $additional_screen > 1 || $auto_update < 0 || $auto_update > 1)
-        {
-            $this->jsonRender([],$this->language,$user_wrongData);
-        }
+//        if ($additional_screen < 0 || $additional_screen > 1 || $auto_update < 0 || $auto_update > 1)
+//        {
+//            $this->jsonRender([],$this->language,$user_wrongData);
+//        }
 
-        $set->additional_screen = $additional_screen;
-        $set->auto_update = $auto_update;
+//        $set->additional_screen = $additional_screen;
+//        $set->auto_update = $auto_update;
 
-        if ($settings !== false && $settings->additional_screen !== (string)$additional_screen){
-            $this->trackUserData('set.add_sec', $userId, $settings->additional_screen, $additional_screen);
-        }
-        if ($settings !== false && $settings->auto_update !== (string)$auto_update){
-            $this->trackUserData('set.auto_upd', $userId, $settings->auto_update, $auto_update);
-        }
+//        if ($settings !== false && $settings->additional_screen !== (string)$additional_screen){
+//            $this->trackUserData('set.add_sec', $userId, $settings->additional_screen, $additional_screen);
+//        }
+//        if ($settings !== false && $settings->auto_update !== (string)$auto_update){
+//            $this->trackUserData('set.auto_upd', $userId, $settings->auto_update, $auto_update);
+//        }
 
         // Permissions:
-        $run = $this->filterInt($this->checkInput('post','background'));
-        $aud = $this->filterInt($this->checkInput('post','audio'));
-        $loc = $this->filterInt($this->checkInput('post','location'));
-
-        if ($run < 0 || $run > 1 || $aud < 0 || $aud > 1 || $loc < 0 || $loc > 1)
-        {
-            $this->jsonRender([],$this->language,$user_wrongData);
-        }
-
-        $per = $this->fromBin($run . $aud . $loc);
-
-        if ($settings !== false && $settings->permissions !== (string)$per){
-            $this->trackUserData('set.permissions', $userId, $settings->permissions, $per);
-        }
-        $set->permissions = $per;
+//        $run = $this->filterInt($this->checkInput('post','background'));
+//        $aud = $this->filterInt($this->checkInput('post','audio'));
+//        $loc = $this->filterInt($this->checkInput('post','location'));
+//
+//        if ($run < 0 || $run > 1 || $aud < 0 || $aud > 1 || $loc < 0 || $loc > 1)
+//        {
+//            $this->jsonRender([],$this->language,$user_wrongData);
+//        }
+//
+//        $per = $this->fromBin($run . $aud . $loc);
+//
+//        if ($settings !== false && $settings->permissions !== (string)$per){
+//            $this->trackUserData('set.permissions', $userId, $settings->permissions, $per);
+//        }
+//        $set->permissions = $per;
 
         if ($set->save() !== false)
         {
@@ -160,15 +160,16 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
     {
         foreach ($set as $key=>$value)
         {
-            if ($key === 'permissions')
-            {
-                $data = $this->toBin($set->permissions);
-                $set->permissions = [
-                    'Running In Background'     =>  (bool) $data[0],
-                    'Entry Permit Audio Files'  =>  (bool) $data[1],
-                    'Location '                 =>  (bool) $data[2]
-                ];
-            }else if($key === 'theme'){
+//            if ($key === 'permissions')
+//            {
+//                $data = $this->toBin($set->permissions);
+//                $set->permissions = [
+//                    'Running In Background'     =>  (bool) $data[0],
+//                    'Entry Permit Audio Files'  =>  (bool) $data[1],
+//                    'Location '                 =>  (bool) $data[2]
+//                ];
+//            }else
+            if($key === 'theme'){
 
                 $set->theme = Theme::getByPK($value);
 
@@ -176,10 +177,11 @@ class SettingsController extends \MUSICAA\controllers\AbstractController
 
                 $set->language = Languages::getByPK($value);
 
-            }else
-            {
-                $set->$key = (bool) $value;
             }
+//            else
+//            {
+//                $set->$key = (bool) $value;
+//            }
         }
     }
 

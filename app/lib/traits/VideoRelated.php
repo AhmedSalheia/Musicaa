@@ -295,8 +295,8 @@ trait VideoRelated
 
 		$id->save('upd');
 
-		$videos['video_count'] = count($videos['videos']);
-		$videos['channel_count'] = count($videos['channels']);
+		$videos['video_count'] = count($videos['videos']?:[]);
+		$videos['channel_count'] = count($videos['channels']?:[]);
 		return $videos;
     }
 }

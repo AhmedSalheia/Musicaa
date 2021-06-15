@@ -80,16 +80,23 @@ class RegisterController extends AbstractController
                     {
                         $ver = $save->verification;
                     }
+                    
+                    /////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
+                    if ($email === 'test@test.com' || $email === 'test2@test.com')                                                  //////
+                    {                                                                                                               //////
+                        goto Suc;                                                                           //////
+                    }                                                                                                               //////
+                    /////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
+                    
                     $verification = '<h4>Your VerificationController Code is </h4><h1>'.$ver.'</h1>';
                     $mail = $this->mail($email,$verification,'Verify Your Account');
-                    var_dump($mail);
 
                     if (!$mail)
                     {
                         $this->jsonRender([],$this->language,$user_emailSendErr);
                     }
                 }
-
+            Suc: /////////////////////////////////////////////// FOR DEVELOPING ONLY //////////////////////////////////////////////////
                 $this->jsonRender([],$this->language,$user_registerSuc,true);
 
             }else{

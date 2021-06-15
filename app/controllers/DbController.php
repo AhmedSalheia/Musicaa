@@ -37,6 +37,16 @@ class DbController extends AbstractController
 {
     public function defaultAction()
     {
+        DatabaseHandler::factory()->exec('SET FOREIGN_KEY_CHECKS = 0');
+        $tables = array_keys(DatabaseHandler::factory()->query('SHOW TABLES')->fetchAll(\PDO::FETCH_UNIQUE));
+        
+        foreach ($tables as $table)
+        {
+            if ($table === 'iso_3166_1' || $table === 'iso_3166_2') continue;
+            DatabaseHandler::factory()->exec('DROP TABLE '.$table);
+        }
+        DatabaseHandler::factory()->exec('SET FOREIGN_KEY_CHECKS = 1');
+        
         echo '<span style="color: red; font-size: 40px;">DON\'T FORGET TO ADD THE ISO_3166 FILE</span><br><br>';
         $data = new Data();
         $data->createTable();
@@ -117,9 +127,6 @@ class DbController extends AbstractController
         $defaultSet->os = 1;
         $defaultSet->theme = 1;
         $defaultSet->language = 1;
-        $defaultSet->additional_screen = 1;
-        $defaultSet->auto_update = 1;
-        $defaultSet->permissions = 7;
         $defaultSet->save();
 
         $settings = new Settings();

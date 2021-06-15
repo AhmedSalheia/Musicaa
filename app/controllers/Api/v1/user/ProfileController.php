@@ -207,7 +207,7 @@ class ProfileController extends \MUSICAA\controllers\AbstractController
             $gender = Genders::getByPK($user->gender)->gender;
             $user->gender = GenderLabels::getByPK($this->language)->$gender;
 
-            unset($user->id, $user->verified, $user->password);
+            unset($user->id, $user->verified, $user->password,$user->token);
             $this->jsonRender(['user'=>$user],$this->language,$user_saveDataSuc);
 
         }else{

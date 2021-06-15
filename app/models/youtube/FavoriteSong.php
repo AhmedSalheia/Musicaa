@@ -14,7 +14,7 @@ class FavoriteSong extends \MUSICAA\models\AbstractModel
 
     public static $tableName = 'favoritesongs';
     public static $primaryKey = 'id';
-    public static $uniqueKey = 'videoId';
+    public static $uniqueKey = '';
     public static $timeCol = '';
     public static $tableSchema = [
         'favoriteId'    =>  self::DATA_TYPE_STR,
@@ -27,7 +27,7 @@ class FavoriteSong extends \MUSICAA\models\AbstractModel
             CREATE TABLE favoritesongs(
                 id INT NOT NuLL PRIMARY KEY AUTO_INCREMENT,
                 favoriteId INT NOT NULL,
-                videoId VARCHAR(50) NOT NULL UNIQUE,
+                videoId VARCHAR(50) NOT NULL,
                 FOREIGN KEY (favoriteId) REFERENCES favorites(id),
                 FOREIGN KEY (videoId) REFERENCES video(id)
             )

@@ -124,7 +124,7 @@ class AbstractModel
         return false;
     }
 
-    public static function getByUnique($unique,array $cols=["*"]){
+    public static function getByUnique($unique,array $cols=["*"],$return='default'){
         $sql = 'SELECT '.(self::prepareCols($cols)).' FROM '.static::$tableName. ' WHERE '.static::$uniqueKey.' = "'.$unique.'"';
         $stmt = DatabaseHandler::factory()->prepare($sql);
         if($stmt->execute() === true){
@@ -133,7 +133,7 @@ class AbstractModel
             }else{
                 $results = $stmt->fetchAll(\PDO::FETCH_CLASS,get_called_class());
             }
-            return !empty($results)? ((count($results) === 1)? array_shift($results): $results) : false;
+            return !empty($results)? ((count($results) === 1 && strtolower($return)!=='array')? array_shift($results): $results) : false;
         }
         return false;
     }

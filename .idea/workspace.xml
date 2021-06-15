@@ -4,7 +4,16 @@
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1/user/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/DbController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/DbController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/traits/VideoRelated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/AbstractModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/AbstractModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/DefaultSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/DefaultSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/youtube/FavoriteSong.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/youtube/FavoriteSong.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +292,10 @@
       <workItem from="1622922597642" duration="4699000" />
       <workItem from="1622967859505" duration="65000" />
       <workItem from="1623067141659" duration="2472000" />
-      <workItem from="1623580381663" duration="5283000" />
+      <workItem from="1623580381663" duration="6604000" />
+      <workItem from="1623749053158" duration="813000" />
+      <workItem from="1623749906825" duration="8117000" />
+      <workItem from="1623763308925" duration="179000" />
     </task>
     <servers />
   </component>
