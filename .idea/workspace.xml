@@ -3,25 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/ApidataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/data/ApidataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/CountriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/data/CountriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/GendersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/data/GendersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/OnboardingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/data/OnboardingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/PrivacypolicyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/data/PrivacypolicyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/data/TermsandconditionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/data/TermsandconditionsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/FavoriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/music/FavoriteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/music/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/PlaylistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/music/PlaylistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/music/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/music/ViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/music/ViewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/user/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/user/LogoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/user/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/user/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/user/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/StatusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/user/StatusController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Api/v1/user/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Api/v1_/user/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/message.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +285,7 @@
       <workItem from="1623749053158" duration="813000" />
       <workItem from="1623749906825" duration="8117000" />
       <workItem from="1623763308925" duration="1038000" />
-      <workItem from="1627463715774" duration="125000" />
+      <workItem from="1627463715774" duration="1167000" />
     </task>
     <servers />
   </component>
