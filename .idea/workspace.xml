@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee5f751-4148-4fa4-8345-a38c7d3a3c01" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f269782f-1444-455f-9c40-e3163334125b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f269782f-1444-455f-9c40-e3163334125b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +46,7 @@
       </set>
     </option>
   </component>
-  <component name="PhpDebugGeneral" xdebug_show_addresses="true" break_at_first_line="true" hide_empty_superglobals="false" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" hide_empty_superglobals="false" />
   <component name="PhpServers">
     <servers>
       <server host="127.0.0.1" id="bd395714-dfaa-4732-85cc-e5269d72b5b4" name="127.0.0.1" port="443" />
@@ -285,7 +287,8 @@
       <workItem from="1623749053158" duration="813000" />
       <workItem from="1623749906825" duration="8117000" />
       <workItem from="1623763308925" duration="1038000" />
-      <workItem from="1627463715774" duration="1203000" />
+      <workItem from="1627463715774" duration="1866000" />
+      <workItem from="1629790013680" duration="312000" />
     </task>
     <servers />
   </component>
